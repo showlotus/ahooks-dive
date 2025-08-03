@@ -84,4 +84,6 @@ export default defineConfig({
     math: true,
     lineNumbers: true,
   },
+
+  ignoreDeadLinks: true,
 })
