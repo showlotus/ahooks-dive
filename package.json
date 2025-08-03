@@ -1,0 +1,24 @@
+{
+  "name": "ahooks-dive",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "ahooks dive 是一个深入剖析 ahooks 源码与用法的文档站点，帮助开发者更好地理解和应用 ahooks",
+  "author": "showlotus",
+  "license": "MIT",
+  "packageManager": "pnpm@8.15.4",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development vitepress dev .",
+    "build": "cross-env NODE_ENV=production vitepress build .",
+    "preview": "vitepress preview ."
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "cross-env": "^10.0.0",
+    "markdown-it-mathjax3": "^4.3.2",
+    "vitepress": "^1.6.3"
+  }
+}
