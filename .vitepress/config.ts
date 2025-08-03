@@ -1,5 +1,12 @@
 import { defineConfig } from 'vitepress'
 
+const useBase = (url: string) => {
+  if (process.env.NODE_ENV === 'production') {
+    return `/ahooks-dive/${url}`
+  }
+  return `/${url}`
+}
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'ahooks dive',
@@ -7,12 +14,12 @@ export default defineConfig({
     'ahooks dive 是一个深入剖析 ahooks 源码与用法的文档站点，帮助开发者更好地理解和应用 ahooks',
   srcDir: '.',
   outDir: './docs',
-  base: process.env.NODE_ENV === 'production' ? '/ahooks-dive/' : '/',
+  base: useBase(''),
   // lang: 'zh-CN',
   // 设置最后更新时间
   lastUpdated: true,
   // 设置图标
-  head: [['link', { rel: 'icon', href: '/ahooks.svg' }]],
+  head: [['link', { rel: 'icon', href: useBase('ahooks.svg') }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
