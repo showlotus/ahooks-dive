@@ -17,8 +17,14 @@
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "ahooks": "^3.9.0",
+    "antd": "^5.26.7",
     "cross-env": "^10.0.0",
     "markdown-it-mathjax3": "^4.3.2",
-    "vitepress": "^1.6.3"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "vitepress": "^1.6.3",
+    "vitepress-demo-plugin": "^1.4.7"
   }
 }

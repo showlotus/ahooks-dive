@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import { vitepressDemoPlugin } from 'vitepress-demo-plugin'
+import react from '@vitejs/plugin-react'
 
 const useBase = (url: string) => {
   if (process.env.NODE_ENV === 'production') {
@@ -20,6 +22,7 @@ export default defineConfig({
   lastUpdated: true,
   // 设置图标
   head: [['link', { rel: 'icon', href: useBase('ahooks.svg') }]],
+  cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -45,7 +48,8 @@ export default defineConfig({
       },
       {
         text: 'LifeCycle',
-        items: [{ text: '概述', link: '/source/life-cycle/' }],
+        link: '/source/life-cycle/',
+        items: [{ text: 'useMount', link: '/source/life-cycle/useMount' }],
       },
       {
         text: 'State',
@@ -74,7 +78,7 @@ export default defineConfig({
 
     // 设置页脚
     footer: {
-      copyright: 'Copyright © 2025-present ahooks dive',
+      copyright: 'Copyright © 2025-present showlotus',
     },
 
     // 设置搜索
@@ -90,6 +94,13 @@ export default defineConfig({
   markdown: {
     math: true,
     lineNumbers: true,
+    config: md => {
+      md.use(vitepressDemoPlugin)
+    },
+  },
+
+  vite: {
+    plugins: [react()],
   },
 
   ignoreDeadLinks: true,
