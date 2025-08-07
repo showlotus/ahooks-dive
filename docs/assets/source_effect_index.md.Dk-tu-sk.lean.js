@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as i,ag as l}from"./chunks/framework.B2Nsdnpo.js";const t=JSON.parse('{"title":"Effect 副作用","description":"","frontmatter":{},"headers":[],"relativePath":"source/effect/index.md","filePath":"source/effect/index.md","lastUpdated":1754187800000}');const r=e({name:"source/effect/index.md"},[["render",function(e,t,r,o,f,c){return i(),a("div",null,t[0]||(t[0]=[l("",7)]))}]]);export{t as __pageData,r as default};
+//# sourceMappingURL=source_effect_index.md.Dk-tu-sk.js.map

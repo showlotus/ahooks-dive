@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as s,ag as t}from"./chunks/framework.B2Nsdnpo.js";const i=JSON.parse('{"title":"Use Request 网络请求","description":"","frontmatter":{},"headers":[],"relativePath":"source/use-request/index.md","filePath":"source/use-request/index.md","lastUpdated":1754187800000}');const l=e({name:"source/use-request/index.md"},[["render",function(e,i,l,r,u,o){return s(),a("div",null,i[0]||(i[0]=[t("",7)]))}]]);export{i as __pageData,l as default};
+//# sourceMappingURL=source_use-request_index.md.CW3F3tGg.js.map

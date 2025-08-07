@@ -1,0 +1,2 @@
+import{_ as a,c as e,o as i,ag as l}from"./chunks/framework.B2Nsdnpo.js";const r=JSON.parse('{"title":"Dev 开发工具","description":"","frontmatter":{},"headers":[],"relativePath":"source/dev/index.md","filePath":"source/dev/index.md","lastUpdated":1754187800000}');const t=a({name:"source/dev/index.md"},[["render",function(a,r,t,o,d,s){return i(),e("div",null,r[0]||(r[0]=[l("",7)]))}]]);export{r as __pageData,t as default};
+//# sourceMappingURL=source_dev_index.md.Brj4nf3u.js.map

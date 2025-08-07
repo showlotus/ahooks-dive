@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as i,ag as l}from"./chunks/framework.B2Nsdnpo.js";const r=JSON.parse('{"title":"Scene 场景应用","description":"","frontmatter":{},"headers":[],"relativePath":"source/scene/index.md","filePath":"source/scene/index.md","lastUpdated":1754187800000}');const n=e({name:"source/scene/index.md"},[["render",function(e,r,n,t,s,o){return i(),a("div",null,r[0]||(r[0]=[l("",7)]))}]]);export{r as __pageData,n as default};
+//# sourceMappingURL=source_scene_index.md.Cu17KeR7.js.map

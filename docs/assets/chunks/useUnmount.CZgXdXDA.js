@@ -1,0 +1,2 @@
+import{j as r}from"./jsx-runtime.DKusaIV_.js";import{u as t}from"./index.BEUqp1sD.js";import{r as n}from"./index.CrvAvMll.js";import{u as o}from"./index.DfsLWuqc.js";import"./framework.B2Nsdnpo.js";const e=()=>{var t;return t=o(()=>{}),n.useEffect(function(){return function(){t.current()}},[]),r.jsx("div",{children:"Hello World"})},s=()=>{const[n,{toggle:o}]=t();return r.jsxs(r.Fragment,{children:[r.jsx("button",{type:"button",onClick:o,children:n?"unmount":"mount"}),n&&r.jsx(e,{})]})};export{s as default};
+//# sourceMappingURL=useUnmount.CZgXdXDA.js.map

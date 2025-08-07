@@ -1,0 +1,2 @@
+import{_ as s,c as a,o as n,ag as i}from"./chunks/framework.B2Nsdnpo.js";const e=JSON.parse('{"title":"Markdown Extension Examples","description":"","frontmatter":{},"headers":[],"relativePath":"markdown-examples.md","filePath":"markdown-examples.md","lastUpdated":1754187800000}');const l=s({name:"markdown-examples.md"},[["render",function(s,e,l,p,t,r){return n(),a("div",null,e[0]||(e[0]=[i("",19)]))}]]);export{e as __pageData,l as default};
+//# sourceMappingURL=markdown-examples.md.CVGWTfqt.js.map
