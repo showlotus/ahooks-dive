@@ -1,6 +1,4 @@
-# useMount
-
-> _[ahooks useMount](https://ahooks.js.org/zh-CN/hooks/use-mount#usemount)_
+# [useMount](https://ahooks.js.org/zh-CN/hooks/use-mount#usemount)
 
 ## 用法
 
@@ -34,7 +32,7 @@ const useMount = (fn: EffectCallback) => {
 export default useMount;
 ```
 
-## 逻辑分析
+## 解读
 
 先是环境判断，开发模式下传入参数的类型不为 `Function` 时，输出错误日志。
 

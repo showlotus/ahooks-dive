@@ -49,7 +49,10 @@ export default defineConfig({
       {
         text: 'LifeCycle',
         link: '/source/life-cycle/',
-        items: [{ text: 'useMount', link: '/source/life-cycle/useMount' }],
+        items: [
+          { text: 'useMount', link: '/source/life-cycle/useMount' },
+          { text: 'useUnmount', link: '/source/life-cycle/useUnmount' },
+        ],
       },
       {
         text: 'State',
@@ -65,16 +68,23 @@ export default defineConfig({
       },
       {
         text: 'Advanced',
-        items: [{ text: '概述', link: '/source/advanced/' }],
+        link: '/source/advanced/',
+        items: [{ text: 'useLatest', link: '/source/advanced/useLatest' }],
       },
       {
         text: 'Dev',
         items: [{ text: '概述', link: '/source/dev/' }],
       },
+      {
+        text: 'Extra',
+        items: [{ text: '概述', link: '/source/extra/' }],
+      },
     ],
 
     // 设置社交链接
-    socialLinks: [{ icon: 'github', link: 'https://github.com/showlotus/ahooks-dive' }],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/showlotus/ahooks-dive' },
+    ],
 
     // 设置页脚
     footer: {
@@ -101,6 +111,57 @@ export default defineConfig({
 
   vite: {
     plugins: [react()],
+    // 预构建配置
+    optimizeDeps: {
+      // 强制预构建的依赖
+      include: [
+        'react',
+        'react-dom',
+        'antd',
+        'ahooks',
+        '@vitejs/plugin-react',
+        'vitepress-demo-plugin',
+      ],
+      // 排除不需要预构建的依赖
+      exclude: ['vitepress', 'fsevents'],
+    },
+    // 解决 .node 文件加载器问题
+    resolve: {
+      alias: {
+        // 忽略 fsevents 在非 macOS 系统上的问题
+        fsevents: 'rollup-plugin-node-polyfills/polyfills/fs-events',
+      },
+    },
+    // 构建配置
+    build: {
+      // 启用依赖预构建
+      commonjsOptions: {
+        include: [/node_modules/],
+      },
+      // 设置块大小警告限制
+      chunkSizeWarningLimit: 1000,
+      // 启用源码映射
+      sourcemap: true,
+      // 压缩配置
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
+      // 处理原生模块
+      rollupOptions: {
+        external: ['fsevents'],
+      },
+    },
+    // 开发服务器配置
+    server: {
+      // 忽略 fsevents 警告
+      fs: {
+        allow: ['..'],
+      },
+    },
   },
 
   ignoreDeadLinks: true,
