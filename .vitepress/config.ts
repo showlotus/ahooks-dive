@@ -21,8 +21,8 @@ export default defineConfig({
   // 设置最后更新时间
   lastUpdated: true,
   // 设置图标
-  head: [['link', { rel: 'icon', href: useBase('ahooks.svg') }]],
-  cleanUrls: true,
+  head: [['link', { rel: 'icon', href: useBase('ahooks-dive.png') }]],
+  // cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -35,6 +35,7 @@ export default defineConfig({
       { text: 'Dom', link: '/source/dom/' },
       { text: 'Advanced', link: '/source/advanced/' },
       { text: 'Dev', link: '/source/dev/' },
+      { text: 'Extra', link: '/source/extra/' },
     ],
 
     sidebar: [
@@ -77,7 +78,7 @@ export default defineConfig({
       },
       {
         text: 'Extra',
-        items: [{ text: '概述', link: '/source/extra/' }],
+        items: [{ text: 'useImmer', link: '/source/extra/use-immer' }],
       },
     ],
 
