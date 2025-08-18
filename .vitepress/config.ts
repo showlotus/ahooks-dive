@@ -78,7 +78,11 @@ export default defineConfig({
       },
       {
         text: 'Extra',
-        items: [{ text: 'useImmer', link: '/source/extra/use-immer' }],
+        items: [
+          { text: 'useState', link: '/source/extra/use-state' },
+          { text: 'useRef', link: '/source/extra/use-ref' },
+          { text: 'useImmer', link: '/source/extra/use-immer' },
+        ],
       },
     ],
 

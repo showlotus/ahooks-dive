@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useLatest } from 'ahooks'
 
 export default () => {
   const [useLatestCount, setUseLatestCount] = useState(0)
   const [defaultCount, setDefaultCount] = useState(0)
 
-  console.log('render defaultCount', defaultCount)
-
-  const latestCountRef = useLatest(useLatestCount)
+  // const latestCountRef = useLatest(useLatestCount)
+  const latestCountRef = useRef(useLatestCount)
+  latestCountRef.current = useLatestCount
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,9 +18,6 @@ export default () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log('defaultCount', defaultCount)
-      console.log('useLatestCount', useLatestCount)
-      console.log('latestCountRef', latestCountRef.current)
       setDefaultCount(defaultCount + 1)
     }, 1000)
     return () => clearInterval(interval)
