@@ -2,14 +2,16 @@
 
 ## 用法
 
+组件挂载时执行。
+
 <demo react="./useMount.tsx" />
 
-## 源码
+## [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useMount/index.ts)
 
-_[源码地址](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useMount/index.ts)_
+::: code-group
 
 <!-- prettier-ignore -->
-```js{15-17}
+```ts{15-17} [useMount.ts]
 import { useEffect } from 'react';
 import { type EffectCallback } from 'react';
 import { isFunction } from '../utils';
@@ -31,6 +33,8 @@ const useMount = (fn: EffectCallback) => {
 
 export default useMount;
 ```
+
+:::
 
 ## 解读
 

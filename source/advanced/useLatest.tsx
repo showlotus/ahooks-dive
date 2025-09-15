@@ -5,8 +5,6 @@ export default () => {
   const [useLatestCount, setUseLatestCount] = useState(0)
   const [defaultCount, setDefaultCount] = useState(0)
 
-  console.log('render defaultCount', defaultCount)
-
   const latestCountRef = useLatest(useLatestCount)
 
   useEffect(() => {
@@ -18,9 +16,6 @@ export default () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log('defaultCount', defaultCount)
-      console.log('useLatestCount', useLatestCount)
-      console.log('latestCountRef', latestCountRef.current)
       setDefaultCount(defaultCount + 1)
     }, 1000)
     return () => clearInterval(interval)
