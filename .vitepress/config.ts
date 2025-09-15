@@ -1,6 +1,8 @@
 import { defineConfig } from 'vitepress'
 import { vitepressDemoPlugin } from 'vitepress-demo-plugin'
 import react from '@vitejs/plugin-react'
+// import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
+// import { type LanguageInput } from 'shiki'
 
 const useBase = (url: string) => {
   if (process.env.NODE_ENV === 'production') {
@@ -41,10 +43,12 @@ export default defineConfig({
     sidebar: [
       {
         text: 'useRequest',
+        link: '/source/use-request/',
         items: [{ text: '概述', link: '/source/use-request/' }],
       },
       {
         text: 'Scene',
+        link: '/source/scene/',
         items: [{ text: '概述', link: '/source/scene/' }],
       },
       {
@@ -53,18 +57,25 @@ export default defineConfig({
         items: [
           { text: 'useMount', link: '/source/life-cycle/useMount' },
           { text: 'useUnmount', link: '/source/life-cycle/useUnmount' },
+          {
+            text: 'useUnmountedRef',
+            link: '/source/life-cycle/useUnmountedRef',
+          },
         ],
       },
       {
         text: 'State',
+        link: '/source/state/',
         items: [{ text: '概述', link: '/source/state/' }],
       },
       {
         text: 'Effect',
+        link: '/source/effect/',
         items: [{ text: '概述', link: '/source/effect/' }],
       },
       {
         text: 'Dom',
+        link: '/source/dom/',
         items: [{ text: '概述', link: '/source/dom/' }],
       },
       {
@@ -74,11 +85,17 @@ export default defineConfig({
       },
       {
         text: 'Dev',
+        link: '/source/dev/',
         items: [{ text: '概述', link: '/source/dev/' }],
       },
       {
         text: 'Extra',
-        items: [{ text: 'useImmer', link: '/source/extra/use-immer' }],
+        items: [
+          { text: 'useEffect', link: '/source/extra/useEffect' },
+          { text: 'useState', link: '/source/extra/useState' },
+          { text: 'useRef', link: '/source/extra/useRef' },
+          { text: 'useImmer', link: '/source/extra/useImmer' },
+        ],
       },
     ],
 
@@ -99,19 +116,36 @@ export default defineConfig({
     // 设置右侧目录导航
     outline: {
       level: 'deep', // 显示所有层级的标题
-      label: ' ', // 目录标题
+      label: '📚 目录', // 目录标题
     },
   },
   markdown: {
     math: true,
     lineNumbers: true,
     config: md => {
-      md.use(vitepressDemoPlugin)
+      md.use(vitepressDemoPlugin, {
+        stackblitz: {
+          show: true,
+        },
+        codesandbox: {
+          show: true,
+        },
+      })
     },
+    // codeTransformers: [transformerTwoslash()],
+    // Explicitly load these languages for types hightlighting
+    // languages: ['js', 'jsx', 'ts', 'tsx'] as unknown as LanguageInput[],
   },
 
   vite: {
     plugins: [react()],
+    css: {
+      preprocessorOptions: {
+        css: {
+          additionalData: `@import '@shikijs/vitepress-twoslash/style.css';`,
+        },
+      },
+    },
     // 预构建配置
     optimizeDeps: {
       // 强制预构建的依赖

@@ -2,12 +2,16 @@
 
 ## 用法
 
+组件卸载时执行。
+
 <demo react="./useUnmount.tsx" />
 
 ## [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUnmount/index.ts)
 
+::: code-group
+
 <!-- prettier-ignore -->
-```js{15-20}
+```ts{15-20} [useUnMount.ts]
 import { useEffect } from 'react';
 import useLatest from '../useLatest';
 import { isFunction } from '../utils';
@@ -33,21 +37,9 @@ const useUnmount = (fn: () => void) => {
 export default useUnmount;
 ```
 
-[`useLatest`](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useLatest/index.ts) 的作用是返回一个最新的值，这里主要是为了解决闭包问题。
+:::
 
-<!-- prettier-ignore -->
-```js
-import { useRef } from 'react';
-
-function useLatest<T>(value: T) {
-  const ref = useRef(value);
-  ref.current = value;
-
-  return ref;
-}
-
-export default useLatest;
-```
+[`useLatest`](/source/advanced/useLatest.md) 的作用是返回最新的值。
 
 ## 解读
 
