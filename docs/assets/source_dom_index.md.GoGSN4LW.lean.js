@@ -1,0 +1,2 @@
+import{_ as a,c as e,o as i,ag as l}from"./chunks/framework.B2Nsdnpo.js";const o=JSON.parse('{"title":"DOM 操作","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/index.md","filePath":"source/dom/index.md","lastUpdated":1754187800000}');const r=a({name:"source/dom/index.md"},[["render",function(a,o,r,t,d,n){return i(),e("div",null,o[0]||(o[0]=[l("",7)]))}]]);export{o as __pageData,r as default};
+//# sourceMappingURL=source_dom_index.md.GoGSN4LW.js.map

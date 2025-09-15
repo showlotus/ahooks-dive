@@ -1,0 +1,2 @@
+import{_ as e,c as l,o as a,ag as i}from"./chunks/framework.B2Nsdnpo.js";const r=JSON.parse('{"title":"Life Cycle 生命周期","description":"","frontmatter":{},"headers":[],"relativePath":"source/life-cycle/index.md","filePath":"source/life-cycle/index.md","lastUpdated":1754187800000}');const t=e({name:"source/life-cycle/index.md"},[["render",function(e,r,t,o,c,n){return a(),l("div",null,r[0]||(r[0]=[i("",7)]))}]]);export{r as __pageData,t as default};
+//# sourceMappingURL=source_life-cycle_index.md.Dz5gZIgM.js.map

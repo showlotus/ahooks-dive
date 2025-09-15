@@ -1,0 +1,2 @@
+import{_ as a,c as e,o as i,ag as l}from"./chunks/framework.B2Nsdnpo.js";const d=JSON.parse('{"title":"Advanced 高级用法","description":"","frontmatter":{},"headers":[],"relativePath":"source/advanced/index.md","filePath":"source/advanced/index.md","lastUpdated":1754187800000}');const o=a({name:"source/advanced/index.md"},[["render",function(a,d,o,r,n,t){return i(),e("div",null,d[0]||(d[0]=[l("",7)]))}]]);export{d as __pageData,o as default};
+//# sourceMappingURL=source_advanced_index.md.4U7iI5L-.js.map
