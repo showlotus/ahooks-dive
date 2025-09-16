@@ -55,11 +55,11 @@ export default defineConfig({
         text: 'LifeCycle',
         link: '/source/life-cycle/',
         items: [
-          { text: 'useMount', link: '/source/life-cycle/useMount' },
-          { text: 'useUnmount', link: '/source/life-cycle/useUnmount' },
+          { text: 'useMount', link: '/source/life-cycle/use-mount' },
+          { text: 'useUnmount', link: '/source/life-cycle/use-unmount' },
           {
             text: 'useUnmountedRef',
-            link: '/source/life-cycle/useUnmountedRef',
+            link: '/source/life-cycle/use-unmounted-ref',
           },
         ],
       },
@@ -81,7 +81,7 @@ export default defineConfig({
       {
         text: 'Advanced',
         link: '/source/advanced/',
-        items: [{ text: 'useLatest', link: '/source/advanced/useLatest' }],
+        items: [{ text: 'useLatest', link: '/source/advanced/use-latest' }],
       },
       {
         text: 'Dev',
@@ -91,10 +91,10 @@ export default defineConfig({
       {
         text: 'Extra',
         items: [
-          { text: 'useEffect', link: '/source/extra/useEffect' },
-          { text: 'useState', link: '/source/extra/useState' },
-          { text: 'useRef', link: '/source/extra/useRef' },
-          { text: 'useImmer', link: '/source/extra/useImmer' },
+          { text: 'useEffect', link: '/source/extra/use-effect' },
+          { text: 'useState', link: '/source/extra/use-state' },
+          { text: 'useRef', link: '/source/extra/use-ref' },
+          { text: 'useImmer', link: '/source/extra/use-immer' },
         ],
       },
     ],

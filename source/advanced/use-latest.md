@@ -4,7 +4,7 @@
 
 返回最新的值。
 
-<demo react="./useLatest.tsx" />
+<demo react="./use-latest.tsx" />
 
 为什么 `demo.tsx` 中为什么 `defaultCount` 没有更新？
 
@@ -37,7 +37,7 @@ export default () => {
 
 :::
 
-<demo react="./useLatest2.tsx" />
+<demo react="./use-latest2.tsx" />
 
 ## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useLatest/index.ts)
 
@@ -122,4 +122,4 @@ export default () => {
 
 而每次重新渲染时，当前组件内部上下文中拿到的都是每个 `state` 最新的值，`useLatest` 相当于更新了一下 `useRef` 定义的值，保证当前 `ref` 对象是最新的值。
 
-![demo.tsx 更新流程](./useLatest.excalidraw.svg)
+![demo.tsx 更新流程](./use-latest.excalidraw.svg)
