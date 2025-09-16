@@ -66,7 +66,10 @@ export default defineConfig({
       {
         text: 'State',
         link: '/source/state/',
-        items: [{ text: '概述', link: '/source/state/' }],
+        items: [
+          { text: '概述', link: '/source/state/' },
+          { text: 'useRafState', link: '/source/state/use-raf-state' },
+        ],
       },
       {
         text: 'Effect',
@@ -76,7 +79,10 @@ export default defineConfig({
       {
         text: 'Dom',
         link: '/source/dom/',
-        items: [{ text: '概述', link: '/source/dom/' }],
+        items: [
+          { text: '概述', link: '/source/dom/' },
+          { text: 'useScroll', link: '/source/dom/use-scroll' },
+        ],
       },
       {
         text: 'Advanced',
@@ -142,7 +148,7 @@ export default defineConfig({
     css: {
       preprocessorOptions: {
         css: {
-          additionalData: `@import '@shikijs/vitepress-twoslash/style.css';`,
+          // additionalData: `@import '@shikijs/vitepress-twoslash/style.css';`,
         },
       },
     },
