@@ -44,3 +44,5 @@ export default useRafState;
 :::
 
 ## 解读
+
+与 `useState` 相比，`useRafState` 会在 `requestAnimationFrame` 中更新状态，而不是在 `setState` 中更新状态。

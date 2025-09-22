@@ -1,7 +1,7 @@
 import { useRafState } from 'ahooks'
 import React, { useEffect, useState } from 'react'
 
-const ChildOne = ({ times = 1 }) => {
+const WithUseState = ({ times = 1 }) => {
   const [state, setState] = useState(0)
   useEffect(() => {
     const onScroll = () => {
@@ -18,13 +18,13 @@ const ChildOne = ({ times = 1 }) => {
   }, [])
 
   return (
-    <div>
-      ChildOne update state count: {state} / {times}
+    <div style={{ color: '#F44336' }}>
+      [WithUseState] update state count: {state} / {times}
     </div>
   )
 }
 
-const ChildTwo = ({ times = 1 }) => {
+const WithUseRafState = ({ times = 1 }) => {
   const [state, setState] = useRafState(0)
   useEffect(() => {
     const onScroll = () => {
@@ -41,8 +41,8 @@ const ChildTwo = ({ times = 1 }) => {
   }, [])
 
   return (
-    <div>
-      ChildTwo update state count: {state} / {times}
+    <div style={{ color: '#4CAF50' }}>
+      [WithUseRafState] update state count: {state} / {times}
     </div>
   )
 }
@@ -50,11 +50,11 @@ export default () => {
   return (
     <div>
       滚动页面，观察两个组件更新次数的差异
-      <ChildOne times={1} />
-      <ChildTwo times={1} />
+      <WithUseState times={1} />
+      <WithUseRafState times={1} />
       <hr />
-      <ChildOne times={10} />
-      <ChildTwo times={10} />
+      <WithUseState times={10} />
+      <WithUseRafState times={10} />
     </div>
   )
 }
