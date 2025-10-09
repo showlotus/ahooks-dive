@@ -79,7 +79,7 @@
 | useEventEmitter            |     |
 | useIsomorphicLayoutEffect  |     |
 | useLatest                  | ✅  |
-| useMemoizedFn              |     |
+| useMemoizedFn              | ✅  |
 | useReactive                |     |
 | useTrackedEffect           |     |
 | useWhyDidYouUpdate         |     |
