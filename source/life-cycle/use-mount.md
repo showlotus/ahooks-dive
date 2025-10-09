@@ -4,7 +4,7 @@
 
 组件挂载时执行。
 
-<demo react="./useMount.tsx" />
+<demo react="./use-mount.tsx" />
 
 ## [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useMount/index.ts)
 

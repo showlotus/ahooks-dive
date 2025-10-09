@@ -1,0 +1,26 @@
+/* 自定义 vitepress-demo-plugin 样式 */
+.vitepress-demo-plugin__container {
+  border-color: var(--vp-c-border) !important;
+  border-radius: 8px !important;
+}
+
+.vitepress-demo-plugin-description__split-line {
+  border-bottom-color: var(--vp-c-border) !important;
+}
+
+.vitepress-demo-plugin__container > .vitepress-demo-plugin-fold {
+  border-top-color: var(--vp-c-border) !important;
+}
+
+.vitepress-demo-plugin__container > section.vitepress-demo-plugin-preview {
+  padding: 16px;
+}
+
+.vitepress-demo-plugin__container > * {
+  font-size: inherit;
+}
+
+/* 重置浏览器默认样式 */
+.vitepress-demo-plugin__container button[type='button'] {
+  all: revert;
+}

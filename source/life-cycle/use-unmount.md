@@ -4,7 +4,7 @@
 
 组件卸载时执行。
 
-<demo react="./useUnmount.tsx" />
+<demo react="./use-unmount.tsx" />
 
 ## [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUnmount/index.ts)
 
@@ -39,7 +39,7 @@ export default useUnmount;
 
 :::
 
-[`useLatest`](/source/advanced/useLatest.md) 的作用是返回最新的值。
+[`useLatest`](/source/advanced/use-latest.md) 的作用是返回最新的值。
 
 ## 解读
 

@@ -1,0 +1,116 @@
+# [useMemoizedFn](https://ahooks.js.org/zh-CN/hooks/use-memoized-fn)
+
+## 📖 用法
+
+持久化 `function` 的引用，保证函数引用保持不变，避免重复创建函数。
+
+<demo react="./use-memoized-fn.tsx" />
+
+## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useMemoizedFn/index.ts)
+
+::: code-group
+
+<!-- prettier-ignore -->
+```ts [useMemoizedFn.ts]
+import { useMemo, useRef } from 'react';
+import { isFunction } from '../utils';
+import isDev from '../utils/isDev';
+
+type noop = (this: any, ...args: any[]) => any;
+
+type PickFunction<T extends noop> = (
+  this: ThisParameterType<T>,
+  ...args: Parameters<T>
+) => ReturnType<T>;
+
+const useMemoizedFn = <T extends noop>(fn: T) => {
+  if (isDev) {
+    if (!isFunction(fn)) {
+      console.error(`useMemoizedFn expected parameter is a function, got ${typeof fn}`);
+    }
+  }
+
+  const fnRef = useRef<T>(fn);
+
+  // why not write `fnRef.current = fn`?
+  // https://github.com/alibaba/hooks/issues/728
+  fnRef.current = useMemo<T>(() => fn, [fn]);
+
+  const memoizedFn = useRef<PickFunction<T>>(undefined);
+
+  if (!memoizedFn.current) {
+    memoizedFn.current = function (this, ...args) {
+      return fnRef.current.apply(this, args);
+    };
+  }
+
+  return memoizedFn.current;
+};
+
+export default useMemoizedFn;
+```
+
+:::
+
+## 🔍 解读
+
+先是环境判断，开发模式下传入参数的类型不为 `Function` 时，输出错误日志。
+
+<!-- prettier-ignore -->
+```tsx
+const useMemoizedFn = <T extends noop>(fn: T) => {
+  if (isDev) { // [!code focus:5]
+    if (!isFunction(fn)) {
+      console.error(`useMemoizedFn expected parameter is a function, got ${typeof fn}`);
+    }
+  }
+
+  /* ... */
+}
+```
+
+然后使用 `useRef` 定义了一个 `fnRef` 对象，用于存储传入的函数。并且当传入的 `fn` 发生变化时，更新 `fnRef` 对象的值。
+
+::: tip
+关于为什么使用 `useMemo` 包裹，可以查看对应 issue：[#728](https://github.com/alibaba/hooks/issues/728)
+:::
+
+<!-- prettier-ignore -->
+```tsx
+const useMemoizedFn = <T extends noop>(fn: T) => {
+  /* ... */
+
+  const fnRef = useRef<T>(fn); // [!code focus:5]
+
+  // why not write `fnRef.current = fn`?
+  // https://github.com/alibaba/hooks/issues/728
+  fnRef.current = useMemo<T>(() => fn, [fn]);
+}
+```
+
+接着使用 `useRef` 定义了一个 `memoizedFn` 对象，初始值为 `undefined`，用来记录新函数。
+
+首次执行时，会更新 `memoizedFn` 对象的值，赋值一个新函数，新函数内部会修改 `this` 指向后直接调用 `fnRef` 对象的值，并返回函数的执行结果。
+
+首次更新 `memoizedFn` 对象的值后，后续便不再更新，这也是 `useMemoizedFn` 为什么能保证函数引用保持不变的原因。
+
+最后返回 `memoizedFn` 对象中记录的这个新函数。
+
+<!-- prettier-ignore -->
+```tsx
+const useMemoizedFn = <T extends noop>(fn: T) => {
+  /* ... */
+
+  const memoizedFn = useRef<PickFunction<T>>(undefined); // [!code focus:9]
+
+  if (!memoizedFn.current) {
+    memoizedFn.current = function (this, ...args) {
+      return fnRef.current.apply(this, args);
+    };
+  }
+
+  return memoizedFn.current;
+}
+```
+
+综上，简单来说，`useMemoizedFn` 就是在内部创建了一个新函数，新函数内部执行传入的函数 `fn`，将 `fn` 的执行结果作为新函数的返回值，最后返回这个新函数，来保证函数的引用一直不变。通过 `useRef` 和 `useMemo` 来保证新函数内部执行的 `fn` 函数始终是最新的 `fn` 。

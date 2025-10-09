@@ -4,7 +4,7 @@
 
 当前组件是否已经卸载。
 
-<demo react="./useUnmountedRef.tsx" />
+<demo react="./use-unmounted-ref.tsx" />
 
 ## [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUnmountedRef/index.tsx)
 
