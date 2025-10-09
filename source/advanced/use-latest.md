@@ -129,3 +129,8 @@ export default () => {
   dark="./use-latest.dark.svg"
   alt="demo.tsx 更新流程"
 />
+<!-- 打包时，提供给 vite 识别，否则无法打包图片 -->
+<script>
+import light from './use-latest.excalidraw.svg'
+import dark from './use-latest.dark.svg'
+</script>
