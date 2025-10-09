@@ -1,15 +1,9 @@
 import { defineConfig } from 'vitepress'
 import { vitepressDemoPlugin } from 'vitepress-demo-plugin'
 import react from '@vitejs/plugin-react'
+import { useBase } from './theme/utils'
 // import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 // import { type LanguageInput } from 'shiki'
-
-const useBase = (url: string) => {
-  if (process.env.NODE_ENV === 'production') {
-    return `/ahooks-dive/${url}`
-  }
-  return `/${url}`
-}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -44,12 +38,12 @@ export default defineConfig({
       {
         text: 'useRequest',
         // link: '/source/use-request/',
-        items: [{ text: '概述', link: '/source/use-request/' }],
+        // items: [{ text: '概述', link: '/source/use-request/' }],
       },
       {
         text: 'Scene',
         // link: '/source/scene/',
-        items: [{ text: 'useTheme', link: '/source/scene/use-theme' }],
+        // items: [{ text: 'useTheme', link: '/source/scene/use-theme' }],
       },
       {
         text: 'LifeCycle',
@@ -71,7 +65,7 @@ export default defineConfig({
       {
         text: 'Effect',
         // link: '/source/effect/',
-        items: [{ text: '概述', link: '/source/effect/' }],
+        // items: [{ text: '概述', link: '/source/effect/' }],
       },
       {
         text: 'Dom',
@@ -89,7 +83,7 @@ export default defineConfig({
       {
         text: 'Dev',
         // link: '/source/dev/',
-        items: [{ text: '概述', link: '/source/dev/' }],
+        // items: [{ text: '概述', link: '/source/dev/' }],
       },
       {
         text: 'Extra',
@@ -192,6 +186,23 @@ export default defineConfig({
       // 处理原生模块
       rollupOptions: {
         external: ['fsevents'],
+        output: {
+          assetFileNames: assetInfo => {
+            // 本地资源
+            if (assetInfo.originalFileNames?.[0]?.startsWith('source/')) {
+              const ext = assetInfo.name?.split('.').pop() || ''
+              // 将图片输出到原 md 文件所在目录
+              if (/^(png|jpeg|jpg|svg|webp)$/.test(ext)) {
+                const dir = assetInfo.originalFileNames[0]
+                  .split('/')
+                  .slice(0, -1)
+                  .join('/')
+                return `${dir}/[name][extname]`
+              }
+            }
+            return 'assets/[name].[hash][extname]'
+          },
+        },
       },
     },
     // 开发服务器配置
