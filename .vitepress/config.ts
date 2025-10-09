@@ -29,31 +29,31 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'useRequest', link: '/source/use-request/' },
-      { text: 'Scene', link: '/source/scene/' },
-      { text: 'LifeCycle', link: '/source/life-cycle/' },
-      { text: 'State', link: '/source/state/' },
-      { text: 'Effect', link: '/source/effect/' },
-      { text: 'Dom', link: '/source/dom/' },
-      { text: 'Advanced', link: '/source/advanced/' },
-      { text: 'Dev', link: '/source/dev/' },
+      // { text: 'useRequest', link: '/source/use-request/' },
+      // { text: 'Scene', link: '/source/scene/' },
+      // { text: 'LifeCycle', link: '/source/life-cycle/' },
+      // { text: 'State', link: '/source/state/' },
+      // { text: 'Effect', link: '/source/effect/' },
+      // { text: 'Dom', link: '/source/dom/' },
+      // { text: 'Advanced', link: '/source/advanced/' },
+      // { text: 'Dev', link: '/source/dev/' },
       { text: 'Extra', link: '/source/extra/' },
     ],
 
     sidebar: [
       {
         text: 'useRequest',
-        link: '/source/use-request/',
+        // link: '/source/use-request/',
         items: [{ text: '概述', link: '/source/use-request/' }],
       },
       {
         text: 'Scene',
-        link: '/source/scene/',
-        items: [{ text: '概述', link: '/source/scene/' }],
+        // link: '/source/scene/',
+        items: [{ text: 'useTheme', link: '/source/scene/use-theme' }],
       },
       {
         text: 'LifeCycle',
-        link: '/source/life-cycle/',
+        // link: '/source/life-cycle/',
         items: [
           { text: 'useMount', link: '/source/life-cycle/use-mount' },
           { text: 'useUnmount', link: '/source/life-cycle/use-unmount' },
@@ -65,37 +65,35 @@ export default defineConfig({
       },
       {
         text: 'State',
-        link: '/source/state/',
-        items: [
-          { text: '概述', link: '/source/state/' },
-          { text: 'useRafState', link: '/source/state/use-raf-state' },
-        ],
+        // link: '/source/state/',
+        items: [{ text: 'useRafState', link: '/source/state/use-raf-state' }],
       },
       {
         text: 'Effect',
-        link: '/source/effect/',
+        // link: '/source/effect/',
         items: [{ text: '概述', link: '/source/effect/' }],
       },
       {
         text: 'Dom',
-        link: '/source/dom/',
-        items: [
-          { text: '概述', link: '/source/dom/' },
-          { text: 'useScroll', link: '/source/dom/use-scroll' },
-        ],
+        // link: '/source/dom/',
+        items: [{ text: 'useScroll', link: '/source/dom/use-scroll' }],
       },
       {
         text: 'Advanced',
-        link: '/source/advanced/',
-        items: [{ text: 'useLatest', link: '/source/advanced/use-latest' }],
+        // link: '/source/advanced/',
+        items: [
+          { text: 'useLatest', link: '/source/advanced/use-latest' },
+          { text: 'useMemoizedFn', link: '/source/advanced/use-memoized-fn' },
+        ],
       },
       {
         text: 'Dev',
-        link: '/source/dev/',
+        // link: '/source/dev/',
         items: [{ text: '概述', link: '/source/dev/' }],
       },
       {
         text: 'Extra',
+        // link: '/source/extra/',
         items: [
           { text: 'useEffect', link: '/source/extra/use-effect' },
           { text: 'useState', link: '/source/extra/use-state' },

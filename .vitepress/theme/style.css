@@ -19,3 +19,8 @@
 .vitepress-demo-plugin__container > * {
   font-size: inherit;
 }
+
+/* 重置浏览器默认样式 */
+.vitepress-demo-plugin__container button[type='button'] {
+  all: revert;
+}
