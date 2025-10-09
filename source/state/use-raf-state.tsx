@@ -46,6 +46,7 @@ const WithUseRafState = ({ times = 1 }) => {
     </div>
   )
 }
+
 export default () => {
   return (
     <div>
