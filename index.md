@@ -11,7 +11,7 @@ hero:
       text: 开始探索
       link: /source/use-request/
     - theme: alt
-      text: 查看源码
+      text: 查看 ahooks 源码
       link: https://github.com/alibaba/hooks
 
 features:

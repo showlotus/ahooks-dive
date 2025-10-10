@@ -4,7 +4,7 @@
 
 当前已完善的 Hook 如下：
 
-| Hook                       | ✅  |
+| Hook                       | ✅ (6/77) |
 | -------------------------- | --- |
 | useRequest                 |     |
 | useAntdTable               |     |
@@ -20,7 +20,7 @@
 | useCounter                 |     |
 | useTextSelection           |     |
 | useWebSocket               |     |
-| useTheme                   |     |
+| useTheme                   | ✅  |
 | useMount                   | ✅  |
 | useUnmount                 | ✅  |
 | useUnmountedRef            | ✅  |

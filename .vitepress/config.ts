@@ -43,7 +43,7 @@ export default defineConfig({
       {
         text: 'Scene',
         // link: '/source/scene/',
-        // items: [{ text: 'useTheme', link: '/source/scene/use-theme' }],
+        items: [{ text: 'useTheme', link: '/source/scene/use-theme' }],
       },
       {
         text: 'LifeCycle',

@@ -2,9 +2,9 @@
 
 ## 📖 用法
 
-```tsx
-const theme = useTheme()
-```
+获取并设置当前主题，并将主题存储在 `localStorage` 中。
+
+<demo react="./use-theme.tsx" />
 
 ## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useTheme/index.ts)
 
@@ -88,6 +88,122 @@ export default function useTheme(options: Options = {}) {
 }
 ```
 
+:::
+
 ## 🔍 解读
 
-_TODO_
+先看 `useCurrentTheme` 的实现，用来获取当前的主题 `light` 或 `dark`。
+
+创建一个 `matchMedia` 对象，用来监听系统主题的变化。并用一个 `state` 记录当前的主题 `light` 或 `dark`。
+
+<!-- prettier-ignore -->
+```ts
+const useCurrentTheme = () => {
+  const matchMedia = isBrowser ? window.matchMedia('(prefers-color-scheme: dark)') : undefined; // [!code focus:8]
+  const [theme, setTheme] = useState<ThemeType>(() => {
+    if (isBrowser) {
+      return matchMedia?.matches ? ThemeMode.DARK : ThemeMode.LIGHT;
+    } else {
+      return ThemeMode.LIGHT;
+    }
+  });
+
+  /* ... */
+};
+```
+
+然后在 `useEffect` 中监听系统主题的变化，并更新 `theme`。最后返回 `theme`。
+
+<!-- prettier-ignore -->
+```ts
+const useCurrentTheme = () => {
+  /* ... */
+
+  useEffect(() => { // [!code focus:17]
+    const onThemeChange: MediaQueryList['onchange'] = (event) => {
+      if (event.matches) {
+        setTheme(ThemeMode.DARK);
+      } else {
+        setTheme(ThemeMode.LIGHT);
+      }
+    };
+
+    matchMedia?.addEventListener('change', onThemeChange);
+
+    return () => {
+      matchMedia?.removeEventListener('change', onThemeChange);
+    };
+  }, []);
+
+  return theme;
+};
+```
+
+接着看 `useTheme` 的实现。
+
+从入参中获取 `localStorageKey`。
+
+如果 `localStorageKey` 存在，则从 `localStorage` 中获取主题模式。否则使用默认值 `ThemeMode.SYSTEM`。
+
+这里的 `themeMode` 是主题模式，可选值有：`light`、`dark`、`system`。
+
+<!-- prettier-ignore -->
+```ts
+export default function useTheme(options: Options = {}) {
+  const { localStorageKey } = options; // [!code focus:8]
+
+  const [themeMode, setThemeMode] = useState<ThemeModeType>(() => {
+    const preferredThemeMode =
+      localStorageKey?.length && (localStorage.getItem(localStorageKey) as ThemeModeType | null);
+
+    return preferredThemeMode || ThemeMode.SYSTEM;
+  });
+
+  /* ... */
+}
+```
+
+然后是定义 `setThemeModeWithLocalStorage` 函数，用来更新 `themeMode`，并将值存储到 `localStorage` 中。
+
+<!-- prettier-ignore -->
+```ts
+export default function useTheme(options: Options = {}) {
+  /* ... */
+
+  const setThemeModeWithLocalStorage = (mode: ThemeModeType) => { // [!code focus:7]
+    setThemeMode(mode);
+
+    if (localStorageKey?.length) {
+      localStorage.setItem(localStorageKey, mode);
+    }
+  };
+
+  /* ... */
+}
+```
+
+最后，先是调用 `useCurrentTheme` 获取当前主题 `currentTheme`。
+
+如果 `themeMode` 为 `system`，则使用 `currentTheme` 作为当前主题。否则使用 `themeMode` 作为当前主题。
+
+最后返回 `theme`、`themeMode` 和 `setThemeMode` 函数。
+
+:::tip
+关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../advanced/use-memoized-fn)
+:::
+
+<!-- prettier-ignore -->
+```ts
+export default function useTheme(options: Options = {}) {
+  /* ... */
+
+  const currentTheme = useCurrentTheme(); // [!code focus:8]
+  const theme = themeMode === ThemeMode.SYSTEM ? currentTheme : themeMode;
+
+  return {
+    theme,
+    themeMode,
+    setThemeMode: useMemoizedFn(setThemeModeWithLocalStorage),
+  };
+}
+```
