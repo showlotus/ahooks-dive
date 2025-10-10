@@ -4,7 +4,7 @@
 
 当前已完善的 Hook 如下：
 
-| Hook                       | ✅ (6/77) |
+| Hook                       | ✅ (7/77) |
 | -------------------------- | --- |
 | useRequest                 |     |
 | useAntdTable               |     |
@@ -24,7 +24,7 @@
 | useMount                   | ✅  |
 | useUnmount                 | ✅  |
 | useUnmountedRef            | ✅  |
-| useSetState                |     |
+| useSetState                | ✅  |
 | useBoolean                 |     |
 | useToggle                  |     |
 | useUrlState                |     |
