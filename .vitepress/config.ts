@@ -68,7 +68,12 @@ export default defineConfig({
       {
         text: 'Effect',
         // link: '/source/effect/',
-        // items: [{ text: '概述', link: '/source/effect/' }],
+        items: [
+          {
+            text: 'useDeepCompareEffect',
+            link: '/source/effect/use-deep-compare-effect',
+          },
+        ],
       },
       {
         text: 'Dom',
