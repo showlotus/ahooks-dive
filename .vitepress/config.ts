@@ -60,7 +60,10 @@ export default defineConfig({
       {
         text: 'State',
         // link: '/source/state/',
-        items: [{ text: 'useRafState', link: '/source/state/use-raf-state' }],
+        items: [
+          { text: 'useRafState', link: '/source/state/use-raf-state' },
+          { text: 'useSetState', link: '/source/state/use-set-state' },
+        ],
       },
       {
         text: 'Effect',

@@ -39,7 +39,9 @@ export default useUnmount;
 
 :::
 
-[`useLatest`](/source/advanced/use-latest.md) 的作用是返回最新的值。
+:::tip
+关于 `useLatest`，可以查看对应文档：[useLatest](../advanced/use-latest)，用来返回最新的值。
+:::
 
 ## 解读
 

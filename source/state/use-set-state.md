@@ -1,0 +1,95 @@
+# [useSetState](https://ahooks.js.org/zh-CN/hooks/use-set-state)
+
+## 📖 用法
+
+用于更新对象状态，自动合并对象。
+
+<demo react="./use-set-state.tsx" />
+
+## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useSetState/index.ts)
+
+::: code-group
+
+<!-- prettier-ignore -->
+```ts [useSetState.ts]
+import { useState } from 'react';
+import useMemoizedFn from '../useMemoizedFn';
+import { isFunction } from '../utils';
+
+export type SetState<S extends Record<string, any>> = <K extends keyof S>(
+  state: Pick<S, K> | null | ((prevState: Readonly<S>) => Pick<S, K> | S | null),
+) => void;
+
+const useSetState = <S extends Record<string, any>>(
+  initialState: S | (() => S),
+): [S, SetState<S>] => {
+  const [state, setState] = useState<S>(initialState);
+
+  const setMergeState = useMemoizedFn((patch) => {
+    setState((prevState) => {
+      const newState = isFunction(patch) ? patch(prevState) : patch;
+      return newState ? { ...prevState, ...newState } : prevState;
+    });
+  });
+
+  return [state, setMergeState];
+};
+
+export default useSetState;
+```
+
+:::
+
+## 🔍 解读
+
+重点就是 `setMergeState` 函数。
+
+首先使用 `useMemoizedFn` 缓存函数引用，避免重复创建函数。
+
+:::tip
+关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../advanced/use-memoized-fn)。
+:::
+
+<!-- prettier-ignore -->
+```ts
+const useSetState = <S extends Record<string, any>>(
+  initialState: S | (() => S),
+): [S, SetState<S>] => {
+  const [state, setState] = useState<S>(initialState);
+
+  const setMergeState = useMemoizedFn((patch) => { // [!code focus:6]
+    setState((prevState) => {
+      const newState = isFunction(patch) ? patch(prevState) : patch;
+      return newState ? { ...prevState, ...newState } : prevState;
+    });
+  });
+
+  return [state, setMergeState];
+};
+```
+
+内部直接调用 `setState` 函数，并传入一个回调函数。
+
+<!-- prettier-ignore -->
+```ts
+const useSetState = <S extends Record<string, any>>(
+  initialState: S | (() => S),
+): [S, SetState<S>] => {
+  const [state, setState] = useState<S>(initialState);
+
+  const setMergeState = useMemoizedFn((patch) => { 
+    setState((prevState) => { // [!code focus:4]
+      const newState = isFunction(patch) ? patch(prevState) : patch;
+      return newState ? { ...prevState, ...newState } : prevState;
+    });
+  });
+
+  return [state, setMergeState];
+};
+```
+
+如果 `patch` 是函数，则调用 `patch` 函数，并传入 `prevState` 参数，返回新的状态。否则，直接返回 `patch`。
+
+最后，如果 `newState` 为 `Truthy` 值，则返回使用扩展运算符合并后的新对象。否则返回 `prevState`。
+
+内部也没有对 `prevState` 和 `newState` 进行类型判断，而是直接使用扩展运算符合并。如果得到的是非 `object` 类型，则会报错。这个需要特别注意。
