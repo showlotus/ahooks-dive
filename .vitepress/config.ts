@@ -43,17 +43,17 @@ export default defineConfig({
       {
         text: 'Scene',
         // link: '/source/scene/',
-        items: [{ text: 'useTheme', link: '/source/scene/use-theme' }],
+        items: [{ text: 'useTheme', link: '/source/scene/use-theme/' }],
       },
       {
         text: 'LifeCycle',
         // link: '/source/life-cycle/',
         items: [
-          { text: 'useMount', link: '/source/life-cycle/use-mount' },
-          { text: 'useUnmount', link: '/source/life-cycle/use-unmount' },
+          { text: 'useMount', link: '/source/life-cycle/use-mount/' },
+          { text: 'useUnmount', link: '/source/life-cycle/use-unmount/' },
           {
             text: 'useUnmountedRef',
-            link: '/source/life-cycle/use-unmounted-ref',
+            link: '/source/life-cycle/use-unmounted-ref/',
           },
         ],
       },
@@ -61,8 +61,9 @@ export default defineConfig({
         text: 'State',
         // link: '/source/state/',
         items: [
-          { text: 'useRafState', link: '/source/state/use-raf-state' },
-          { text: 'useSetState', link: '/source/state/use-set-state' },
+          { text: 'useRafState', link: '/source/state/use-raf-state/' },
+          { text: 'useSetState', link: '/source/state/use-set-state/' },
+          { text: 'useSet', link: '/source/state/use-set/' },
         ],
       },
       {
@@ -71,21 +72,21 @@ export default defineConfig({
         items: [
           {
             text: 'useDeepCompareEffect',
-            link: '/source/effect/use-deep-compare-effect',
+            link: '/source/effect/use-deep-compare-effect/',
           },
         ],
       },
       {
         text: 'Dom',
         // link: '/source/dom/',
-        items: [{ text: 'useScroll', link: '/source/dom/use-scroll' }],
+        items: [{ text: 'useScroll', link: '/source/dom/use-scroll/' }],
       },
       {
         text: 'Advanced',
         // link: '/source/advanced/',
         items: [
-          { text: 'useLatest', link: '/source/advanced/use-latest' },
-          { text: 'useMemoizedFn', link: '/source/advanced/use-memoized-fn' },
+          { text: 'useLatest', link: '/source/advanced/use-latest/' },
+          { text: 'useMemoizedFn', link: '/source/advanced/use-memoized-fn/' },
         ],
       },
       {
