@@ -40,7 +40,7 @@ export default useUnmount;
 :::
 
 :::tip
-关于 `useLatest`，可以查看对应文档：[useLatest](../advanced/use-latest)，用来返回最新的值。
+关于 `useLatest`，可以查看对应文档：[useLatest](../../advanced/use-latest/)，用来返回最新的值。
 :::
 
 ## 解读

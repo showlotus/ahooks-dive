@@ -189,7 +189,7 @@ export default function useTheme(options: Options = {}) {
 最后返回 `theme`、`themeMode` 和 `setThemeMode` 函数。
 
 :::tip
-关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../advanced/use-memoized-fn)，用来缓存函数引用，避免重复创建函数。
+关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)，用来缓存函数引用，避免重复创建函数。
 :::
 
 <!-- prettier-ignore -->

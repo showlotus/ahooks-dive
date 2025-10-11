@@ -47,7 +47,7 @@ export default useSetState;
 首先使用 `useMemoizedFn` 缓存函数引用，避免重复创建函数。
 
 :::tip
-关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../advanced/use-memoized-fn)。
+关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)。
 :::
 
 <!-- prettier-ignore -->
