@@ -47,7 +47,7 @@
 | useDebounceFn              |     |
 | useThrottleFn              |     |
 | useThrottleEffect          |     |
-| useDeepCompareEffect       |     |
+| useDeepCompareEffect       | ✅  |
 | useDeepCompareLayoutEffect |     |
 | useInterval                |     |
 | useRafInterval             |     |
