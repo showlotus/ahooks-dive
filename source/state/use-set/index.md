@@ -58,6 +58,36 @@ function useSet<K>(initialValue?: Iterable<K>) {
 export default useSet;
 ```
 
+:::
+
+::: tip
+关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)。
+:::
+
 ## 🔍 解读
 
-_TODO_
+在不了解 `useSet` 之前，如果使用 `useState` 初始化一个 `Set` 类型的值，更新时需要怎么做呢？
+
+基于 `React` 的渲染逻辑，每次更新都需要传入一个新的 `Set` 对象，才能保证页面可以更新。
+
+也即：
+
+```ts{6,12}
+const [set, setSet] = useState(new Set())
+
+// add
+setSet(prev => {
+  prev.add('foo')
+  return new Set(prev) // 返回一个新的 Set 对象
+})
+
+// remove
+setSet(prev => {
+  prev.delete('foo')
+  return new Set(prev) // 返回一个新的 Set 对象
+})
+```
+
+而 `useSet` 内部也是这样实现的，只不过为了调用方便，内部将 `add`、`remove` 和 `reset` 方法进行了封装。
+
+在内部会定义一个 `getInitValue` 函数，函数的执行结果返回当前初始值，`reset` 方法内部就是调用 `getInitValue` 函数，对 `Set` 对象进行重置。
