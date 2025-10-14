@@ -91,3 +91,16 @@ setSet(prev => {
 而 `useSet` 内部也是这样实现的，只不过为了调用方便，内部将 `add`、`remove` 和 `reset` 方法进行了封装。
 
 在内部会定义一个 `getInitValue` 函数，函数的执行结果返回当前初始值，`reset` 方法内部就是调用 `getInitValue` 函数，对 `Set` 对象进行重置。
+
+```ts
+function useSet<K>(initialValue?: Iterable<K>) {
+  const getInitValue = () => new Set(initialValue);
+  const [set, setSet] = useState<Set<K>>(getInitValue);
+
+  /* ... */
+
+  const reset = () => setSet(getInitValue());
+
+  /* ... */
+}
+```

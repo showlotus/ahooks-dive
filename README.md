@@ -34,7 +34,7 @@
 | useDebounce                |     |
 | useThrottle                |     |
 | useMap                     |     |
-| useSet                     |     |
+| useSet                     | ✅  |
 | usePrevious                |     |
 | useRafState                |     |
 | useSafeState               |     |
