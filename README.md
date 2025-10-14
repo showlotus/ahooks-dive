@@ -4,7 +4,7 @@
 
 当前已完善的 Hook 如下：
 
-| Hook                       | ✅ (8/77) |
+| Hook                       | ✅ (10/77) |
 | -------------------------- | --- |
 | useRequest                 |     |
 | useAntdTable               |     |
@@ -37,7 +37,7 @@
 | useSet                     | ✅  |
 | usePrevious                |     |
 | useRafState                |     |
-| useSafeState               |     |
+| useSafeState               | ✅  |
 | useGetState                |     |
 | useResetState              |     |
 | useUpdateEffect            |     |

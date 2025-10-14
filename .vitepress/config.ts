@@ -62,6 +62,7 @@ export default defineConfig({
         // link: '/source/state/',
         items: [
           { text: 'useRafState', link: '/source/state/use-raf-state/' },
+          { text: 'useSafeState', link: '/source/state/use-safe-state/' },
           { text: 'useSetState', link: '/source/state/use-set-state/' },
           { text: 'useSet', link: '/source/state/use-set/' },
         ],
