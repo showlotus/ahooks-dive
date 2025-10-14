@@ -1,0 +1,21 @@
+{
+  "name": "benchmarks",
+  "private": true,
+  "scripts": {
+    "check-bundle-size": "vitest --update",
+    "bench": "vitest bench performance/isEqual.bench.ts"
+  },
+  "dependencies": {
+    "es-toolkit": "1.40.0",
+    "esbuild": "0.23.0",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "react-fast-compare": "3.2.2",
+    "vitest": "^2.1.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.20",
+    "@types/lodash-es": "^4",
+    "rfdc": "^1.4.1"
+  }
+}

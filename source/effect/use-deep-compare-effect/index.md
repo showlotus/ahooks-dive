@@ -136,3 +136,68 @@ export const createDeepCompareEffect: CreateUpdateEffect = (hook) => {
   }
 };
 ```
+
+关于 `react-fast-compare` 的性能，与其他常用库对比了一下：
+
+```bash{7,13,19,25,31}
+ ✓ performance/isEqual.bench.ts (20) 30022ms
+   ✓ isEqual primitives (4) 12722ms
+     name                                  hz     min     max    mean     p75     p99    p995    p999     rme  samples
+   · es-toolkit/isEqual          5,570,330.33  0.0001  1.6825  0.0002  0.0002  0.0003  0.0003  0.0009  ±1.23%  2785166
+   · es-toolkit/compat/isEqual   6,036,394.12  0.0001  4.6306  0.0002  0.0002  0.0003  0.0003  0.0005  ±3.60%  3018198
+   · lodash/isEqual             13,391,214.96  0.0001  1.9242  0.0001  0.0001  0.0001  0.0002  0.0003  ±1.45%  6695608   fastest
+   · react-fast-compare            862,318.72  0.0008  0.7540  0.0012  0.0010  0.0024  0.0025  0.0170  ±0.54%   431160   slowest
+   ✓ isEqual dates (4) 3825ms
+     name                                 hz     min     max    mean     p75     p99    p995    p999     rme  samples
+   · es-toolkit/isEqual         1,138,553.87  0.0007  0.4236  0.0009  0.0008  0.0016  0.0018  0.0252  ±0.63%   569291   fastest
+   · es-toolkit/compat/isEqual  1,001,027.09  0.0007  1.2038  0.0010  0.0008  0.0017  0.0021  0.0277  ±1.71%   500514
+   · lodash                       665,996.26  0.0010  4.6849  0.0015  0.0013  0.0027  0.0042  0.0298  ±2.41%   332999   slowest
+   · react-fast-compare           815,727.90  0.0009  0.3981  0.0012  0.0011  0.0024  0.0031  0.0224  ±0.55%   407864
+   ✓ isEqual RegExps (4) 5670ms
+     name                                 hz     min      max    mean     p75     p99    p995    p999      rme  samples
+   · es-toolkit/isEqual         3,805,749.96  0.0002   0.6714  0.0003  0.0002  0.0005  0.0005  0.0022   ±1.51%  1902875   fastest
+   · es-toolkit/compat/isEqual  3,759,993.18  0.0002  33.7471  0.0003  0.0002  0.0005  0.0005  0.0026  ±13.27%  1879997
+   · lodash                       468,184.31  0.0018   2.3425  0.0021  0.0019  0.0038  0.0080  0.0323   ±1.25%   234093   slowest
+   · react-fast-compare         1,760,409.41  0.0004   0.2142  0.0006  0.0005  0.0011  0.0012  0.0131   ±0.43%   880205
+   ✓ isEqual objects (4) 3058ms
+     name                               hz     min     max    mean     p75     p99    p995    p999     rme  samples
+   · es-toolkit/isEqual         282,333.10  0.0028  0.4127  0.0035  0.0032  0.0090  0.0276  0.0441  ±0.88%   141167
+   · es-toolkit/compat/isEqual  285,047.83  0.0027  0.6333  0.0035  0.0031  0.0098  0.0282  0.0517  ±0.98%   142524
+   · lodash                     278,861.64  0.0029  0.9371  0.0036  0.0032  0.0120  0.0298  0.0447  ±0.95%   139431   slowest
+   · react-fast-compare         873,738.88  0.0009  0.5821  0.0011  0.0010  0.0021  0.0035  0.0306  ±0.92%   436876   fastest
+   ✓ isEqual arrays (4) 4742ms
+     name                                 hz     min     max    mean     p75     p99    p995    p999     rme  samples
+   · es-toolkit/isEqual         1,220,726.70  0.0006  0.6043  0.0008  0.0007  0.0015  0.0017  0.0252  ±0.51%   610364
+   · es-toolkit/compat/isEqual  1,151,798.89  0.0006  0.4761  0.0009  0.0008  0.0014  0.0019  0.0265  ±0.47%   575900   slowest
+   · lodash                     2,070,361.93  0.0003  2.6473  0.0005  0.0004  0.0009  0.0011  0.0223  ±1.61%  1035181   fastest
+   · react-fast-compare         1,518,164.03  0.0004  0.9480  0.0007  0.0006  0.0011  0.0013  0.0181  ±1.36%   759116
+
+ BENCH  Summary
+
+  lodash/isEqual - performance/isEqual.bench.ts > isEqual primitives
+    2.22x faster than es-toolkit/compat/isEqual
+    2.40x faster than es-toolkit/isEqual
+    15.53x faster than react-fast-compare
+
+  es-toolkit/isEqual - performance/isEqual.bench.ts > isEqual dates
+    1.14x faster than es-toolkit/compat/isEqual
+    1.40x faster than react-fast-compare
+    1.71x faster than lodash
+
+  es-toolkit/isEqual - performance/isEqual.bench.ts > isEqual RegExps
+    1.01x faster than es-toolkit/compat/isEqual
+    2.16x faster than react-fast-compare
+    8.13x faster than lodash
+
+  react-fast-compare - performance/isEqual.bench.ts > isEqual objects
+    3.07x faster than es-toolkit/compat/isEqual
+    3.09x faster than es-toolkit/isEqual
+    3.13x faster than lodash
+
+  lodash - performance/isEqual.bench.ts > isEqual arrays
+    1.36x faster than react-fast-compare
+    1.70x faster than es-toolkit/isEqual
+    1.80x faster than es-toolkit/compat/isEqual
+```
+
+在对比原始值时，`react-fast-compare` 的性能居末，但对比对象、数组时，性能位居前二。在 `React` 中用来对比 `deps`，还是很能打的。
