@@ -80,7 +80,11 @@ export default defineConfig({
       {
         text: 'Dom',
         // link: '/source/dom/',
-        items: [{ text: 'useScroll', link: '/source/dom/use-scroll/' }],
+        items: [
+          { text: 'useEventListener', link: '/source/dom/use-event-listener/' },
+          { text: 'useHover', link: '/source/dom/use-hover/' },
+          { text: 'useScroll', link: '/source/dom/use-scroll/' },
+        ],
       },
       {
         text: 'Advanced',
