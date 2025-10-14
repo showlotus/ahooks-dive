@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "check-bundle-size": "vitest --update",
-    "bench": "vitest bench performance/isEqual.bench.ts"
+    "bench": "vitest bench performance/isEqual.bench.ts",
+    "bench-json": "vitest bench performance/isEqual.bench.ts --outputJson benchmark-results.json"
   },
   "dependencies": {
     "es-toolkit": "1.40.0",
