@@ -64,18 +64,32 @@ export default defineConfig({
           { text: 'useDebounce', link: '/source/state/use-debounce/' },
           { text: 'useRafState', link: '/source/state/use-raf-state/' },
           { text: 'useSafeState', link: '/source/state/use-safe-state/' },
-          { text: 'useSetState', link: '/source/state/use-set-state/' },
           { text: 'useSet', link: '/source/state/use-set/' },
+          { text: 'useSetState', link: '/source/state/use-set-state/' },
+          { text: 'useThrottle', link: '/source/state/use-throttle/' },
         ],
       },
       {
         text: 'Effect',
         // link: '/source/effect/',
         items: [
+          {
+            text: 'useDebounceEffect',
+            link: '/source/effect/use-debounce-effect/',
+          },
           { text: 'useDebounceFn', link: '/source/effect/use-debounce-fn/' },
           {
             text: 'useDeepCompareEffect',
             link: '/source/effect/use-deep-compare-effect/',
+          },
+          {
+            text: 'useThrottleEffect',
+            link: '/source/effect/use-throttle-effect/',
+          },
+          { text: 'useThrottleFn', link: '/source/effect/use-throttle-fn/' },
+          {
+            text: 'useUpdateEffect',
+            link: '/source/effect/use-update-effect/',
           },
         ],
       },
