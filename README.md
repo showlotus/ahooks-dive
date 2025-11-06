@@ -2,9 +2,9 @@
 
 一个深入剖析 ahooks 源码与用法的文档站点，帮助开发者更好地理解和应用 ahooks。
 
-当前已完善的 Hook 如下：
+当前已完成的 Hook 如下：
 
-| Hook                       | ✅ (10/77) |
+| Hook                       | ✅ (12/77) |
 | -------------------------- | --- |
 | useRequest                 |     |
 | useAntdTable               |     |
@@ -31,7 +31,7 @@
 | useCookieState             |     |
 | useLocalStorageState       |     |
 | useSessionStorageState     |     |
-| useDebounce                |     |
+| useDebounce                | ✅  |
 | useThrottle                |     |
 | useMap                     |     |
 | useSet                     | ✅  |
@@ -44,7 +44,7 @@
 | useUpdateLayoutEffect      |     |
 | useAsyncEffect             |     |
 | useDebounceEffect          |     |
-| useDebounceFn              |     |
+| useDebounceFn              | ✅  |
 | useThrottleFn              |     |
 | useThrottleEffect          |     |
 | useDeepCompareEffect       | ✅  |

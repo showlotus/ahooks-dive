@@ -1,0 +1,109 @@
+# [useDebounceFn](https://ahooks.js.org/zh-CN/hooks/use-debounce-fn#usedebouncefn)
+
+## 📖 用法
+
+用来处理防抖函数的 Hook。
+
+<demo react="./demo.tsx" />
+
+## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useDebounceFn/index.ts)
+
+::: code-group
+
+<!-- prettier-ignore -->
+```ts [useDebounceFn.ts]
+import { debounce } from '../utils/lodash-polyfill';
+import { useMemo } from 'react';
+import type { DebounceOptions } from '../useDebounce/debounceOptions';
+import useLatest from '../useLatest';
+import useUnmount from '../useUnmount';
+import { isFunction } from '../utils';
+import isDev from '../utils/isDev';
+
+type noop = (...args: any[]) => any;
+
+function useDebounceFn<T extends noop>(fn: T, options?: DebounceOptions) {
+  if (isDev) {
+    if (!isFunction(fn)) {
+      console.error(`useDebounceFn expected parameter is a function, got ${typeof fn}`);
+    }
+  }
+
+  const fnRef = useLatest(fn);
+
+  const wait = options?.wait ?? 1000;
+
+  const debounced = useMemo(
+    () =>
+      debounce(
+        (...args: Parameters<T>): ReturnType<T> => {
+          return fnRef.current(...args);
+        },
+        wait,
+        options,
+      ),
+    [],
+  );
+
+  useUnmount(() => {
+    debounced.cancel();
+  });
+
+  return {
+    run: debounced,
+    cancel: debounced.cancel,
+    flush: debounced.flush,
+  };
+}
+
+export default useDebounceFn;
+```
+
+:::
+
+## 🔍 解读
+
+::: tip
+关于 `useLatest`、`useUnmount`，可以查看对应文档：[useLatest](../../advanced/use-latest/)、[useUnmount](../../life-cycle/use-unmount/)。
+:::
+
+<!-- prettier-ignore -->
+```ts
+function useDebounceFn<T extends noop>(fn: T, options?: DebounceOptions) {
+  // 1. 首先，使用 useLatest 来记录函数的最新值。
+  const fnRef = useLatest(fn);
+
+  // 2. 然后，使用 options 中的 wait 属性来设置防抖时间，默认值为 1000ms。
+  const wait = options?.wait ?? 1000;
+
+  // 3. 接着，使用 useMemo 来缓存防抖后的函数。防抖后的函数内部会调用 fnRef 对象的值，并返回函数的执行结果。
+  const debounced = useMemo(
+    () =>
+      // 使用 lodash 的 debounce 函数实现防抖函数，参数配置也完全与 lodash 的 debounce 函数一致。
+      debounce(
+        (...args: Parameters<T>): ReturnType<T> => {
+          return fnRef.current(...args);
+        },
+        wait,
+        options,
+      ),
+    [],
+  );
+
+  // 4. 然后，使用 useUnmount 来卸载防抖后的函数。
+  useUnmount(() => {
+    debounced.cancel();
+  });
+
+  // 5. 最后，返回防抖后的函数。
+  return {
+    run: debounced,
+    cancel: debounced.cancel,
+    flush: debounced.flush,
+  };
+}
+```
+
+本质上就是利用 `debounce` 来延时更新 `state` 的值，完全可以利用 `setTimeout` 来实现一个简易的版本。
+
+<demo react="./demo2.tsx" />

@@ -61,6 +61,7 @@ export default defineConfig({
         text: 'State',
         // link: '/source/state/',
         items: [
+          { text: 'useDebounce', link: '/source/state/use-debounce/' },
           { text: 'useRafState', link: '/source/state/use-raf-state/' },
           { text: 'useSafeState', link: '/source/state/use-safe-state/' },
           { text: 'useSetState', link: '/source/state/use-set-state/' },
@@ -71,6 +72,7 @@ export default defineConfig({
         text: 'Effect',
         // link: '/source/effect/',
         items: [
+          { text: 'useDebounceFn', link: '/source/effect/use-debounce-fn/' },
           {
             text: 'useDeepCompareEffect',
             link: '/source/effect/use-deep-compare-effect/',
