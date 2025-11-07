@@ -2,7 +2,7 @@
 
 ## 📖 用法
 
-深度比较依赖，只有在依赖发生变化时才会执行回调函数。
+用法与 `useEffect` 一致，不同的是，会深度比较依赖。
 
 <demo react="./use-deep-compare-effect.tsx" />
 

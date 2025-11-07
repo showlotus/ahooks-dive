@@ -83,6 +83,10 @@ export default defineConfig({
             link: '/source/effect/use-deep-compare-effect/',
           },
           {
+            text: 'useDeepCompareLayoutEffect',
+            link: '/source/effect/use-deep-compare-layout-effect/',
+          },
+          {
             text: 'useThrottleEffect',
             link: '/source/effect/use-throttle-effect/',
           },
@@ -90,6 +94,10 @@ export default defineConfig({
           {
             text: 'useUpdateEffect',
             link: '/source/effect/use-update-effect/',
+          },
+          {
+            text: 'useUpdateLayoutEffect',
+            link: '/source/effect/use-update-layout-effect/',
           },
         ],
       },
