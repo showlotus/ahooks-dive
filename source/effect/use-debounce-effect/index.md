@@ -42,3 +42,49 @@ export default useDebounceEffect;
 :::
 
 ## 🔍 解读
+
+::: tip
+关于 `useDebounceFn`、`useUpdateEffect`，可以查看对应文档：[useDebounceFn](../../effect/use-debounce-fn/)、[useUpdateEffect](../../effect/use-update-effect/)。
+:::
+
+<!-- prettier-ignore -->
+```ts
+function useDebounceEffect(
+  effect: EffectCallback,
+  deps?: DependencyList,
+  options?: DebounceOptions,
+) {
+  // 1. 首先，使用 useState 定义了一个 flag 状态，用于记录依赖是否更新。
+  const [flag, setFlag] = useState({});
+
+  // 2. 然后，使用 useDebounceFn 来处理防抖值。
+  const { run } = useDebounceFn(() => {
+    setFlag({});
+  }, options);
+
+  // 3. 接着，使用 useEffect 来监听依赖的更新，并调用 run 函数来更新防抖值。
+  useEffect(() => {
+    return run();
+  }, deps);
+
+  // 4. 最后，使用 useUpdateEffect 来监听 flag 的变化，并执行 effect。
+  useUpdateEffect(effect, [flag]);
+}
+```
+
+执行流程：`deps` 更新 -> 执行 `run` 函数 -> `flag` 更新 -> 执行 `effect`。
+
+由于 `useUpdateEffect` 会忽略首次执行，如果需要首次执行，可以通过 `useDebounceFn` 的 `options` 参数来设置。
+
+```ts
+const { run } = useDebounceFn(
+  () => {
+    setFlag({});
+  },
+  {
+    wait: 1000,
+    // 设置为 true，表示在延迟开始前调用
+    leading: true, // [!code highlight]
+  }
+)
+```

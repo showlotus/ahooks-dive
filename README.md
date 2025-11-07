@@ -4,7 +4,7 @@
 
 当前已完成的 Hook 如下：
 
-| Hook                       | ✅ (12/77) |
+| Hook                       | ✅ (17/77) |
 | -------------------------- | --- |
 | useRequest                 |     |
 | useAntdTable               |     |
@@ -32,7 +32,7 @@
 | useLocalStorageState       |     |
 | useSessionStorageState     |     |
 | useDebounce                | ✅  |
-| useThrottle                |     |
+| useThrottle                | ✅  |
 | useMap                     |     |
 | useSet                     | ✅  |
 | usePrevious                |     |
@@ -40,13 +40,13 @@
 | useSafeState               | ✅  |
 | useGetState                |     |
 | useResetState              |     |
-| useUpdateEffect            |     |
+| useUpdateEffect            | ✅  |
 | useUpdateLayoutEffect      |     |
 | useAsyncEffect             |     |
-| useDebounceEffect          |     |
+| useDebounceEffect          | ✅  |
 | useDebounceFn              | ✅  |
-| useThrottleFn              |     |
-| useThrottleEffect          |     |
+| useThrottleFn              | ✅  |
+| useThrottleEffect          | ✅  |
 | useDeepCompareEffect       | ✅  |
 | useDeepCompareLayoutEffect |     |
 | useInterval                |     |

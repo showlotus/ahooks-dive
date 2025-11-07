@@ -47,12 +47,12 @@ function useDebounce<T>(value: T, options?: DebounceOptions) {
   // 1. 首先，使用 useState 定义了一个 debounced 状态，用于存储防抖后的值。
   const [debounced, setDebounced] = useState(value);
 
-  // 2. 然后，使用 useDebounceFn 来处理防抖值。
+  // 2. 然后，使用 useDebounceFn 来定义一个防抖函数。
   const { run } = useDebounceFn(() => {
     setDebounced(value);
   }, options);
 
-  // 3. 接着，使用 useEffect 来监听 value 的变化，并调用 run 函数来更新防抖值。
+  // 3. 接着，使用 useEffect 来监听 value 的变化，并调用 run 函数执行防抖函数。
   useEffect(() => {
     run();
   }, [value]);

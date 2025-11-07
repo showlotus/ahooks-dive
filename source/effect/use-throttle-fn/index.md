@@ -12,15 +12,94 @@
 
 <!-- prettier-ignore -->
 ```ts [useThrottleFn.ts]
-import { throttle } from '../utils/lodash-polyfill'
-import { useMemo } from 'react'
-import type { ThrottleOptions } from '../useThrottle/throttleOptions'
-import useLatest from '../useLatest'
-import useUnmount from '../useUnmount'
-import { isFunction } from '../utils'
-import isDev from '../utils/isDev'
+import throttle from 'lodash/throttle';
+import { useMemo } from 'react';
+import useLatest from '../useLatest';
+import type { ThrottleOptions } from '../useThrottle/throttleOptions';
+import useUnmount from '../useUnmount';
+import { isFunction } from '../utils';
+import isDev from '../utils/isDev';
+
+type noop = (...args: any[]) => any;
+
+function useThrottleFn<T extends noop>(fn: T, options?: ThrottleOptions) {
+  if (isDev) {
+    if (!isFunction(fn)) {
+      console.error(`useThrottleFn expected parameter is a function, got ${typeof fn}`);
+    }
+  }
+
+  const fnRef = useLatest(fn);
+
+  const wait = options?.wait ?? 1000;
+
+  const throttled = useMemo(
+    () =>
+      throttle(
+        (...args: Parameters<T>): ReturnType<T> => {
+          return fnRef.current(...args);
+        },
+        wait,
+        options,
+      ),
+    [],
+  );
+
+  useUnmount(() => {
+    throttled.cancel();
+  });
+
+  return {
+    run: throttled,
+    cancel: throttled.cancel,
+    flush: throttled.flush,
+  };
+}
+
+export default useThrottleFn;
 ```
 
 :::
 
 ## 🔍 解读
+
+::: tip
+关于 `useLatest`、`useUnmount`，可以查看对应文档：[useLatest](../../advanced/use-latest/)、[useUnmount](../../life-cycle/use-unmount/)。
+:::
+
+<!-- prettier-ignore -->
+```ts
+function useThrottleFn<T extends noop>(fn: T, options?: ThrottleOptions) {
+  // 1. 首先，使用 useLatest 来记录函数的最新值。
+  const fnRef = useLatest(fn);
+
+  // 2. 然后，使用 options 中的 wait 属性来设置节流时间，默认值为 1000ms。
+  const wait = options?.wait ?? 1000;
+
+  // 3. 接着，使用 useMemo 来缓存节流后的函数。节流后的函数内部会调用 fnRef 对象的值，并返回函数的执行结果。
+  const throttled = useMemo(
+    () =>
+      // 使用 lodash 的 throttle 函数实现节流函数，参数配置也完全与 lodash 的 throttle 函数一致。
+      throttle(
+        (...args: Parameters<T>): ReturnType<T> => {
+          return fnRef.current(...args);
+        },
+        wait,
+        options,
+      ),
+    [],
+  );
+
+  // 4. 然后，使用 useUnmount 来卸载节流后的函数。
+  useUnmount(() => {
+    throttled.cancel();
+  });
+
+  // 5. 最后，返回节流后的函数，包括 run、cancel、flush 三个方法。
+  return {
+    run: throttled,
+    cancel: throttled.cancel,
+    flush: throttled.flush,
+  };
+}
+```

@@ -45,28 +45,32 @@ export const createUpdateEffect: (hook: EffectHookType) => EffectHookType =
     }, deps);
   };
 
-export default createUpdateEffect;`
+export default createUpdateEffect;
 ```
 
 :::
 
 ## 🔍 解读
 
-首先，调用 `createUpdateEffect` 函数，传入 `useEffect` 函数。`createUpdateEffect` 函数接收一个函数作为参数，返回一个新函数。这样封装的目的是为了支持 `useLayoutEffect` 的用法。
+首先，调用 `createUpdateEffect` 函数，传入 `useEffect` 函数。`createUpdateEffect` 函数接收一个函数作为参数，返回一个新函数。这样封装的目的是为了支持 `useLayoutEffect` 的用法。ahooks 中有很多类似的这种封装，因为需要同时支持 `useEffect` 和 `useLayoutEffect` 的用法。
 
-把源码中的 `hook` 替换成 `useEffect`，再来看看实际的代码：
+直接把源码中的参数 `hook` 替换成 `useEffect`，再来看看实际的代码：
 
 ```ts
 export const useUpdateEffect = (effect, deps) => {
+  // 1. 使用 useRef 定义一个 ref 对象，用于记录组件是否已经挂载
   const isMounted = useRef(false)
 
-  // for react-refresh
+  // 2. 使用 useEffect 监听组件的卸载，在组件卸载时，将 isMounted 的值设置为 false
   useEffect(() => {
     return () => {
       isMounted.current = false
     }
   }, [])
 
+  // 3. 使用 useEffect 监听依赖的更新
+  //    因为 useEffect 会在组件挂载时执行一次，但是由于 isMounted 的初始值为 false，所以会跳过这次 effect 的执行
+  //    后续依赖更新时，才会执行 effect
   useEffect(() => {
     if (!isMounted.current) {
       isMounted.current = true

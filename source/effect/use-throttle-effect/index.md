@@ -12,12 +12,28 @@
 
 <!-- prettier-ignore -->
 ```ts [useThrottleEffect.ts]
-import { useEffect } from 'react';
-import useThrottleFn from '../useThrottleFn';
+import { useEffect, useState } from 'react';
+import type { DependencyList, EffectCallback } from 'react';
 import type { ThrottleOptions } from '../useThrottle/throttleOptions';
+import useThrottleFn from '../useThrottleFn';
+import useUpdateEffect from '../useUpdateEffect';
 
-function useThrottleEffect(effect, options?: ThrottleOptions) {
-  const { run } = useThrottleFn(effect, options);
+function useThrottleEffect(
+  effect: EffectCallback,
+  deps?: DependencyList,
+  options?: ThrottleOptions,
+) {
+  const [flag, setFlag] = useState({});
+
+  const { run } = useThrottleFn(() => {
+    setFlag({});
+  }, options);
+
+  useEffect(() => {
+    return run();
+  }, deps);
+
+  useUpdateEffect(effect, [flag]);
 }
 
 export default useThrottleEffect;
@@ -26,3 +42,32 @@ export default useThrottleEffect;
 :::
 
 ## 🔍 解读
+
+::: tip
+关于 `useThrottleFn`、`useUpdateEffect`，可以查看对应文档：[useThrottleFn](../../effect/use-throttle-fn/)、[useUpdateEffect](../../effect/use-update-effect/)。
+:::
+
+<!-- prettier-ignore -->
+```ts
+function useThrottleEffect(
+  effect: EffectCallback,
+  deps?: DependencyList,
+  options?: ThrottleOptions,
+) { 
+  // 1. 首先，使用 useState 定义了一个 flag 状态，用于记录依赖是否更新。
+  const [flag, setFlag] = useState({});
+
+  // 2. 然后，使用 useThrottleFn 来定义一个节流函数。
+  const { run } = useThrottleFn(() => {
+    setFlag({});
+  }, options);
+
+  // 3. 接着，使用 useEffect 来监听依赖的更新，并调用 run 函数执行节流函数。
+  useEffect(() => {
+    return run();
+  }, deps);
+
+  // 4. 最后，使用 useUpdateEffect 来监听 flag 的变化，并执行 effect。
+  useUpdateEffect(effect, [flag]);
+}
+```

@@ -95,7 +95,7 @@ function useDebounceFn<T extends noop>(fn: T, options?: DebounceOptions) {
     debounced.cancel();
   });
 
-  // 5. 最后，返回防抖后的函数。
+  // 5. 最后，返回防抖后的函数，包括 run、cancel、flush 三个方法。
   return {
     run: debounced,
     cancel: debounced.cancel,
