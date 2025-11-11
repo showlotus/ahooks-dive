@@ -1,6 +1,5 @@
 import React from 'react'
 import { useUnmount, useBoolean } from 'ahooks'
-import { Logger } from '@theme/components/Logger'
 
 const MyComponent = () => {
   useUnmount(() => {
@@ -19,7 +18,6 @@ export default () => {
         {state ? 'unmount' : 'mount'}
       </button>
       {state && <MyComponent />}
-      <Logger />
     </>
   )
 }
