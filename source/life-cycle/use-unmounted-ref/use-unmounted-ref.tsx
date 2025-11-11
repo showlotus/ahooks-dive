@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useUnmountedRef } from 'ahooks'
+import { Logger } from '@theme/components/Logger'
 
 const MyComponent = () => {
   const unmountedRef = useUnmountedRef()
@@ -25,6 +26,7 @@ export default () => {
         {state ? 'unmount' : 'mount'}
       </button>
       {state && <MyComponent />}
+      <Logger />
     </>
   )
 }

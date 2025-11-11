@@ -1,5 +1,6 @@
-import { useMount, useBoolean } from 'ahooks'
 import React from 'react'
+import { useMount, useBoolean } from 'ahooks'
+import { Logger } from '@theme/components/Logger'
 
 const MyComponent = () => {
   useMount(() => {
@@ -18,6 +19,7 @@ export default () => {
         {state ? 'unmount' : 'mount'}
       </button>
       {state && <MyComponent />}
+      <Logger />
     </>
   )
 }

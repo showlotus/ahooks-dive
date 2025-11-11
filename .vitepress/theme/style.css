@@ -2,6 +2,7 @@
 .vitepress-demo-plugin__container {
   border-color: var(--vp-c-border) !important;
   border-radius: 8px !important;
+  overflow: hidden;
 }
 
 .vitepress-demo-plugin-description__split-line {
@@ -14,14 +15,87 @@
 
 .vitepress-demo-plugin__container > section.vitepress-demo-plugin-preview {
   padding: 16px;
+  min-height: 150px;
 }
 
 .vitepress-demo-plugin__container > * {
   font-size: inherit;
 }
 
+.vitepress-demo-plugin__container > .vitepress-demo-plugin-preview {
+  position: relative;
+}
+
+.vitepress-demo-plugin-description__split-line {
+  border-bottom: 1px solid var(--vp-c-border) !important;
+}
+
 /* 重置浏览器默认样式 */
 .vitepress-demo-plugin__container button[type='button'],
 .vitepress-demo-plugin__container input {
   all: revert;
+}
+
+/* 日志 */
+.vitepress-demo-plugin__logger {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  border-left: 1px solid var(--vp-c-border);
+  background-color: var(--vp-c-bg);
+}
+
+.vitepress-demo-plugin__logger.collapsed {
+  /* width: 0; */
+  /* transform: translateX(100%); */
+}
+
+.vitepress-demo-plugin__logger .vitepress-demo-plugin__logger-header {
+  height: 32px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--vp-c-border);
+}
+
+.vitepress-demo-plugin__logger .vitepress-demo-plugin__logger-header-icon {
+  cursor: pointer;
+}
+
+.vitepress-demo-plugin__logger
+  .vitepress-demo-plugin__logger-header-icon.expanded {
+  transform: rotate(-90deg);
+}
+
+.vitepress-demo-plugin__logger .vitepress-demo-plugin__logger-header-title {
+  flex: 1;
+}
+
+.vitepress-demo-plugin__logger .vitepress-demo-plugin__logger-header-clear {
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+.vitepress-demo-plugin__logger .vitepress-demo-plugin__logger-content {
+  flex: 1;
+  overflow: auto;
+}
+
+.vitepress-demo-plugin__logger
+  .vitepress-demo-plugin__logger-content
+  .vitepress-demo-plugin__logger-item {
+  padding: 4px 4px 4px 8px;
+  border-bottom: 1px solid var(--vp-c-border);
+}
+
+.vitepress-demo-plugin__logger
+  .vitepress-demo-plugin__logger-content
+  .vitepress-demo-plugin__logger-item:last-child {
+  border-bottom: none;
 }

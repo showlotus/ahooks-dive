@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { useMemoizedFn } from 'ahooks'
+import { Logger } from '@theme/components/Logger'
 
 export default () => {
   const [count, setCount] = useState(0)
@@ -31,6 +32,7 @@ export default () => {
           call memoizedFn
         </button>
       </div>
+      <Logger />
     </>
   )
 }

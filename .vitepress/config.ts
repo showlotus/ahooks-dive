@@ -2,6 +2,10 @@ import { defineConfig } from 'vitepress'
 import { vitepressDemoPlugin } from 'vitepress-demo-plugin'
 import react from '@vitejs/plugin-react'
 import { useBase } from './theme/utils'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 // import { type LanguageInput } from 'shiki'
 
@@ -203,6 +207,8 @@ export default defineConfig({
       alias: {
         // 忽略 fsevents 在非 macOS 系统上的问题
         fsevents: 'rollup-plugin-node-polyfills/polyfills/fs-events',
+        // 路径别名：简化 theme 组件的引入路径
+        '@theme': path.resolve(__dirname, 'theme'),
       },
     },
     // 构建配置
