@@ -4,85 +4,92 @@
 
 当前已完成的 Hook 如下：
 
-| Hook                       | ✅ (19/77) |
-| -------------------------- | --- |
-| useRequest                 |     |
-| useAntdTable               |     |
-| useFusionTable             |     |
-| useInfiniteScroll          |     |
-| usePagination              |     |
-| useDynamicList             |     |
-| useVirtualList             |     |
-| useHistoryTravel           |     |
-| useNetwork                 |     |
-| useSelections              |     |
-| useCountDown               |     |
-| useCounter                 |     |
-| useTextSelection           |     |
-| useWebSocket               |     |
-| useTheme                   | ✅  |
-| useMount                   | ✅  |
-| useUnmount                 | ✅  |
-| useUnmountedRef            | ✅  |
-| useSetState                | ✅  |
-| useBoolean                 |     |
-| useToggle                  |     |
-| useUrlState                |     |
-| useCookieState             |     |
-| useLocalStorageState       |     |
-| useSessionStorageState     |     |
-| useDebounce                | ✅  |
-| useThrottle                | ✅  |
-| useMap                     | ✅  |
-| useSet                     | ✅  |
-| usePrevious                | ✅  |
-| useRafState                |     |
-| useSafeState               | ✅  |
-| useGetState                |     |
-| useResetState              |     |
-| useUpdateEffect            | ✅  |
-| useUpdateLayoutEffect      |     |
-| useAsyncEffect             |     |
-| useDebounceEffect          | ✅  |
-| useDebounceFn              | ✅  |
-| useThrottleFn              | ✅  |
-| useThrottleEffect          | ✅  |
-| useDeepCompareEffect       | ✅  |
-| useDeepCompareLayoutEffect |     |
-| useInterval                |     |
-| useRafInterval             |     |
-| useTimeout                 |     |
-| useRafTimeout              |     |
-| useLockFn                  |     |
-| useUpdate                  |     |
-| useEventListener           |     |
-| useClickAway               |     |
-| useDocumentVisibility      |     |
-| useDrop & useDrag          |     |
-| useEventTarget             |     |
-| useExternal                |     |
-| useTitle                   |     |
-| useFavicon                 |     |
-| useFullscreen              |     |
-| useHover                   |     |
-| useMutationObserver        |     |
-| useInViewport              |     |
-| useKeyPress                |     |
-| useLongPress               |     |
-| useMouse                   |     |
-| useResponsive              |     |
-| useScroll                  |     |
-| useSize                    |     |
-| useFocusWithin             |     |
-| useControllableValue       |     |
-| useCreation                |     |
-| useEventEmitter            |     |
-| useIsomorphicLayoutEffect  |     |
-| useLatest                  | ✅  |
-| useMemoizedFn              | ✅  |
-| useReactive                |     |
-| useTrackedEffect           |     |
-| useWhyDidYouUpdate         |     |
+| Type      | Hook                       | ✅ (20/77) |
+| --------- | -------------------------- | ---------- |
+| Network   | useRequest                 |            |
+| --------- | -------------------------- | ---------- |
+| Scene     | useAntdTable               |            |
+| Scene     | useFusionTable             |            |
+| Scene     | useInfiniteScroll          |            |
+| Scene     | usePagination              |            |
+| Scene     | useDynamicList             |            |
+| Scene     | useVirtualList             |            |
+| Scene     | useHistoryTravel           |            |
+| Scene     | useNetwork                 |            |
+| Scene     | useSelections              |            |
+| Scene     | useCountDown               |            |
+| Scene     | useCounter                 |            |
+| Scene     | useTextSelection           |            |
+| Scene     | useWebSocket               |            |
+| Scene     | useTheme                   | ✅         |
+| --------- | -------------------------- | ---------- |
+| LifeCycle | useMount                   | ✅         |
+| LifeCycle | useUnmount                 | ✅         |
+| LifeCycle | useUnmountedRef            | ✅         |
+| --------- | -------------------------- | ---------- |
+| State     | useSetState                | ✅         |
+| State     | useBoolean                 |            |
+| State     | useToggle                  |            |
+| State     | useUrlState                |            |
+| State     | useCookieState             |            |
+| State     | useLocalStorageState       |            |
+| State     | useSessionStorageState     |            |
+| State     | useDebounce                | ✅         |
+| State     | useThrottle                | ✅         |
+| State     | useMap                     | ✅         |
+| State     | useSet                     | ✅         |
+| State     | usePrevious                | ✅         |
+| State     | useRafState                |            |
+| State     | useSafeState               |            |
+| State     | useGetState                |            |
+| State     | useResetState              |            |
+| --------- | -------------------------- | ---------- |
+| Effect    | useUpdateEffect            | ✅         |
+| Effect    | useUpdateLayoutEffect      | ✅         |
+| Effect    | useAsyncEffect             |            |
+| Effect    | useDebounceEffect          | ✅         |
+| Effect    | useDebounceFn              | ✅         |
+| Effect    | useThrottleFn              | ✅         |
+| Effect    | useThrottleEffect          | ✅         |
+| Effect    | useDeepCompareEffect       | ✅         |
+| Effect    | useDeepCompareLayoutEffect | ✅         |
+| Effect    | useInterval                |            |
+| Effect    | useRafInterval             |            |
+| Effect    | useTimeout                 |            |
+| Effect    | useRafTimeout              |            |
+| Effect    | useLockFn                  |            |
+| Effect    | useUpdate                  |            |
+| --------- | -------------------------- | ---------- |
+| DOM       | useEventListener           |            |
+| DOM       | useClickAway               |            |
+| DOM       | useDocumentVisibility      |            |
+| DOM       | useDrop & useDrag          |            |
+| DOM       | useEventTarget             |            |
+| DOM       | useExternal                |            |
+| DOM       | useTitle                   |            |
+| DOM       | useFavicon                 |            |
+| DOM       | useFullscreen              |            |
+| DOM       | useHover                   |            |
+| DOM       | useMutationObserver        |            |
+| DOM       | useInViewport              |            |
+| DOM       | useKeyPress                |            |
+| DOM       | useLongPress               |            |
+| DOM       | useMouse                   |            |
+| DOM       | useResponsive              |            |
+| DOM       | useScroll                  |            |
+| DOM       | useSize                    |            |
+| DOM       | useFocusWithin             |            |
+| --------- | -------------------------- | ---------- |
+| Advanced  | useControllableValue       |            |
+| Advanced  | useCreation                |            |
+| Advanced  | useEventEmitter            |            |
+| Advanced  | useIsomorphicLayoutEffect  |            |
+| Advanced  | useLatest                  | ✅         |
+| Advanced  | useMemoizedFn              | ✅         |
+| Advanced  | useReactive                |            |
+| --------- | -------------------------- | ---------- |
+| Dev       | useTrackedEffect           |            |
+| Dev       | useWhyDidYouUpdate         |            |
 
 ## 📖 项目简介
 
