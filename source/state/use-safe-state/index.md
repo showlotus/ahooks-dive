@@ -39,11 +39,11 @@ export default useSafeState;
 
 :::
 
+## 🔍 解读
+
 ::: tip
 关于 `useUnmountedRef`，可以查看对应文档：[useUnmountedRef](../../life-cycle/use-unmounted-ref/)。
 :::
-
-## 🔍 解读
 
 内部使用 `useUnmountedRef` 来判断组件是否已经卸载，如果已经卸载，则不进行更新。
 
@@ -80,5 +80,24 @@ function useSafeState<S>(initialState?: S | (() => S)) {
   }, []);
 
   return [state, setCurrentState] as const;
+}
+```
+
+最后返回 `state` 和 `setCurrentState`。
+
+<!-- prettier-ignore -->
+```ts
+function useSafeState<S>(initialState?: S | (() => S)) {
+  const unmountedRef = useUnmountedRef();
+  const [state, setState] = useState(initialState);
+  const setCurrentState = useCallback((currentState: S) => {
+    /** if component is unmounted, stop update */
+    if (unmountedRef.current) {
+      return;
+    }
+    setState(currentState);
+  }, []);
+
+  return [state, setCurrentState] as const; // [!code focus:1]
 }
 ```

@@ -31,7 +31,7 @@
 }
 
 /* 重置浏览器默认样式 */
-.vitepress-demo-plugin__container button[type='button'],
+.vitepress-demo-plugin__container button,
 .vitepress-demo-plugin__container input {
   all: revert;
 }

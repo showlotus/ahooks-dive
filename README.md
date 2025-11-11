@@ -4,7 +4,7 @@
 
 当前已完成的 Hook 如下：
 
-| Type      | Hook                       | ✅ (20/77) |
+| Type      | Hook                       | ✅ (21/77) |
 | --------- | -------------------------- | ---------- |
 | Network   | useRequest                 |            |
 | --------- | -------------------------- | ---------- |
@@ -40,7 +40,7 @@
 | State     | useSet                     | ✅         |
 | State     | usePrevious                | ✅         |
 | State     | useRafState                |            |
-| State     | useSafeState               |            |
+| State     | useSafeState               | ✅         |
 | State     | useGetState                |            |
 | State     | useResetState              |            |
 | --------- | -------------------------- | ---------- |
