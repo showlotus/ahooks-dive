@@ -1,0 +1,120 @@
+# [useMap](https://ahooks.js.org/zh-CN/hooks/use-map)
+
+## 📖 用法
+
+管理 `Map` 类型状态。
+
+<demo react="./demo.tsx" />
+
+## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useMap/index.ts)
+
+::: code-group
+
+<!-- prettier-ignore -->
+```ts [useMap.ts]
+import { useState } from 'react';
+import useMemoizedFn from '../useMemoizedFn';
+
+function useMap<K, T>(initialValue?: Iterable<readonly [K, T]>) {
+  const getInitValue = () => new Map(initialValue);
+  const [map, setMap] = useState<Map<K, T>>(getInitValue);
+
+  const set = (key: K, entry: T) => {
+    setMap((prev) => {
+      const temp = new Map(prev);
+      temp.set(key, entry);
+      return temp;
+    });
+  };
+
+  const setAll = (newMap: Iterable<readonly [K, T]>) => {
+    setMap(new Map(newMap));
+  };
+
+  const remove = (key: K) => {
+    setMap((prev) => {
+      const temp = new Map(prev);
+      temp.delete(key);
+      return temp;
+    });
+  };
+
+  const reset = () => setMap(getInitValue());
+
+  const get = (key: K) => map.get(key);
+
+  return [
+    map,
+    {
+      set: useMemoizedFn(set),
+      setAll: useMemoizedFn(setAll),
+      remove: useMemoizedFn(remove),
+      reset: useMemoizedFn(reset),
+      get: useMemoizedFn(get),
+    },
+  ] as const;
+}
+
+export default useMap;
+```
+
+:::
+
+## 🔍 解读
+
+::: tip
+关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)。
+:::
+
+本质上 `useMap` 返回的就是一个普通 `Map` 类型的数据，而在更新时则传入一个新的 `Map` 对象，从而触发页面重新渲染。
+
+<!-- prettier-ignore -->
+```ts
+function useMap<K, V>(initialValue?: Iterable<[K, V]>) {
+  // 1. 定义一个获取初始值的函数，方便后续 reset 函数内部调用
+  const getInitValue = () => new Map(initialValue);
+  // 2. 定义一个 `Map` 类型的状态，初始值为 `getInitValue` 函数的返回值
+  const [map, setMap] = useState<Map<K, T>>(getInitValue);
+
+  // 3. 定义一个更新 `Map` 内某个键值对的方法，传入一个键和值，更新时返回一个新的 `Map` 对象
+  const set = useMemoizedFn((key: K, entry: T) => {
+    setMap((prev) => {
+      const temp = new Map(prev);
+      temp.set(key, entry);
+      return temp;
+    });
+  });
+
+  // 4. 定义一个全量更新 `Map` 数据的方法，传入一个 `Map` 对象，全量更新时传入一个新的 `Map` 对象
+  const setAll = (newMap: Iterable<readonly [K, T]>) => {
+    setMap(new Map(newMap));
+  };
+
+  // 5. 定义一个删除 `Map` 内某个键值对的方法，传入一个键，删除时返回一个新的 `Map` 对象
+  const remove = useMemoizedFn((key: K) => {
+    setMap((prev) => {
+      const temp = new Map(prev);
+      temp.delete(key);
+      return temp;
+    });
+  };
+
+  // 6. 定义一个重置 `Map` 数据的方法，重置时传入 `getInitValue` 函数的返回值
+  const reset = () => setMap(getInitValue());
+
+  // 7. 定义一个获取 `Map` 内某个键值对的方法，传入一个键，获取时返回 `Map` 对象中对应键的值
+  const get = (key: K) => map.get(key);
+
+  // 8. 返回 `Map` 对象和更新 `Map` 数据的方法
+  return [
+    map,
+    {
+      set: useMemoizedFn(set),
+      setAll: useMemoizedFn(setAll),
+      remove: useMemoizedFn(remove),
+      reset: useMemoizedFn(reset),
+      get: useMemoizedFn(get),
+    },
+  ] as const;
+}
+```

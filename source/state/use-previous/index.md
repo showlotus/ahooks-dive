@@ -1,0 +1,66 @@
+# [usePrevious](https://ahooks.js.org/zh-CN/hooks/use-previous)
+
+## 📖 用法
+
+保存上一次状态的 Hook。
+
+<demo react="./demo.tsx" />
+
+## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/usePrevious/index.ts)
+
+::: code-group
+
+<!-- prettier-ignore -->
+```ts [usePrevious.ts]
+import { useRef } from 'react';
+
+export type ShouldUpdateFunc<T> = (prev?: T, next?: T) => boolean;
+
+const defaultShouldUpdate = <T>(a?: T, b?: T) => !Object.is(a, b);
+
+function usePrevious<T>(
+  state: T,
+  shouldUpdate: ShouldUpdateFunc<T> = defaultShouldUpdate,
+): T | undefined {
+  const prevRef = useRef<T>(undefined);
+  const curRef = useRef<T>(undefined);
+
+  if (shouldUpdate(curRef.current, state)) {
+    prevRef.current = curRef.current;
+    curRef.current = state;
+  }
+
+  return prevRef.current;
+}
+
+export default usePrevious;
+```
+
+:::
+
+## 🔍 解读
+
+在内部定义两个 `ref` 对象，分别用于存储上一次状态和当前状态，并在每次状态更新时，判断当前状态与上一次状态是否不同，如果不同，则更新上一次状态。
+
+<!-- prettier-ignore -->
+```ts
+function usePrevious<T>(
+  state: T,
+  shouldUpdate: ShouldUpdateFunc<T> = defaultShouldUpdate,
+): T | undefined {
+  // 1. 定义两个 ref 对象，分别用于存储上一次状态和当前状态
+  const prevRef = useRef<T>(undefined);
+  const curRef = useRef<T>(undefined);
+
+  // 2. 如果当前状态与上一次状态不同
+  if (shouldUpdate(curRef.current, state)) {
+    // 2.1. 更新上一次状态
+    prevRef.current = curRef.current;
+    // 2.2. 更新当前状态
+    curRef.current = state;
+  }
+
+  // 3. 返回上一次状态
+  return prevRef.current;
+}
+```

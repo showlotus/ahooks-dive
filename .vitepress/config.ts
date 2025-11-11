@@ -62,6 +62,8 @@ export default defineConfig({
         // link: '/source/state/',
         items: [
           { text: 'useDebounce', link: '/source/state/use-debounce/' },
+          { text: 'useMap', link: '/source/state/use-map/' },
+          { text: 'usePrevious', link: '/source/state/use-previous/' },
           { text: 'useRafState', link: '/source/state/use-raf-state/' },
           { text: 'useSafeState', link: '/source/state/use-safe-state/' },
           { text: 'useSet', link: '/source/state/use-set/' },

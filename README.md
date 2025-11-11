@@ -4,7 +4,7 @@
 
 当前已完成的 Hook 如下：
 
-| Hook                       | ✅ (17/77) |
+| Hook                       | ✅ (19/77) |
 | -------------------------- | --- |
 | useRequest                 |     |
 | useAntdTable               |     |
@@ -33,9 +33,9 @@
 | useSessionStorageState     |     |
 | useDebounce                | ✅  |
 | useThrottle                | ✅  |
-| useMap                     |     |
+| useMap                     | ✅  |
 | useSet                     | ✅  |
-| usePrevious                |     |
+| usePrevious                | ✅  |
 | useRafState                |     |
 | useSafeState               | ✅  |
 | useGetState                |     |
