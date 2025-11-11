@@ -1,0 +1,2 @@
+import{_ as a,c as e,o as t,ag as i}from"./chunks/framework.AQ_qBFi5.js";const l=JSON.parse('{"title":"State 状态管理","description":"","frontmatter":{},"headers":[],"relativePath":"source/state/index.md","filePath":"source/state/index.md","lastUpdated":1754187800000}');const r=a({name:"source/state/index.md"},[["render",function(a,l,r,o,s,n){return t(),e("div",null,[...l[0]||(l[0]=[i("",7)])])}]]);export{l as __pageData,r as default};
+//# sourceMappingURL=source_state_index.md.DwlHwFs3.js.map

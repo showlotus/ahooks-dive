@@ -1,0 +1,2 @@
+import{_ as t,c as e,o as a,ag as s}from"./chunks/framework.AQ_qBFi5.js";const d=JSON.parse('{"title":"ahooks dive 🚀","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md","lastUpdated":1762829020000}');const r=t({name:"README.md"},[["render",function(t,d,r,n,i,l){return a(),e("div",null,[...d[0]||(d[0]=[s("",51)])])}]]);export{d as __pageData,r as default};
+//# sourceMappingURL=README.md.BR9iGXAo.js.map

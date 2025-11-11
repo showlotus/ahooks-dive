@@ -1,0 +1,2 @@
+import{j as t}from"./jsx-runtime.DKusaIV_.js";import{r}from"./index.D8Pj_a7y.js";import{u as s}from"./index.DadFtACe.js";import"./framework.AQ_qBFi5.js";import"./index.D1PY2-Uk.js";import"./useEffectWithTarget.CZBvUWJe.js";import"./index.BibeSFQn.js";import"./index.DF9hM_3q.js";import"./isBrowser.CRfK_dEj.js";const e=()=>{const[e,i]=r.useState(0),o=r.useRef(null);return s("click",()=>{i(e+1)},{target:o}),t.jsxs("button",{ref:o,type:"button",children:["You click ",e," times"]})};export{e as default};
+//# sourceMappingURL=demo.OENT8k52.js.map

@@ -1,0 +1,2 @@
+import{_ as e,c as s,o as a,ag as r}from"./chunks/framework.AQ_qBFi5.js";const t=JSON.parse('{"title":"useRequest","description":"","frontmatter":{},"headers":[],"relativePath":"source/use-request/index.md","filePath":"source/use-request/index.md","lastUpdated":1758027210000}');const u=e({name:"source/use-request/index.md"},[["render",function(e,t,u,l,o,i){return a(),s("div",null,[...t[0]||(t[0]=[r("",7)])])}]]);export{t as __pageData,u as default};
+//# sourceMappingURL=source_use-request_index.md.DETTqrCh.js.map
