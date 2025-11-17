@@ -159,7 +159,7 @@ export default defineConfig({
           },
           { text: 'useThrottleFn', link: '/source/effect/use-throttle-fn/' },
           { text: 'useTimeout 🔄', link: '/source/effect/use-timeout/' },
-          { text: 'useUpdate 🔄', link: '/source/effect/use-update/' },
+          { text: 'useUpdate', link: '/source/effect/use-update/' },
           {
             text: 'useUpdateEffect',
             link: '/source/effect/use-update-effect/',

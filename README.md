@@ -4,7 +4,7 @@
 
 当前已完成的 Hook 如下：
 
-| Type      | Hook                       | ✅ (21/77) |
+| Type      | Hook                       | ✅ (22/77) |
 | --------- | -------------------------- | ---------- |
 | Network   | useRequest                 |            |
 | --------- | -------------------------- | ---------- |
@@ -58,7 +58,7 @@
 | Effect    | useTimeout                 |            |
 | Effect    | useRafTimeout              |            |
 | Effect    | useLockFn                  |            |
-| Effect    | useUpdate                  |            |
+| Effect    | useUpdate                  | ✅         |
 | --------- | -------------------------- | ---------- |
 | DOM       | useEventListener           |            |
 | DOM       | useClickAway               |            |
