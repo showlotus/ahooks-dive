@@ -36,6 +36,14 @@
   all: revert;
 }
 
+/* 恢复 Codesandbox 按钮样式 */
+.vitepress-demo-plugin__container .vitepress-demo-plugin-tooltip__wrapper button {
+  color: inherit;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
 /* 日志 */
 .vitepress-demo-plugin__logger {
   position: absolute;

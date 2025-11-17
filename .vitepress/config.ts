@@ -40,14 +40,47 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'useRequest',
-        // link: '/source/use-request/',
+        text: 'useRequest 🔄',
+        link: '/source/use-request/',
         // items: [{ text: '概述', link: '/source/use-request/' }],
       },
       {
         text: 'Scene',
         // link: '/source/scene/',
-        items: [{ text: 'useTheme', link: '/source/scene/use-theme/' }],
+        items: [
+          { text: 'useAntdTable 🔄', link: '/source/scene/use-antd-table/' },
+          { text: 'useCountDown 🔄', link: '/source/scene/use-count-down/' },
+          { text: 'useCounter 🔄', link: '/source/scene/use-counter/' },
+          {
+            text: 'useDynamicList 🔄',
+            link: '/source/scene/use-dynamic-list/',
+          },
+          {
+            text: 'useFusionTable 🔄',
+            link: '/source/scene/use-fusion-table/',
+          },
+          {
+            text: 'useHistoryTravel 🔄',
+            link: '/source/scene/use-history-travel/',
+          },
+          {
+            text: 'useInfiniteScroll 🔄',
+            link: '/source/scene/use-infinite-scroll/',
+          },
+          { text: 'useNetwork 🔄', link: '/source/scene/use-network/' },
+          { text: 'usePagination 🔄', link: '/source/scene/use-pagination/' },
+          { text: 'useSelections 🔄', link: '/source/scene/use-selections/' },
+          {
+            text: 'useTextSelection 🔄',
+            link: '/source/scene/use-text-selection/',
+          },
+          { text: 'useTheme', link: '/source/scene/use-theme/' },
+          {
+            text: 'useVirtualList 🔄',
+            link: '/source/scene/use-virtual-list/',
+          },
+          { text: 'useWebSocket 🔄', link: '/source/scene/use-web-socket/' },
+        ],
       },
       {
         text: 'LifeCycle',
@@ -65,20 +98,41 @@ export default defineConfig({
         text: 'State',
         // link: '/source/state/',
         items: [
+          { text: 'useBoolean 🔄', link: '/source/state/use-boolean/' },
+          {
+            text: 'useCookieState 🔄',
+            link: '/source/state/use-cookie-state/',
+          },
           { text: 'useDebounce', link: '/source/state/use-debounce/' },
+          { text: 'useGetState 🔄', link: '/source/state/use-get-state/' },
+          {
+            text: 'useLocalStorageState 🔄',
+            link: '/source/state/use-local-storage-state/',
+          },
           { text: 'useMap', link: '/source/state/use-map/' },
           { text: 'usePrevious', link: '/source/state/use-previous/' },
-          { text: 'useRafState', link: '/source/state/use-raf-state/' },
+          { text: 'useRafState 🔄', link: '/source/state/use-raf-state/' },
+          { text: 'useResetState 🔄', link: '/source/state/use-reset-state/' },
           { text: 'useSafeState', link: '/source/state/use-safe-state/' },
+          {
+            text: 'useSessionStorageState 🔄',
+            link: '/source/state/use-session-storage-state/',
+          },
           { text: 'useSet', link: '/source/state/use-set/' },
           { text: 'useSetState', link: '/source/state/use-set-state/' },
           { text: 'useThrottle', link: '/source/state/use-throttle/' },
+          { text: 'useToggle 🔄', link: '/source/state/use-toggle/' },
+          { text: 'useUrlState 🔄', link: '/source/state/use-url-state/' },
         ],
       },
       {
         text: 'Effect',
         // link: '/source/effect/',
         items: [
+          {
+            text: 'useAsyncEffect 🔄',
+            link: '/source/effect/use-async-effect/',
+          },
           {
             text: 'useDebounceEffect',
             link: '/source/effect/use-debounce-effect/',
@@ -92,11 +146,20 @@ export default defineConfig({
             text: 'useDeepCompareLayoutEffect',
             link: '/source/effect/use-deep-compare-layout-effect/',
           },
+          { text: 'useInterval 🔄', link: '/source/effect/use-interval/' },
+          { text: 'useLockFn 🔄', link: '/source/effect/use-lock-fn/' },
+          {
+            text: 'useRafInterval 🔄',
+            link: '/source/effect/use-raf-interval/',
+          },
+          { text: 'useRafTimeout 🔄', link: '/source/effect/use-raf-timeout/' },
           {
             text: 'useThrottleEffect',
             link: '/source/effect/use-throttle-effect/',
           },
           { text: 'useThrottleFn', link: '/source/effect/use-throttle-fn/' },
+          { text: 'useTimeout 🔄', link: '/source/effect/use-timeout/' },
+          { text: 'useUpdate 🔄', link: '/source/effect/use-update/' },
           {
             text: 'useUpdateEffect',
             link: '/source/effect/use-update-effect/',
@@ -111,32 +174,81 @@ export default defineConfig({
         text: 'Dom',
         // link: '/source/dom/',
         items: [
-          { text: 'useEventListener', link: '/source/dom/use-event-listener/' },
-          { text: 'useHover', link: '/source/dom/use-hover/' },
-          { text: 'useScroll', link: '/source/dom/use-scroll/' },
+          { text: 'useClickAway 🔄', link: '/source/dom/use-click-away/' },
+          {
+            text: 'useDocumentVisibility 🔄',
+            link: '/source/dom/use-document-visibility/',
+          },
+          { text: 'useDrag 🔄', link: '/source/dom/use-drag/' },
+          { text: 'useDrop 🔄', link: '/source/dom/use-drop/' },
+          {
+            text: 'useEventListener 🔄',
+            link: '/source/dom/use-event-listener/',
+          },
+          { text: 'useEventTarget 🔄', link: '/source/dom/use-event-target/' },
+          { text: 'useExternal 🔄', link: '/source/dom/use-external/' },
+          { text: 'useFavicon 🔄', link: '/source/dom/use-favicon/' },
+          { text: 'useFocusWithin 🔄', link: '/source/dom/use-focus-within/' },
+          { text: 'useFullscreen 🔄', link: '/source/dom/use-fullscreen/' },
+          { text: 'useHover 🔄', link: '/source/dom/use-hover/' },
+          { text: 'useInViewport 🔄', link: '/source/dom/use-in-viewport/' },
+          { text: 'useKeyPress 🔄', link: '/source/dom/use-key-press/' },
+          { text: 'useLongPress 🔄', link: '/source/dom/use-long-press/' },
+          { text: 'useMouse 🔄', link: '/source/dom/use-mouse/' },
+          {
+            text: 'useMutationObserver 🔄',
+            link: '/source/dom/use-mutation-observer/',
+          },
+          { text: 'useResponsive 🔄', link: '/source/dom/use-responsive/' },
+          { text: 'useScroll 🔄', link: '/source/dom/use-scroll/' },
+          { text: 'useSize 🔄', link: '/source/dom/use-size/' },
+          { text: 'useTitle 🔄', link: '/source/dom/use-title/' },
         ],
       },
       {
         text: 'Advanced',
         // link: '/source/advanced/',
         items: [
+          {
+            text: 'useControllableValue 🔄',
+            link: '/source/advanced/use-controllable-value/',
+          },
+          { text: 'useCreation 🔄', link: '/source/advanced/use-creation/' },
+          {
+            text: 'useEventEmitter 🔄',
+            link: '/source/advanced/use-event-emitter/',
+          },
+          {
+            text: 'useIsomorphicLayoutEffect 🔄',
+            link: '/source/advanced/use-isomorphic-layout-effect/',
+          },
           { text: 'useLatest', link: '/source/advanced/use-latest/' },
           { text: 'useMemoizedFn', link: '/source/advanced/use-memoized-fn/' },
+          { text: 'useReactive 🔄', link: '/source/advanced/use-reactive/' },
         ],
       },
       {
         text: 'Dev',
         // link: '/source/dev/',
-        // items: [{ text: '概述', link: '/source/dev/' }],
+        items: [
+          {
+            text: 'useTrackedEffect 🔄',
+            link: '/source/dev/use-tracked-effect/',
+          },
+          {
+            text: 'useWhyDidYouUpdate 🔄',
+            link: '/source/dev/use-why-did-you-update/',
+          },
+        ],
       },
       {
         text: 'Extra',
         // link: '/source/extra/',
         items: [
           { text: 'useEffect', link: '/source/extra/use-effect' },
-          { text: 'useState', link: '/source/extra/use-state' },
-          { text: 'useRef', link: '/source/extra/use-ref' },
           { text: 'useImmer', link: '/source/extra/use-immer' },
+          { text: 'useRef', link: '/source/extra/use-ref' },
+          { text: 'useState', link: '/source/extra/use-state' },
         ],
       },
     ],
