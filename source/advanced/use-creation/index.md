@@ -56,5 +56,44 @@ export default depsAreSame;
 
 ## 🔍 解读
 
-_TODO_
+先看 `depsAreSame` 函数，用于比较两个依赖数组是否相同，内部采用 `Object.is` 进行比较。
 
+<!-- prettier-ignore -->
+```ts
+function depsAreSame(oldDeps: DependencyList, deps: DependencyList): boolean {
+  if (oldDeps === deps) {
+    return true;
+  }
+  for (let i = 0; i < oldDeps.length; i++) {
+    if (!Object.is(oldDeps[i], deps[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+```
+
+而 `useCreation` 函数则是在内部使用 `useRef` 定义了一个 `ref` 对象，用于存储依赖数组和计算结果。
+
+<!-- prettier-ignore -->
+```ts [useCreation.ts]
+const useCreation = <T>(factory: () => T, deps: DependencyList) => {
+  // 1. 定义一个 ref 对象，用于存储依赖数组和计算结果
+  const { current } = useRef({
+    deps,
+    obj: undefined as T,
+    initialized: false,
+  });
+  // 2. 如果依赖数组未初始化，或者依赖数组发生变化，则更新依赖数组并重新计算结果
+  if (current.initialized === false || !depsAreSame(current.deps, deps)) {
+    // 2.1. 更新依赖数组
+    current.deps = deps;
+    // 2.2. 重新计算结果
+    current.obj = factory();
+    // 2.3. 标记为已初始化
+    current.initialized = true;
+  }
+  // 3. 返回计算结果
+  return current.obj;
+};
+```

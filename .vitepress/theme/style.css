@@ -44,6 +44,10 @@
   background-color: transparent;
 }
 
+.vitepress-demo-plugin__container .vitepress-demo-plugin-tooltip__wrapper:nth-child(3) {
+  order: 4;
+}
+
 /* 日志 */
 .vitepress-demo-plugin__logger {
   position: absolute;

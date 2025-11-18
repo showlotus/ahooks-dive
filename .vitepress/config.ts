@@ -213,7 +213,7 @@ export default defineConfig({
             text: 'useControllableValue 🔄',
             link: '/source/advanced/use-controllable-value/',
           },
-          { text: 'useCreation 🔄', link: '/source/advanced/use-creation/' },
+          { text: 'useCreation', link: '/source/advanced/use-creation/' },
           {
             text: 'useEventEmitter 🔄',
             link: '/source/advanced/use-event-emitter/',
