@@ -89,7 +89,96 @@ export default useReactive;
 ## 🔍 解读
 
 ::: tip
-关于 `useCreation`、`useUpdate`，可以查看对应文档：[useCreation](../use-creation/)、[useUpdate](../use-update/)。
+关于 `useCreation`、`useUpdate`，可以查看对应文档：[useCreation](../../advanced/use-creation/)、[useUpdate](../../effect/use-update/)。
 :::
 
-_TODO_
+先看 `observer` 函数，用于深度代理一个对象。
+
+<!-- prettier-ignore -->
+```ts
+// k:v 原对象:代理过的对象
+const proxyMap = new WeakMap();
+// k:v 代理过的对象:原对象
+const rawMap = new WeakMap();
+
+function observer<T extends Record<string, any>>(initialVal: T, cb: () => void): T {
+  // 1. 在 proxyMap 中查找当前对象是否已经代理过
+  const existingProxy = proxyMap.get(initialVal);
+
+  // 添加缓存 防止重新构建proxy
+  // 2. 如果已经代理过，则直接返回代理过的对象
+  if (existingProxy) {
+    return existingProxy;
+  }
+
+  // 防止代理已经代理过的对象
+  // https://github.com/alibaba/hooks/issues/839
+  // 3. 如果当前对象是个已经代理过的对象，则直接返回该对象
+  if (rawMap.has(initialVal)) {
+    return initialVal;
+  }
+
+  // 4. 构建代理对象
+  const proxy = new Proxy<T>(initialVal, {
+    get(target, key, receiver) {
+      // 4.1. 通过 Reflect.get 获取当前对象的属性值，可确保 this 指向的正确性
+      const res = Reflect.get(target, key, receiver);
+
+      // https://github.com/alibaba/hooks/issues/1317
+      // 4.2. 获取当前对象的属性描述符，如果属性描述符不可配置且不可写，则直接返回该属性
+      const descriptor = Reflect.getOwnPropertyDescriptor(target, key);
+      if (!descriptor?.configurable && !descriptor?.writable) {
+        return res;
+      }
+
+      // Only proxy plain object or array,
+      // otherwise it will cause: https://github.com/alibaba/hooks/issues/2080
+      // 4.3. 如果当前对象是普通对象或数组，则递归代理该对象
+      return isPlainObject(res) || Array.isArray(res) ? observer(res, cb) : res;
+    },
+    set(target, key, val) {
+      // 4.4. 通过 Reflect.set 设置当前对象的属性值，并触发回调
+      const ret = Reflect.set(target, key, val);
+      cb();
+      return ret;
+    },
+    deleteProperty(target, key) {
+      // 4.5. 通过 Reflect.deleteProperty 删除当前对象的属性，并触发回调
+      const ret = Reflect.deleteProperty(target, key);
+      cb();
+      return ret;
+    },
+  });
+
+  // 5. 将原对象和代理对象分别缓存到 proxyMap 和 rawMap 中
+  proxyMap.set(initialVal, proxy);
+  rawMap.set(proxy, initialVal);
+
+  // 6. 返回代理对象
+  return proxy;
+}
+```
+
+再来看看 `useReactive` 函数的实现。
+
+<!-- prettier-ignore -->
+```ts
+function useReactive<S extends Record<string, any>>(initialState: S): S {
+  // 1. 使用 useUpdate 获取更新函数，调用 update 会触发组件重新渲染
+  const update = useUpdate();
+  // 2. 使用 useRef 创建一个 ref 对象，用于存储初始状态
+  const stateRef = useRef<S>(initialState);
+
+  // 3. 使用 useCreation 创建一个响应式对象
+  const state = useCreation(() => {
+    // 3.1. 调用 observer 函数，深度代理初始状态
+    return observer(stateRef.current, () => {
+      // 3.2. 当对象的属性发生变化时，触发 update 函数，从而触发组件重新渲染
+      update();
+    });
+  }, []);
+
+  // 4. 返回响应式对象
+  return state;
+}
+```

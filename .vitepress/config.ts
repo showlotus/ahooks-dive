@@ -224,7 +224,7 @@ export default defineConfig({
           },
           { text: 'useLatest', link: '/source/advanced/use-latest/' },
           { text: 'useMemoizedFn', link: '/source/advanced/use-memoized-fn/' },
-          { text: 'useReactive 🔄', link: '/source/advanced/use-reactive/' },
+          { text: 'useReactive', link: '/source/advanced/use-reactive/' },
         ],
       },
       {
