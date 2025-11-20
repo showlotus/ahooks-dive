@@ -215,7 +215,7 @@ export default defineConfig({
           },
           { text: 'useCreation', link: '/source/advanced/use-creation/' },
           {
-            text: 'useEventEmitter 🔄',
+            text: 'useEventEmitter',
             link: '/source/advanced/use-event-emitter/',
           },
           {

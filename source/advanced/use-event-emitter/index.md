@@ -2,10 +2,125 @@
 
 ## 📖 用法
 
-_TODO_
+创建一个事件发射器，用于在组件之间传递事件。
+
+<demo react="./demo.tsx" />
 
 ## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useEventEmitter/index.ts)
 
+::: code-group
+
+<!-- prettier-ignore -->
+```ts [useEventEmitter.ts]
+import { useRef, useEffect } from 'react';
+
+type Subscription<T> = (val: T) => void;
+
+export class EventEmitter<T> {
+  private subscriptions = new Set<Subscription<T>>();
+
+  emit = (val: T) => {
+    for (const subscription of this.subscriptions) {
+      subscription(val);
+    }
+  };
+
+  useSubscription = (callback: Subscription<T>) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const callbackRef = useRef<Subscription<T>>(undefined);
+    callbackRef.current = callback;
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+      function subscription(val: T) {
+        if (callbackRef.current) {
+          callbackRef.current(val);
+        }
+      }
+      this.subscriptions.add(subscription);
+      return () => {
+        this.subscriptions.delete(subscription);
+      };
+    }, []);
+  };
+}
+
+function useEventEmitter<T = void>() {
+  const ref = useRef<EventEmitter<T>>(undefined);
+  if (!ref.current) {
+    ref.current = new EventEmitter();
+  }
+  return ref.current;
+}
+
+export default useEventEmitter;
+```
+
+:::
+
 ## 🔍 解读
 
-_TODO_
+先看 `EventEmitter` 类的实现。
+
+<!-- prettier-ignore -->
+```ts
+export class EventEmitter<T> {
+  // 1. 使用 Set 存储订阅者
+  private subscriptions = new Set<Subscription<T>>();
+
+  // 2. 定义 emit 方法，用于触发事件
+  emit = (val: T) => {
+    // 2.1. 遍历订阅者，调用每个订阅者的回调函数
+    for (const subscription of this.subscriptions) {
+      subscription(val);
+    }
+  };
+
+  // 3. 定义 useSubscription 方法，用于订阅事件
+  useSubscription = (callback: Subscription<T>) => {
+    // 3.1. 使用 useRef 存储订阅者回调函数
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const callbackRef = useRef<Subscription<T>>(undefined);
+    callbackRef.current = callback;
+    // 3.2. 使用 useEffect 订阅事件
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+      // 3.2.1. 定义订阅者回调函数
+      function subscription(val: T) {
+        // 3.2.2. 如果订阅者回调函数存在，则调用该回调函数
+        if (callbackRef.current) {
+          callbackRef.current(val);
+        }
+      }
+      // 3.2.3. 将订阅者回调函数添加到订阅者集合中
+      this.subscriptions.add(subscription);
+      // 3.2.4. 返回一个清理函数，用于在组件卸载时清理订阅者
+      return () => {
+        this.subscriptions.delete(subscription);
+      };
+    }, []);
+  };
+}
+```
+
+再来看 `useEventEmitter` 函数的实现。
+
+<!-- prettier-ignore -->
+```ts
+function useEventEmitter<T = void>() {
+  // 1. 使用 useRef 创建一个 ref 对象，用于存储 EventEmitter 实例
+  const ref = useRef<EventEmitter<T>>(undefined);
+  // 2. 如果 ref 对象不存在，则创建一个 EventEmitter 实例
+  if (!ref.current) {
+    // 2.1. 创建一个 EventEmitter 实例
+    ref.current = new EventEmitter();
+  }
+  // 3. 返回 EventEmitter 实例
+  return ref.current;
+}
+```
+
+其实就是一个 `EventBus` 的 `hook` 版本，在 `EventBus` 的基础上，增加了当组件卸载时清理订阅者的功能。以及在组件的顶层调用订阅事件 `useSubscription`，因为对于一个组件来说，只需要订阅一次，也就是为什么订阅函数是一个 `hook`，而不是一个普通的函数，仅需要在顶层调用一次 `useSubscription` 即可。
+
+而当前的 `EventEmitter` 仅支持发布者发布唯一事件，如果需要发布多个事件，那就需要创建多个 `EventEmitter` 实例了。其实根据简单改造一下就能支持多事件发布订阅。
+
+<demo react="./demo2.tsx" />
