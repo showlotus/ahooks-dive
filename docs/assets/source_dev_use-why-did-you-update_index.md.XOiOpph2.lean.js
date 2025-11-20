@@ -1,0 +1,2 @@
+import{_ as e,c as a,o,ag as t}from"./chunks/framework.AQ_qBFi5.js";const d=JSON.parse('{"title":"useWhyDidYouUpdate","description":"","frontmatter":{},"headers":[],"relativePath":"source/dev/use-why-did-you-update/index.md","filePath":"source/dev/use-why-did-you-update/index.md","lastUpdated":1763381444000}');const r=e({name:"source/dev/use-why-did-you-update/index.md"},[["render",function(e,d,r,s,h,u){return o(),a("div",null,[...d[0]||(d[0]=[t("",6)])])}]]);export{d as __pageData,r as default};
+//# sourceMappingURL=source_dev_use-why-did-you-update_index.md.XOiOpph2.js.map

@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as s,ag as o}from"./chunks/framework.AQ_qBFi5.js";const t=JSON.parse('{"title":"useFocusWithin","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-focus-within/index.md","filePath":"source/dom/use-focus-within/index.md","lastUpdated":1763381444000}');const r=e({name:"source/dom/use-focus-within/index.md"},[["render",function(e,t,r,i,h,n){return s(),a("div",null,[...t[0]||(t[0]=[o("",6)])])}]]);export{t as __pageData,r as default};
+//# sourceMappingURL=source_dom_use-focus-within_index.md.CFdooiE8.js.map

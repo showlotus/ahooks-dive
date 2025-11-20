@@ -1,0 +1,2 @@
+import{b as r,a as n}from"./tslib.es6.D7VAKcod.js";import{t}from"./throttle.QbaAYV0T.js";import{r as o}from"./index.D8Pj_a7y.js";import{u as s}from"./index.D1PY2-Uk.js";import{u as e}from"./index.BibeSFQn.js";function u(u,i){var a,l=s(u),f=null!==(a=null==i?void 0:i.wait)&&void 0!==a?a:1e3,c=o.useMemo(function(){return t(function(){for(var t=[],o=0;o<arguments.length;o++)t[o]=arguments[o];return l.current.apply(l,r([],n(t),!1))},f,i)},[]);return e(function(){c.cancel()}),{run:c,cancel:c.cancel,flush:c.flush}}export{u};
+//# sourceMappingURL=index.C2jt5Avb.js.map

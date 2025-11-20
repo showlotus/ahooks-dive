@@ -1,0 +1,2 @@
+import{_ as a,c as e,o as r,ag as s}from"./chunks/framework.AQ_qBFi5.js";const o=JSON.parse('{"title":"useDrag","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-drag/index.md","filePath":"source/dom/use-drag/index.md","lastUpdated":1763381444000}');const t=a({name:"source/dom/use-drag/index.md"},[["render",function(a,o,t,h,d,i){return r(),e("div",null,[...o[0]||(o[0]=[s("",6)])])}]]);export{o as __pageData,t as default};
+//# sourceMappingURL=source_dom_use-drag_index.md.iUjn_Wua.js.map

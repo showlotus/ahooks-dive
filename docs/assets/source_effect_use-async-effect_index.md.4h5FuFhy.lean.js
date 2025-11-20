@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as s,ag as t}from"./chunks/framework.AQ_qBFi5.js";const r=JSON.parse('{"title":"useAsyncEffect","description":"","frontmatter":{},"headers":[],"relativePath":"source/effect/use-async-effect/index.md","filePath":"source/effect/use-async-effect/index.md","lastUpdated":1763381444000}');const o=e({name:"source/effect/use-async-effect/index.md"},[["render",function(e,r,o,c,f,n){return s(),a("div",null,[...r[0]||(r[0]=[t("",6)])])}]]);export{r as __pageData,o as default};
+//# sourceMappingURL=source_effect_use-async-effect_index.md.4h5FuFhy.js.map

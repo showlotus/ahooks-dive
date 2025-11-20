@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as t,ag as o}from"./chunks/framework.AQ_qBFi5.js";const r=JSON.parse('{"title":"useTimeout","description":"","frontmatter":{},"headers":[],"relativePath":"source/effect/use-timeout/index.md","filePath":"source/effect/use-timeout/index.md","lastUpdated":1763381444000}');const s=e({name:"source/effect/use-timeout/index.md"},[["render",function(e,r,s,i,u,h){return t(),a("div",null,[...r[0]||(r[0]=[o("",6)])])}]]);export{r as __pageData,s as default};
+//# sourceMappingURL=source_effect_use-timeout_index.md.CjN8JB3o.js.map

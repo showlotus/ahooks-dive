@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as t,ag as o}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"useCookieState","description":"","frontmatter":{},"headers":[],"relativePath":"source/state/use-cookie-state/index.md","filePath":"source/state/use-cookie-state/index.md","lastUpdated":1763381444000}');const r=e({name:"source/state/use-cookie-state/index.md"},[["render",function(e,s,r,i,h,n){return t(),a("div",null,[...s[0]||(s[0]=[o("",6)])])}]]);export{s as __pageData,r as default};
+//# sourceMappingURL=source_state_use-cookie-state_index.md.CRe6MLEa.js.map

@@ -1,0 +1,2 @@
+import{_ as e,c as a,o,ag as r}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"useLockFn","description":"","frontmatter":{},"headers":[],"relativePath":"source/effect/use-lock-fn/index.md","filePath":"source/effect/use-lock-fn/index.md","lastUpdated":1763381444000}');const t=e({name:"source/effect/use-lock-fn/index.md"},[["render",function(e,s,t,n,h,c){return o(),a("div",null,[...s[0]||(s[0]=[r("",6)])])}]]);export{s as __pageData,t as default};
+//# sourceMappingURL=source_effect_use-lock-fn_index.md.DInt-xB4.js.map

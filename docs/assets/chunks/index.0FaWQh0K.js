@@ -1,0 +1,2 @@
+import{a as n}from"./tslib.es6.D7VAKcod.js";import{r}from"./index.D8Pj_a7y.js";import{u as e}from"./index.BibeSFQn.js";function t(t){var a=r.useRef(0),i=n(r.useState(t),2),o=i[0],u=i[1],s=r.useCallback(function(n){cancelAnimationFrame(a.current),a.current=requestAnimationFrame(function(){u(n)})},[]);return e(function(){cancelAnimationFrame(a.current)}),[o,s]}export{t as u};
+//# sourceMappingURL=index.0FaWQh0K.js.map

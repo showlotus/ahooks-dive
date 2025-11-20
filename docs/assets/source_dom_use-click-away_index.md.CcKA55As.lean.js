@@ -1,0 +1,2 @@
+import{_ as a,c as e,o as r,ag as s}from"./chunks/framework.AQ_qBFi5.js";const o=JSON.parse('{"title":"useClickAway","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-click-away/index.md","filePath":"source/dom/use-click-away/index.md","lastUpdated":1763381444000}');const t=a({name:"source/dom/use-click-away/index.md"},[["render",function(a,o,t,i,l,c){return r(),e("div",null,[...o[0]||(o[0]=[s("",6)])])}]]);export{o as __pageData,t as default};
+//# sourceMappingURL=source_dom_use-click-away_index.md.CcKA55As.js.map

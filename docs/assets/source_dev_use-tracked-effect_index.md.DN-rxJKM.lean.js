@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as t,ag as r}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"useTrackedEffect","description":"","frontmatter":{},"headers":[],"relativePath":"source/dev/use-tracked-effect/index.md","filePath":"source/dev/use-tracked-effect/index.md","lastUpdated":1763381444000}');const o=e({name:"source/dev/use-tracked-effect/index.md"},[["render",function(e,s,o,c,d,h){return t(),a("div",null,[...s[0]||(s[0]=[r("",6)])])}]]);export{s as __pageData,o as default};
+//# sourceMappingURL=source_dev_use-tracked-effect_index.md.DN-rxJKM.js.map

@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as r,ag as t}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"useInterval","description":"","frontmatter":{},"headers":[],"relativePath":"source/effect/use-interval/index.md","filePath":"source/effect/use-interval/index.md","lastUpdated":1763381444000}');const o=e({name:"source/effect/use-interval/index.md"},[["render",function(e,s,o,n,l,h){return r(),a("div",null,[...s[0]||(s[0]=[t("",6)])])}]]);export{s as __pageData,o as default};
+//# sourceMappingURL=source_effect_use-interval_index.md.BV57Y8PZ.js.map

@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as t,ag as r}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"useEventTarget","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-event-target/index.md","filePath":"source/dom/use-event-target/index.md","lastUpdated":1763381444000}');const o=e({name:"source/dom/use-event-target/index.md"},[["render",function(e,s,o,n,h,i){return t(),a("div",null,[...s[0]||(s[0]=[r("",6)])])}]]);export{s as __pageData,o as default};
+//# sourceMappingURL=source_dom_use-event-target_index.md.CskawUp6.js.map

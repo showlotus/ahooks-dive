@@ -1,0 +1,2 @@
+import{_ as e,c as t,o as a,ag as s}from"./chunks/framework.AQ_qBFi5.js";const o=JSON.parse('{"title":"useTextSelection","description":"","frontmatter":{},"headers":[],"relativePath":"source/scene/use-text-selection/index.md","filePath":"source/scene/use-text-selection/index.md","lastUpdated":1763381444000}');const r=e({name:"source/scene/use-text-selection/index.md"},[["render",function(e,o,r,n,i,l){return a(),t("div",null,[...o[0]||(o[0]=[s("",6)])])}]]);export{o as __pageData,r as default};
+//# sourceMappingURL=source_scene_use-text-selection_index.md.BJCBQZyT.js.map

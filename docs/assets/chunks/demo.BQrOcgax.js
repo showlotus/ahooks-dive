@@ -1,0 +1,2 @@
+import{j as t}from"./jsx-runtime.DKusaIV_.js";import{u as r}from"./index.B9kjTikC.js";import"./tslib.es6.D7VAKcod.js";import"./index.D8Pj_a7y.js";import"./framework.AQ_qBFi5.js";const s=()=>{const s=r();return t.jsxs(t.Fragment,{children:[t.jsxs("div",{children:["Time: ",Date.now()]}),t.jsx("button",{type:"button",onClick:s,style:{marginTop:8},children:"update"})]})};export{s as default};
+//# sourceMappingURL=demo.BQrOcgax.js.map

@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as r,ag as t}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"useExternal","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-external/index.md","filePath":"source/dom/use-external/index.md","lastUpdated":1763381444000}');const o=e({name:"source/dom/use-external/index.md"},[["render",function(e,s,o,n,l,h){return r(),a("div",null,[...s[0]||(s[0]=[t("",6)])])}]]);export{s as __pageData,o as default};
+//# sourceMappingURL=source_dom_use-external_index.md.CRY-136G.js.map

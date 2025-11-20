@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as r,ag as s}from"./chunks/framework.AQ_qBFi5.js";const o=JSON.parse('{"title":"useFullscreen","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-fullscreen/index.md","filePath":"source/dom/use-fullscreen/index.md","lastUpdated":1763381444000}');const l=e({name:"source/dom/use-fullscreen/index.md"},[["render",function(e,o,l,t,n,u){return r(),a("div",null,[...o[0]||(o[0]=[s("",6)])])}]]);export{o as __pageData,l as default};
+//# sourceMappingURL=source_dom_use-fullscreen_index.md.DkLQOEt3.js.map

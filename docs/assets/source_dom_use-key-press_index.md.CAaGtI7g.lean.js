@@ -1,0 +1,2 @@
+import{_ as e,c as s,o as a,ag as r}from"./chunks/framework.AQ_qBFi5.js";const o=JSON.parse('{"title":"useKeyPress","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-key-press/index.md","filePath":"source/dom/use-key-press/index.md","lastUpdated":1763381444000}');const t=e({name:"source/dom/use-key-press/index.md"},[["render",function(e,o,t,h,i,n){return a(),s("div",null,[...o[0]||(o[0]=[r("",6)])])}]]);export{o as __pageData,t as default};
+//# sourceMappingURL=source_dom_use-key-press_index.md.CAaGtI7g.js.map

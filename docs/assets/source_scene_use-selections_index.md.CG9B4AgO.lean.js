@@ -1,0 +1,2 @@
+import{_ as e,c as s,o as a,ag as o}from"./chunks/framework.AQ_qBFi5.js";const t=JSON.parse('{"title":"useSelections","description":"","frontmatter":{},"headers":[],"relativePath":"source/scene/use-selections/index.md","filePath":"source/scene/use-selections/index.md","lastUpdated":1763381444000}');const r=e({name:"source/scene/use-selections/index.md"},[["render",function(e,t,r,n,i,l){return a(),s("div",null,[...t[0]||(t[0]=[o("",6)])])}]]);export{t as __pageData,r as default};
+//# sourceMappingURL=source_scene_use-selections_index.md.CG9B4AgO.js.map

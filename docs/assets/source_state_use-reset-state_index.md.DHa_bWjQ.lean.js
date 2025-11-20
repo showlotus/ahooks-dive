@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as t,ag as s}from"./chunks/framework.AQ_qBFi5.js";const r=JSON.parse('{"title":"useResetState","description":"","frontmatter":{},"headers":[],"relativePath":"source/state/use-reset-state/index.md","filePath":"source/state/use-reset-state/index.md","lastUpdated":1763381444000}');const o=e({name:"source/state/use-reset-state/index.md"},[["render",function(e,r,o,h,i,n){return t(),a("div",null,[...r[0]||(r[0]=[s("",6)])])}]]);export{r as __pageData,o as default};
+//# sourceMappingURL=source_state_use-reset-state_index.md.DHa_bWjQ.js.map

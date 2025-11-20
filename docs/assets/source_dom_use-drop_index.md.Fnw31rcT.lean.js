@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as r,ag as o}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"useDrop","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-drop/index.md","filePath":"source/dom/use-drop/index.md","lastUpdated":1763381444000}');const t=e({name:"source/dom/use-drop/index.md"},[["render",function(e,s,t,h,d,i){return r(),a("div",null,[...s[0]||(s[0]=[o("",6)])])}]]);export{s as __pageData,t as default};
+//# sourceMappingURL=source_dom_use-drop_index.md.Fnw31rcT.js.map

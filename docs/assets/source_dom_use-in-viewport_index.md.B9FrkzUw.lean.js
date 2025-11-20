@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as r,ag as o}from"./chunks/framework.AQ_qBFi5.js";const t=JSON.parse('{"title":"useInViewport","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-in-viewport/index.md","filePath":"source/dom/use-in-viewport/index.md","lastUpdated":1763381444000}');const s=e({name:"source/dom/use-in-viewport/index.md"},[["render",function(e,t,s,i,n,h){return r(),a("div",null,[...t[0]||(t[0]=[o("",6)])])}]]);export{t as __pageData,s as default};
+//# sourceMappingURL=source_dom_use-in-viewport_index.md.B9FrkzUw.js.map

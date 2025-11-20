@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as t,ag as s}from"./chunks/framework.AQ_qBFi5.js";const r=JSON.parse('{"title":"useAntdTable","description":"","frontmatter":{},"headers":[],"relativePath":"source/scene/use-antd-table/index.md","filePath":"source/scene/use-antd-table/index.md","lastUpdated":1763381444000}');const o=e({name:"source/scene/use-antd-table/index.md"},[["render",function(e,r,o,n,l,h){return t(),a("div",null,[...r[0]||(r[0]=[s("",6)])])}]]);export{r as __pageData,o as default};
+//# sourceMappingURL=source_scene_use-antd-table_index.md.BQJ6qWo6.js.map

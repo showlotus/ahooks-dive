@@ -1,0 +1,2 @@
+import{_ as e,c as s,o as a,ag as o}from"./chunks/framework.AQ_qBFi5.js";const r=JSON.parse('{"title":"useResponsive","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-responsive/index.md","filePath":"source/dom/use-responsive/index.md","lastUpdated":1763381444000}');const t=e({name:"source/dom/use-responsive/index.md"},[["render",function(e,r,t,i,n,h){return a(),s("div",null,[...r[0]||(r[0]=[o("",6)])])}]]);export{r as __pageData,t as default};
+//# sourceMappingURL=source_dom_use-responsive_index.md.CddVYnz4.js.map

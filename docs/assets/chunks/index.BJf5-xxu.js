@@ -1,0 +1,2 @@
+import{a as t}from"./tslib.es6.D7VAKcod.js";import{r}from"./index.D8Pj_a7y.js";function n(n,e){void 0===n&&(n=!1);var u=t(r.useState(n),2),o=u[0],i=u[1];return[o,r.useMemo(function(){var t=!n;return{toggle:function(){return i(function(r){return r===n?t:n})},set:function(t){return i(t)},setLeft:function(){return i(n)},setRight:function(){return i(t)}}},[])]}export{n as u};
+//# sourceMappingURL=index.BJf5-xxu.js.map

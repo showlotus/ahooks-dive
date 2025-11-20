@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as s,ag as o}from"./chunks/framework.AQ_qBFi5.js";const r=JSON.parse('{"title":"useMouse","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-mouse/index.md","filePath":"source/dom/use-mouse/index.md","lastUpdated":1763381444000}');const t=e({name:"source/dom/use-mouse/index.md"},[["render",function(e,r,t,u,h,i){return s(),a("div",null,[...r[0]||(r[0]=[o("",6)])])}]]);export{r as __pageData,t as default};
+//# sourceMappingURL=source_dom_use-mouse_index.md.D-mzInJu.js.map

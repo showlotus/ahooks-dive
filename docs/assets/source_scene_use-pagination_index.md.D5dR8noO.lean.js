@@ -1,0 +1,2 @@
+import{_ as a,c as e,o,ag as t}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"usePagination","description":"","frontmatter":{},"headers":[],"relativePath":"source/scene/use-pagination/index.md","filePath":"source/scene/use-pagination/index.md","lastUpdated":1763381444000}');const n=a({name:"source/scene/use-pagination/index.md"},[["render",function(a,s,n,r,i,h){return o(),e("div",null,[...s[0]||(s[0]=[t("",6)])])}]]);export{s as __pageData,n as default};
+//# sourceMappingURL=source_scene_use-pagination_index.md.D5dR8noO.js.map

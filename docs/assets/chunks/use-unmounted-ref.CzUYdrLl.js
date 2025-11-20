@@ -1,0 +1,2 @@
+import{j as t}from"./jsx-runtime.DKusaIV_.js";import{r}from"./index.D8Pj_a7y.js";import{u as e}from"./index.DCZZq3td.js";import"./framework.AQ_qBFi5.js";const o=()=>{const o=e();return r.useEffect(()=>{setTimeout(()=>{o.current},3e3)},[]),t.jsx("p",{children:"Hello World!"})},s=()=>{const[e,s]=r.useState(!0);return t.jsxs(t.Fragment,{children:[t.jsx("button",{type:"button",onClick:()=>s(!e),children:e?"unmount":"mount"}),e&&t.jsx(o,{})]})};export{s as default};
+//# sourceMappingURL=use-unmounted-ref.CzUYdrLl.js.map

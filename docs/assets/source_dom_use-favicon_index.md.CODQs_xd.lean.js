@@ -1,0 +1,2 @@
+import{_ as a,c as e,o,ag as r}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"useFavicon","description":"","frontmatter":{},"headers":[],"relativePath":"source/dom/use-favicon/index.md","filePath":"source/dom/use-favicon/index.md","lastUpdated":1763381444000}');const t=a({name:"source/dom/use-favicon/index.md"},[["render",function(a,s,t,i,n,h){return o(),e("div",null,[...s[0]||(s[0]=[r("",6)])])}]]);export{s as __pageData,t as default};
+//# sourceMappingURL=source_dom_use-favicon_index.md.CODQs_xd.js.map

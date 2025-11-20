@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as r,ag as s}from"./chunks/framework.AQ_qBFi5.js";const o=JSON.parse('{"title":"useInfiniteScroll","description":"","frontmatter":{},"headers":[],"relativePath":"source/scene/use-infinite-scroll/index.md","filePath":"source/scene/use-infinite-scroll/index.md","lastUpdated":1763381444000}');const i=e({name:"source/scene/use-infinite-scroll/index.md"},[["render",function(e,o,i,t,n,l){return r(),a("div",null,[...o[0]||(o[0]=[s("",6)])])}]]);export{o as __pageData,i as default};
+//# sourceMappingURL=source_scene_use-infinite-scroll_index.md.4TAzo10O.js.map

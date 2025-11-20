@@ -1,0 +1,2 @@
+import{j as o}from"./jsx-runtime.DKusaIV_.js";import{u as t}from"./index.zxcWlyZZ.js";import{u as r}from"./index.BibeSFQn.js";import"./tslib.es6.D7VAKcod.js";import"./index.D8Pj_a7y.js";import"./framework.AQ_qBFi5.js";import"./index.BJf5-xxu.js";import"./index.D1PY2-Uk.js";const s=()=>(r(()=>{}),o.jsx("div",{children:"Hello World"})),i=()=>{const[r,{toggle:i}]=t(!1);return o.jsxs(o.Fragment,{children:[o.jsx("button",{type:"button",onClick:i,children:r?"unmount":"mount"}),r&&o.jsx(s,{})]})};export{i as default};
+//# sourceMappingURL=use-unmount.DDrUs1d4.js.map

@@ -1,0 +1,2 @@
+import{_ as a,c as e,o as r,ag as t}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"useRafInterval","description":"","frontmatter":{},"headers":[],"relativePath":"source/effect/use-raf-interval/index.md","filePath":"source/effect/use-raf-interval/index.md","lastUpdated":1763381444000}');const o=a({name:"source/effect/use-raf-interval/index.md"},[["render",function(a,s,o,n,l,h){return r(),e("div",null,[...s[0]||(s[0]=[t("",6)])])}]]);export{s as __pageData,o as default};
+//# sourceMappingURL=source_effect_use-raf-interval_index.md.CPj6TPOx.js.map

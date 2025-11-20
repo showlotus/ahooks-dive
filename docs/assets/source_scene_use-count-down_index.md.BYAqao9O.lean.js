@@ -1,0 +1,2 @@
+import{_ as e,c as a,o,ag as t}from"./chunks/framework.AQ_qBFi5.js";const s=JSON.parse('{"title":"useCountDown","description":"","frontmatter":{},"headers":[],"relativePath":"source/scene/use-count-down/index.md","filePath":"source/scene/use-count-down/index.md","lastUpdated":1763381444000}');const n=e({name:"source/scene/use-count-down/index.md"},[["render",function(e,s,n,r,u,h){return o(),a("div",null,[...s[0]||(s[0]=[t("",6)])])}]]);export{s as __pageData,n as default};
+//# sourceMappingURL=source_scene_use-count-down_index.md.BYAqao9O.js.map

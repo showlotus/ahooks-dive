@@ -1,0 +1,2 @@
+import{_ as e,c as a,o as r,ag as s}from"./chunks/framework.AQ_qBFi5.js";const t=JSON.parse('{"title":"useHistoryTravel","description":"","frontmatter":{},"headers":[],"relativePath":"source/scene/use-history-travel/index.md","filePath":"source/scene/use-history-travel/index.md","lastUpdated":1763381444000}');const o=e({name:"source/scene/use-history-travel/index.md"},[["render",function(e,t,o,h,i,l){return r(),a("div",null,[...t[0]||(t[0]=[s("",6)])])}]]);export{t as __pageData,o as default};
+//# sourceMappingURL=source_scene_use-history-travel_index.md.CyubsB2U.js.map
