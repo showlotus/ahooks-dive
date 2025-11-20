@@ -219,7 +219,7 @@ export default defineConfig({
             link: '/source/advanced/use-event-emitter/',
           },
           {
-            text: 'useIsomorphicLayoutEffect 🔄',
+            text: 'useIsomorphicLayoutEffect',
             link: '/source/advanced/use-isomorphic-layout-effect/',
           },
           { text: 'useLatest', link: '/source/advanced/use-latest/' },
