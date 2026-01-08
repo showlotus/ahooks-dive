@@ -1,0 +1,52 @@
+---
+title: Components
+description: Some builtin components
+---
+
+# [useBoolean](https://ahooks.js.org/zh-CN/hooks/use-boolean#useboolean)
+
+## 📖 用法
+
+用来管理布尔值的 Hook。
+
+<ViewCode src="./use-boolean/demo.tsx" />
+
+## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useBoolean/index.ts)
+
+::: code-group
+
+{/* prettier-ignore */}
+```ts [useBoolean.ts]
+import { useMemo } from 'react';
+import useToggle from '../useToggle';
+
+export interface Actions {
+  setTrue: () => void;
+  setFalse: () => void;
+  set: (value: boolean) => void;
+  toggle: () => void;
+}
+
+export default function useBoolean(defaultValue = false): [boolean, Actions] {
+  const [state, { toggle, set }] = useToggle(!!defaultValue);
+
+  const actions: Actions = useMemo(() => {
+    const setTrue = () => set(true);
+    const setFalse = () => set(false);
+    return {
+      toggle,
+      set: (v) => set(!!v),
+      setTrue,
+      setFalse,
+    };
+  }, []);
+
+  return [state, actions];
+}
+```
+
+:::
+
+## 🔍 解读
+
+_TODO_

@@ -1,0 +1,69 @@
+---
+title: Components
+description: Some builtin components
+---
+
+# useWatch
+
+```ts
+function useWatch(source, callback, options = {}) {
+  const { immediate = false } = options
+  const isActive = useRef(true)
+  const unwatch = useRef(() => {})
+
+  useEffect(() => {
+    if (!isActive.current) return
+
+    let oldValue = source()
+
+    // 立即执行一次
+    if (immediate) {
+      callback(oldValue, undefined)
+    }
+
+    const stop = () => {
+      isActive.current = false
+      unwatch.current?.()
+    }
+
+    unwatch.current = () => {
+      isActive.current = false
+    }
+
+    return () => {
+      if (isActive.current) {
+        const newValue = source()
+        if (newValue !== oldValue) {
+          callback(newValue, oldValue)
+        }
+      }
+    }
+  }, [source, callback, immediate])
+
+  return () => {
+    isActive.current = false
+    unwatch.current?.()
+  }
+}
+
+// 使用示例
+function MyComponent() {
+  const [count, setCount] = useState(0)
+
+  const stopWatch = useWatch(
+    () => count, // 获取值函数
+    (newVal, oldVal) => {
+      console.log(`count 从 ${oldVal} 变为 ${newVal}`)
+    },
+    { immediate: true },
+  )
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(c => c + 1)}>增加</button>
+      <button onClick={stopWatch}>停止监听</button>
+    </div>
+  )
+}
+```

@@ -9,11 +9,15 @@ export function remarkViewCode(options?: { root?: string }) {
   const { root = process.cwd() } = options ?? {}
   return (tree: any, file: any) => {
     let componentIdx = 0
+    let virtualIdx = 0
+    let sourceCodeIdx = 0
     const imports: any[] = []
     const dir = path.dirname(file.path)
     const tasks: any[] = []
 
     const ROOT_CACHE_DIR = '.dev/view-code-cache'
+
+    return
 
     visit(tree, 'mdxJsxFlowElement', (node: any) => {
       if (node.name !== displayName) return
@@ -25,7 +29,7 @@ export function remarkViewCode(options?: { root?: string }) {
 
       const absolutePath = path.resolve(dir, srcAttr.value)
       const importPath = './' + path.relative(dir, absolutePath)
-      const varName = `${displayName}Component_${componentIdx++}`
+      const varName = `${displayName}_ActualComponent_${componentIdx++}`
 
       // 记录 import 语句
       imports.push({ varName, importPath })
@@ -42,7 +46,7 @@ export function remarkViewCode(options?: { root?: string }) {
       if (!fs.existsSync(cacheDir)) {
         fs.mkdirSync(cacheDir, { recursive: true })
       }
-      const cacheFileName = path.basename(absolutePath).replace(/\.[^/.]+$/, '') + '.tsx.virtual'
+      const cacheFileName = `${displayName}_VirtualComponent_${virtualIdx++}.tsx.virtual`
       const cacheFilePath = path.resolve(cacheDir, cacheFileName)
       const relativeCacheDirPath = path.relative(dir, cacheDir)
       if (fs.existsSync(cacheFilePath)) {
@@ -50,7 +54,7 @@ export function remarkViewCode(options?: { root?: string }) {
       }
       fs.linkSync(absolutePath, cacheFilePath)
       const sourceCodePath = path.join(relativeCacheDirPath, cacheFileName)
-      const sourceCodeName = `${displayName}ComponentSourceCode_${componentIdx++}`
+      const sourceCodeName = `${displayName}_ComponentSourceCode_${sourceCodeIdx++}`
       imports.push({ varName: sourceCodeName, importPath: sourceCodePath })
       node.attributes.push(generateExpressionAttribute('code', sourceCodeName))
     })

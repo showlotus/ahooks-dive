@@ -1,7 +1,7 @@
 {
-  "name": "fumadocs-template",
+  "name": "ahooks-dive",
   "version": "0.1.0",
-  "description": "A modern documentation website template built with Next.js and Fumadocs",
+  "description": "ahooks dive 是一个深入剖析 ahooks 源码与用法的文档站点，帮助开发者更好地理解和应用 ahooks",
   "private": true,
   "packageManager": "pnpm@8.15.4",
   "type": "module",
@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/showlotus/fumadocs-template.git"
+    "url": "https://github.com/showlotus/ahooks-dive.git"
   },
-  "homepage": "https://github.com/showlotus/fumadocs-template",
+  "homepage": "https://github.com/showlotus/ahooks-dive",
   "bugs": {
-    "url": "https://github.com/showlotus/fumadocs-template/issues"
+    "url": "https://github.com/showlotus/ahooks-dive/issues"
   },
   "author": "showlotus",
   "license": "MIT",

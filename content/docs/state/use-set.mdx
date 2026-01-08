@@ -1,0 +1,109 @@
+---
+title: Components
+description: Some builtin components
+---
+
+# [useSet](https://ahooks.js.org/zh-CN/hooks/use-set)
+
+## 📖 用法
+
+管理 `Set` 类型状态。
+
+<ViewCode src="./demo.tsx" />
+
+## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useSet/index.ts)
+
+{/* prettier-ignore */}
+```ts title="useSet.ts"
+import { useState } from 'react';
+import useMemoizedFn from '../useMemoizedFn';
+
+function useSet<K>(initialValue?: Iterable<K>) {
+  const getInitValue = () => new Set(initialValue);
+  const [set, setSet] = useState<Set<K>>(getInitValue);
+
+  const updateSet = (updater: (set: Set<K>) => Set<K>) => {
+    setSet((prevSet) => updater(new Set(prevSet)));
+  };
+
+  const add = (key: K) => {
+    if (set.has(key)) {
+      return;
+    }
+    updateSet((newSet) => {
+      newSet.add(key);
+      return newSet;
+    });
+  };
+
+  const remove = (key: K) => {
+    if (!set.has(key)) {
+      return;
+    }
+    updateSet((newSet) => {
+      newSet.delete(key);
+      return newSet;
+    });
+  };
+
+  const reset = () => setSet(getInitValue());
+
+  return [
+    set,
+    {
+      add: useMemoizedFn(add),
+      remove: useMemoizedFn(remove),
+      reset: useMemoizedFn(reset),
+    },
+  ] as const;
+}
+
+export default useSet;
+```
+
+::: tip
+关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)。
+:::
+
+## 🔍 解读
+
+在不了解 `useSet` 之前，如果使用 `useState` 初始化一个 `Set` 类型的值，更新时需要怎么做呢？
+
+基于 `React` 的渲染逻辑，每次更新都需要传入一个新的 `Set` 对象，才能保证页面可以更新。
+
+也即：
+
+{/* {6,12} */}
+
+```ts
+const [set, setSet] = useState(new Set())
+
+// add
+setSet(prev => {
+  prev.add('foo')
+  return new Set(prev) // 返回一个新的 Set 对象
+})
+
+// remove
+setSet(prev => {
+  prev.delete('foo')
+  return new Set(prev) // 返回一个新的 Set 对象
+})
+```
+
+而 `useSet` 内部也是这样实现的，只不过为了调用方便，内部将 `add`、`remove` 和 `reset` 方法进行了封装。
+
+在内部会定义一个 `getInitValue` 函数，函数的执行结果返回当前初始值，`reset` 方法内部就是调用 `getInitValue` 函数，对 `Set` 对象进行重置。
+
+```ts
+function useSet<K>(initialValue?: Iterable<K>) {
+  const getInitValue = () => new Set(initialValue)
+  const [set, setSet] = useState<Set<K>>(getInitValue)
+
+  /* ... */
+
+  const reset = () => setSet(getInitValue())
+
+  /* ... */
+}
+```
