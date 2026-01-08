@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+/* 设置 Tab 下的 Code 面板的背景色 */
+.view-code-container div[role='tabpanel'][id*='code'] figure {
+  background-color: transparent;
+}
+
+.custom-code-block pre,
+.custom-code-block code {
+  border: none;
+  background-color: transparent !important;
+}
+
+.custom-code-block code {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-code-block code .line {
+  line-height: var(--text-sm--line-height);
+}
