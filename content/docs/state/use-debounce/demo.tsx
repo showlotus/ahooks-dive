@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+'use client'
+
+import { useState } from 'react'
 import { useDebounce } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [value, setValue] = useState<string>()
   const debouncedValue = useDebounce(value, { wait: 500 })
 
@@ -14,9 +16,7 @@ export default () => {
         style={{ width: 280 }}
       />
       <p style={{ marginTop: 16 }}>Value: {value}</p>
-      <p style={{ marginTop: 16 }}>
-        DebouncedValue（延时 500ms 后更新）: {debouncedValue}
-      </p>
+      <p style={{ marginTop: 16 }}>DebouncedValue（延时 500ms 后更新）: {debouncedValue}</p>
     </div>
   )
 }

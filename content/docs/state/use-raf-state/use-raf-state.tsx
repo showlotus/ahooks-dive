@@ -1,7 +1,9 @@
-import { useRafState } from 'ahooks'
-import React, { useEffect, useState } from 'react'
+'use client'
 
-const WithUseState = ({ times = 1 }) => {
+import { useRafState } from 'ahooks'
+import { useEffect, useState } from 'react'
+
+const WithUseState = function ({ times = 1 }) {
   const [state, setState] = useState(0)
   useEffect(() => {
     const onScroll = () => {
@@ -24,7 +26,7 @@ const WithUseState = ({ times = 1 }) => {
   )
 }
 
-const WithUseRafState = ({ times = 1 }) => {
+const WithUseRafState = function ({ times = 1 }) {
   const [state, setState] = useRafState(0)
   useEffect(() => {
     const onScroll = () => {
@@ -47,7 +49,7 @@ const WithUseRafState = ({ times = 1 }) => {
   )
 }
 
-export default () => {
+export default function Demo() {
   return (
     <div>
       滚动页面，观察两个组件更新次数的差异

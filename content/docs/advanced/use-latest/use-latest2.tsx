@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+'use client'
 
-export default () => {
+import { useState, useEffect } from 'react'
+
+export default function Demo() {
   const [defaultCount, setDefaultCount] = useState(0)
 
   useEffect(() => {

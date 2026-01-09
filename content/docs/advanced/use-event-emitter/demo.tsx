@@ -1,4 +1,6 @@
-import React, { useRef, FC } from 'react'
+'use client'
+
+import { useRef, FC } from 'react'
 import { useEventEmitter } from 'ahooks'
 import { EventEmitter } from 'ahooks/lib/useEventEmitter'
 
@@ -28,15 +30,11 @@ const InputBox: FC<{
     inputRef.current.focus()
   })
   return (
-    <input
-      ref={inputRef}
-      placeholder="Enter reply"
-      style={{ width: '100%', padding: '4px' }}
-    />
+    <input ref={inputRef} placeholder="Enter reply" style={{ width: '100%', padding: '4px' }} />
   )
 }
 
-export default function () {
+export default function Demo() {
   const focus$ = useEventEmitter()
   return (
     <>

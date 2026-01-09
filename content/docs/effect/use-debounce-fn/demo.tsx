@@ -1,7 +1,9 @@
-import { useDebounceFn } from 'ahooks'
-import React, { useState } from 'react'
+'use client'
 
-export default () => {
+import { useDebounceFn } from 'ahooks'
+import { useState } from 'react'
+
+export default function Demo() {
   const [value, setValue] = useState(0)
   const { run } = useDebounceFn(
     () => {
@@ -9,7 +11,7 @@ export default () => {
     },
     {
       wait: 500,
-    }
+    },
   )
 
   return (

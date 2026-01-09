@@ -1,7 +1,8 @@
-import React from 'react'
+'use client'
+
 import { useReactive } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const state = useReactive({
     count: 0,
     inputVal: '',

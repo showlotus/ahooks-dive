@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+'use client'
+
+import { useState } from 'react'
 import { useThrottle } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [value, setValue] = useState<string>()
   const throttledValue = useThrottle(value, { wait: 500 })
 

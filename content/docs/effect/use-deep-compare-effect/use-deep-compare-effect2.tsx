@@ -1,4 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react'
+'use client'
+
+import { useEffect, useState, useRef } from 'react'
 
 export const useCustomCompareEffect = (effect, deps, isEqual = Object.is) => {
   const depsRef = useRef(undefined)
@@ -10,7 +12,7 @@ export const useCustomCompareEffect = (effect, deps, isEqual = Object.is) => {
   useEffect(effect, [signalRef.current])
 }
 
-export default () => {
+export default function Demo() {
   const [count, setCount] = useState(0)
   const effectCountRef = useRef(0)
   const customCompareCountRef = useRef(0)
@@ -27,7 +29,7 @@ export default () => {
     // 当大于等于 5 时，不再触发 effect
     (newDeps, oldDeps) => {
       return newDeps[0] >= 5
-    }
+    },
   )
 
   return (

@@ -1,7 +1,9 @@
-import { usePrevious } from 'ahooks'
-import React, { useState } from 'react'
+'use client'
 
-export default () => {
+import { usePrevious } from 'ahooks'
+import { useState } from 'react'
+
+export default function Demo() {
   const [count, setCount] = useState(0)
   const previous = usePrevious(count)
   return (
@@ -11,11 +13,7 @@ export default () => {
       <button type="button" onClick={() => setCount(c => c + 1)}>
         increase
       </button>
-      <button
-        type="button"
-        style={{ marginLeft: 8 }}
-        onClick={() => setCount(c => c - 1)}
-      >
+      <button type="button" style={{ marginLeft: 8 }} onClick={() => setCount(c => c - 1)}>
         decrease
       </button>
     </>

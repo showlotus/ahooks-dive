@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { useMount, useBoolean } from 'ahooks'
 
@@ -9,7 +11,7 @@ const MyComponent = () => {
   return <div>Hello World</div>
 }
 
-export default () => {
+export default function Demo() {
   const [state, { toggle }] = useBoolean(false)
 
   return (

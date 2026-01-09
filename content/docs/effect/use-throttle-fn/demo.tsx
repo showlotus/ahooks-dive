@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+'use client'
+
+import { useState } from 'react'
 import { useThrottleFn } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [value, setValue] = useState(0)
   const { run } = useThrottleFn(
     () => {
       setValue(value + 1)
     },
-    { wait: 500 }
+    { wait: 500 },
   )
 
   return (

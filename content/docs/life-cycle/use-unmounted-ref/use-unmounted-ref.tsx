@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+'use client'
+
+import { useEffect, useState } from 'react'
 import { useUnmountedRef } from 'ahooks'
 
 const MyComponent = () => {
@@ -16,7 +18,7 @@ const MyComponent = () => {
   return <p>Hello World!</p>
 }
 
-export default () => {
+export default function Demo() {
   const [state, setState] = useState(true)
 
   return (

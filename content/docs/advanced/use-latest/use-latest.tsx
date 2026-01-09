@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+'use client'
+
+import { useState, useEffect } from 'react'
 import { useLatest } from 'ahooks'
 
-export default () => {
+export default function UseLatestDemo() {
   const [useLatestCount, setUseLatestCount] = useState(0)
   const [defaultCount, setDefaultCount] = useState(0)
 

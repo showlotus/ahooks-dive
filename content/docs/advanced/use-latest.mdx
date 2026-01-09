@@ -1,5 +1,5 @@
 ---
-title: Components
+title: useLatest
 description: Some builtin components
 ---
 
@@ -18,7 +18,7 @@ description: Some builtin components
 如果将 `setDefaultCount` 传入一个更新函数，那么就能解决这个问题。
 
 ```mdx title="demo.tsx"
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export default () => {
   const [defaultCount, setDefaultCount] = useState(0)
@@ -60,7 +60,6 @@ export default useLatest;
 
 使用 `useRef` 定义一个 `ref` 对象，将入参赋值给 `ref` 对象，然后返回这个 `ref` 对象。相较于 `useRef`，多了一行赋值的代码，确保每次获取的值都是最新的
 
-::: code-group
 
 {/* prettier-ignore */}
 ```ts [useLatest.ts]
@@ -77,7 +76,7 @@ export default useLatest;
 ```
 
 ```tsx title="demo.tsx"
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useLatest } from 'ahooks'
 
 export default () => {

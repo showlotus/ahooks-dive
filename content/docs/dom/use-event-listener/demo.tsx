@@ -1,7 +1,9 @@
-import React, { useState, useRef } from 'react'
+'use client'
+
+import { useState, useRef } from 'react'
 import { useEventListener } from 'ahooks'
 
-export default () => {
+export default function UseEventListenerDemo() {
   const [value, setValue] = useState(0)
   const ref = useRef(null)
 
@@ -10,7 +12,7 @@ export default () => {
     () => {
       setValue(value + 1)
     },
-    { target: ref }
+    { target: ref },
   )
 
   return (

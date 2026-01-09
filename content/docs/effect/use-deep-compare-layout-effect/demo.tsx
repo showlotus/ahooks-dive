@@ -1,7 +1,9 @@
-import React, { useLayoutEffect, useState, useRef } from 'react'
+'use client'
+
+import { useLayoutEffect, useState, useRef } from 'react'
 import { useDeepCompareLayoutEffect } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [, setCount] = useState(0)
   const effectCountRef = useRef(0)
   const deepCompareCountRef = useRef(0)

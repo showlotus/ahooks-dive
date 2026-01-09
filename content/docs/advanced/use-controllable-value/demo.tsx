@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+'use client'
+
+import { useState } from 'react'
 import { useControllableValue } from 'ahooks'
 
 function Input(props: { value?: string; onChange?: (value: string) => void }) {
@@ -8,16 +10,8 @@ function Input(props: { value?: string; onChange?: (value: string) => void }) {
 
   return (
     <>
-      <input
-        value={state}
-        onChange={e => setState(e.target.value)}
-        style={{ width: 300 }}
-      />
-      <button
-        type="button"
-        onClick={() => setState('')}
-        style={{ marginLeft: 8 }}
-      >
+      <input value={state} onChange={e => setState(e.target.value)} style={{ width: 300 }} />
+      <button type="button" onClick={() => setState('')} style={{ marginLeft: 8 }}>
         Clear By Self
       </button>
     </>

@@ -1,7 +1,8 @@
-import React from 'react'
+'use client'
+
 import { useBoolean } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [state, { toggle, setTrue, setFalse }] = useBoolean(true)
 
   return (

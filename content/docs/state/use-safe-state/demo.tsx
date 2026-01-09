@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+'use client'
+
+import { useEffect, useState } from 'react'
 import { useSafeState } from 'ahooks'
 
-const Child = () => {
+const Child = function () {
   const [value, setValue] = useSafeState<string>()
 
   useEffect(() => {
@@ -15,14 +17,12 @@ const Child = () => {
   return <div>{text}</div>
 }
 
-export default () => {
+export default function Demo() {
   const [visible, setVisible] = useState(true)
 
   return (
     <div>
-      <button onClick={() => setVisible(!visible)}>
-        {visible ? 'Unmount' : 'Mount'}
-      </button>
+      <button onClick={() => setVisible(!visible)}>{visible ? 'Unmount' : 'Mount'}</button>
       {visible && <Child />}
     </div>
   )
