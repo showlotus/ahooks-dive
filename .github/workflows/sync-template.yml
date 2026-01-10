@@ -29,3 +29,10 @@ jobs:
           source_repo_path: showlotus/fumadocs-template
           upstream_branch: master # defaults to main
           pr_labels: template_sync # defaults to template_sync
+          # 设置 prune 为 false，防止删除目标仓库的额外文件
+          prune: false
+          # 明确排除工作流文件
+          exclude: |
+            .github/workflows/deploy.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
