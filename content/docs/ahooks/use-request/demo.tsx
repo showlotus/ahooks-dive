@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+
 import { useRequest } from 'ahooks'
 
 function getUsername(): Promise<string> {
@@ -9,7 +10,7 @@ function getUsername(): Promise<string> {
   })
 }
 
-export default () => {
+export default function Demo() {
   const { data, error, loading } = useRequest(getUsername)
 
   if (error) {

@@ -2,6 +2,36 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 
+:root {
+  --cn-color: hsl(41, 100%, 40%);
+  --en-color: hsl(217, 100%, 58%);
+  --ahooks-color: hsl(225, 62%, 55%);
+  --extra-color: hsl(348, 100%, 61%);
+}
+
+.dark {
+  --cn-color: #fff383;
+  --en-color: #a9ceff;
+  --ahooks-color: #5e93f7;
+  --extra-color: #ff6b6b;
+}
+
+.en {
+  --color-fd-primary: var(--en-color);
+}
+
+.cn {
+  --color-fd-primary: var(--cn-color);
+}
+
+.ahooks {
+  --color-fd-primary: var(--ahooks-color);
+}
+
+.extra {
+  --color-fd-primary: var(--extra-color);
+}
+
 /* 设置 Tab 下的 Code 面板的背景色 */
 .view-code-container div[role='tabpanel'][id*='code'] figure {
   background-color: transparent;

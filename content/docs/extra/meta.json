@@ -1,0 +1,9 @@
+{
+  "title": "Extra",
+  "description": "The Extra docs",
+  "icon": "Cuboid",
+  "root": true,
+  "pages": [
+    "..."
+  ]
+}
