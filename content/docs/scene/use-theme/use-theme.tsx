@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+'use client'
+
+import { useEffect } from 'react'
 import { useTheme } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const { theme, themeMode, setThemeMode } = useTheme({
     localStorageKey: 'themeMode',
   })

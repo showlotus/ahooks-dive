@@ -1,7 +1,8 @@
-import React from 'react'
+'use client'
+
 import { useSet } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [set, { add, remove, reset }] = useSet(['Hello'])
 
   return (

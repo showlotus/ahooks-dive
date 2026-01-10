@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+
 import { useUnmount, useBoolean } from 'ahooks'
 
 const MyComponent = () => {
@@ -9,7 +10,7 @@ const MyComponent = () => {
   return <div>Hello World</div>
 }
 
-export default () => {
+export default function Demo() {
   const [state, { toggle }] = useBoolean(false)
 
   return (

@@ -1,7 +1,8 @@
-import React from 'react'
+'use client'
+
 import { useToggle } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [state, { toggle, setLeft, setRight }] = useToggle()
 
   return (

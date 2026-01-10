@@ -1,7 +1,9 @@
-import React, { useLayoutEffect, useState } from 'react'
+'use client'
+
+import { useLayoutEffect, useState } from 'react'
 import { useUpdateLayoutEffect } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [count, setCount] = useState(0)
   const [layoutEffectCount, setLayoutEffectCount] = useState(0)
   const [updateLayoutEffectCount, setUpdateLayoutEffectCount] = useState(0)

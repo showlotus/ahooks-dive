@@ -9,11 +9,9 @@ description: Some builtin components
 
 组件卸载后，不再更新状态。
 
-<ViewCode src="./demo.tsx" />
+<ViewCode src="./use-safe-state/demo.tsx" />
 
 ## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useSafeState/index.ts)
-
-::: code-group
 
 {/* prettier-ignore */}
 ```ts [useSafeState.ts]
@@ -41,8 +39,6 @@ function useSafeState<S>(initialState?: S | (() => S)) {
 
 export default useSafeState;
 ```
-
-:::
 
 ## 🔍 解读
 

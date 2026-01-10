@@ -1,12 +1,13 @@
-import { useUpdate } from 'ahooks'
-import React from 'react'
+'use client'
 
-export default () => {
+import { useUpdate } from 'ahooks'
+
+export default function Demo() {
   const update = useUpdate()
 
   return (
     <>
-      <div>Time: {Date.now()}</div>
+      <div>Time: {new Date().toISOString()}</div>
       <button type="button" onClick={update} style={{ marginTop: 8 }}>
         update
       </button>

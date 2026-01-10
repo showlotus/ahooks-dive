@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+'use client'
+
+import { useState } from 'react'
 import { useThrottleEffect } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [value, setValue] = useState('hello')
   const [records, setRecords] = useState<string[]>([])
   useThrottleEffect(
@@ -11,7 +13,7 @@ export default () => {
     [value],
     {
       wait: 1000,
-    }
+    },
   )
   return (
     <div>

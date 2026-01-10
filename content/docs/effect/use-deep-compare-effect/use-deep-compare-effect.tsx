@@ -1,7 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react'
+'use client'
+
+import { useEffect, useState, useRef } from 'react'
 import { useDeepCompareEffect } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [count, setCount] = useState(0)
   const effectCountRef = useRef(0)
   const deepCompareCountRef = useRef(0)

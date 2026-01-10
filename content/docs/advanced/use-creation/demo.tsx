@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+'use client'
+
+import { useState } from 'react'
 import { useCreation } from 'ahooks'
 
 class Foo {
@@ -9,7 +11,7 @@ class Foo {
   data: number
 }
 
-export default function () {
+export default function Demo() {
   const foo = useCreation(() => new Foo(), [])
   const [, setFlag] = useState({})
   return (

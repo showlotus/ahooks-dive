@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+'use client'
+
+import { useState, useEffect } from 'react'
 
 function useDebounce<T>(value: T, options?: { wait: number }) {
   const wait = options?.wait ?? 1000
@@ -20,7 +22,7 @@ function useDebounce<T>(value: T, options?: { wait: number }) {
   return debouncedValue
 }
 
-export default () => {
+export default function Demo() {
   const [value, setValue] = useState<string>()
   const debouncedValue = useDebounce(value, { wait: 500 })
 
@@ -33,9 +35,7 @@ export default () => {
         style={{ width: 280 }}
       />
       <p style={{ marginTop: 16 }}>Value: {value}</p>
-      <p style={{ marginTop: 16 }}>
-        DebouncedValue（延时 500ms 后更新）: {debouncedValue}
-      </p>
+      <p style={{ marginTop: 16 }}>DebouncedValue（延时 500ms 后更新）: {debouncedValue}</p>
     </div>
   )
 }

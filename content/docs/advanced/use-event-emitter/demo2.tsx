@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef, useState } from 'react'
 
 type Subscription<T> = (val: T) => void
@@ -45,11 +47,7 @@ function useMultiEventEmitter<T>() {
   return ref.current
 }
 
-function Child1({
-  multiEventEmitter,
-}: {
-  multiEventEmitter: MultiEventEmitter<string>
-}) {
+function Child1({ multiEventEmitter }: { multiEventEmitter: MultiEventEmitter<string> }) {
   const [inputMessage, setInputMessage] = useState<string>('')
   const [messages, setMessages] = useState<string[]>([])
   multiEventEmitter.useSubscription('chat-to-child1', message => {
@@ -67,10 +65,7 @@ function Child1({
           onChange={e => setInputMessage(e.target.value)}
           onKeyDown={e => {
             if (e.key === 'Enter') {
-              multiEventEmitter.emit(
-                'chat-to-child2',
-                `Child1: ${inputMessage}`
-              )
+              multiEventEmitter.emit('chat-to-child2', `Child1: ${inputMessage}`)
               setInputMessage('')
             }
           }}
@@ -85,11 +80,7 @@ function Child1({
   )
 }
 
-function Child2({
-  multiEventEmitter,
-}: {
-  multiEventEmitter: MultiEventEmitter<string>
-}) {
+function Child2({ multiEventEmitter }: { multiEventEmitter: MultiEventEmitter<string> }) {
   const [inputMessage, setInputMessage] = useState<string>('')
   const [messages, setMessages] = useState<string[]>([])
   multiEventEmitter.useSubscription('chat-to-child2', (message: string) => {
@@ -107,10 +98,7 @@ function Child2({
           onChange={e => setInputMessage(e.target.value)}
           onKeyDown={e => {
             if (e.key === 'Enter') {
-              multiEventEmitter.emit(
-                'chat-to-child1',
-                `Child2: ${inputMessage}`
-              )
+              multiEventEmitter.emit('chat-to-child1', `Child2: ${inputMessage}`)
               setInputMessage('')
             }
           }}
@@ -125,7 +113,7 @@ function Child2({
   )
 }
 
-export default function () {
+export default function Demo() {
   const multiEventEmitter = useMultiEventEmitter<string>()
   return (
     <div

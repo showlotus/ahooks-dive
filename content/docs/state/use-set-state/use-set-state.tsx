@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+
 import { useSetState } from 'ahooks'
 
 interface State {
@@ -6,7 +7,7 @@ interface State {
   [key: string]: any
 }
 
-export default () => {
+export default function Demo() {
   const [state, setState] = useSetState<State>({
     hello: '',
   })
@@ -18,11 +19,7 @@ export default () => {
         <button type="button" onClick={() => setState({ hello: 'world' })}>
           set hello
         </button>
-        <button
-          type="button"
-          onClick={() => setState({ foo: 'bar' })}
-          style={{ margin: '0 8px' }}
-        >
+        <button type="button" onClick={() => setState({ foo: 'bar' })} style={{ margin: '0 8px' }}>
           set foo
         </button>
       </p>

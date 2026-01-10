@@ -1,7 +1,9 @@
-import React, { useState, useCallback } from 'react'
+'use client'
+
+import { useState, useCallback } from 'react'
 import { useMemoizedFn } from 'ahooks'
 
-export default () => {
+export default function Demo() {
   const [count, setCount] = useState(0)
 
   const callbackFn = useCallback(() => {
