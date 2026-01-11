@@ -30,11 +30,13 @@ const items = [
   },
   {
     name: 'ahooks',
-    value: 'The ahooks docs',
+    value: 'ahooks',
+    description: 'The ahooks docs',
   },
   {
     name: 'extra',
-    value: 'The extra docs',
+    value: 'extra',
+    description: 'The extra docs',
   },
 ]
 
