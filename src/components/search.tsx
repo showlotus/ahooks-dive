@@ -29,14 +29,12 @@ const items = [
     value: undefined,
   },
   {
-    name: 'English',
-    value: 'en',
-    description: 'The English docs',
+    name: 'ahooks',
+    value: 'The ahooks docs',
   },
   {
-    name: 'Chinese',
-    value: 'cn',
-    description: 'The Chinese docs',
+    name: 'extra',
+    value: 'The extra docs',
   },
 ]
 
