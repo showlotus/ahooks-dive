@@ -1,15 +1,18 @@
 ---
 title: useLatest
-description: Some builtin components
+description: 返回最新的值
 ---
 
-# [useLatest](https://ahooks.js.org/zh-CN/hooks/use-latest#uselatest)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-latest#uselatest" text="ahooks 文档" />
 
-## 📖 用法
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useLatest/index.ts"
+  text="源码"
+/>
 
-返回最新的值。
+## 用法
 
-<ViewCode src="./use-latest/use-latest.tsx" />
+<ViewCode src="./use-latest/demo1.tsx" />{' '}
 
 为什么 `demo.tsx` 中为什么 `defaultCount` 没有更新？
 
@@ -17,30 +20,30 @@ description: Some builtin components
 
 如果将 `setDefaultCount` 传入一个更新函数，那么就能解决这个问题。
 
-```mdx title="demo.tsx"
+```tsx title="demo.tsx"
 import { useState, useEffect } from 'react'
 
 export default () => {
   const [defaultCount, setDefaultCount] = useState(0)
 
-useEffect(() => {
-const interval = setInterval(() => {
-setDefaultCount(count => count + 1) // [!code highlight]
-}, 1000)
-return () => clearInterval(interval)
-}, [])
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDefaultCount(count => count + 1) // [!code highlight]
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [])
 
-return (
-
-<>
-  <p>count(default): {defaultCount}</p>
-</>
-) }
+  return (
+    <>
+      <p>count(default): {defaultCount}</p>
+    </>
+  )
+}
 ```
 
-<ViewCode src="./use-latest/use-latest2.tsx" />
+<ViewCode src="./use-latest/demo2.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useLatest/index.ts)
+## 源码
 
 {/* prettier-ignore */}
 ```ts title="useLatest.ts"
@@ -56,13 +59,12 @@ function useLatest<T>(value: T) {
 export default useLatest;
 ```
 
-## 🔍 解读
+## 解读
 
-使用 `useRef` 定义一个 `ref` 对象，将入参赋值给 `ref` 对象，然后返回这个 `ref` 对象。相较于 `useRef`，多了一行赋值的代码，确保每次获取的值都是最新的
-
+使用 `useRef` 定义一个 `ref` 对象，将入参赋值给 `ref` 对象，然后返回这个 `ref` 对象。相较于 `useRef`，多了一行赋值的代码，确保每次获取的值都是最新的。
 
 {/* prettier-ignore */}
-```ts [useLatest.ts]
+```ts tab="useLatest.ts"
 import { useRef } from 'react';
 
 function useLatest<T>(value: T) {
@@ -75,7 +77,7 @@ function useLatest<T>(value: T) {
 export default useLatest;
 ```
 
-```tsx title="demo.tsx"
+```tsx tab="demo.tsx"
 import { useState, useEffect, useRef } from 'react'
 import { useLatest } from 'ahooks'
 

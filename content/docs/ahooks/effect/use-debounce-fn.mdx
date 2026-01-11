@@ -1,22 +1,22 @@
 ---
-title: Components
-description: Some builtin components
+title: useDebounceFn
+description: 用于管理防抖函数的 Hook
 ---
 
-# [useDebounceFn](https://ahooks.js.org/zh-CN/hooks/use-debounce-fn#usedebouncefn)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-debounce-fn" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useDebounceFn/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
-
-用来处理防抖函数的 Hook。
+## 用法
 
 <ViewCode src="./use-debounce-fn/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useDebounceFn/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useDebounceFn.ts]
+```ts title="useDebounceFn.ts"
 import { debounce } from '../utils/lodash-polyfill';
 import { useMemo } from 'react';
 import type { DebounceOptions } from '../useDebounce/debounceOptions';
@@ -64,13 +64,12 @@ function useDebounceFn<T extends noop>(fn: T, options?: DebounceOptions) {
 export default useDebounceFn;
 ```
 
-:::
+## 解读
 
-## 🔍 解读
-
-::: tip
-关于 `useLatest`、`useUnmount`，可以查看对应文档：[useLatest](../../advanced/use-latest/)、[useUnmount](../../life-cycle/use-unmount/)。
-:::
+<Callout>
+  关于
+  `useLatest`、`useUnmount`，可以查看对应文档：[useLatest](../../advanced/use-latest/)、[useUnmount](../../life-cycle/use-unmount/)。
+</Callout>
 
 {/* prettier-ignore */}
 ```ts

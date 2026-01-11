@@ -1,20 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: usePrevious
+description: 用于保存上一次状态的 Hook
 ---
 
-# [usePrevious](https://ahooks.js.org/zh-CN/hooks/use-previous)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-previous" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/usePrevious/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 保存上一次状态的 Hook。
 
 <ViewCode src="./use-previous/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/usePrevious/index.ts)
+## 源码
 
 {/* prettier-ignore */}
-```ts [usePrevious.ts]
+```ts title="usePrevious.ts"
 import { useRef } from 'react';
 
 export type ShouldUpdateFunc<T> = (prev?: T, next?: T) => boolean;
@@ -39,7 +43,7 @@ function usePrevious<T>(
 export default usePrevious;
 ```
 
-## 🔍 解读
+## 解读
 
 在内部定义两个 `ref` 对象，分别用于存储上一次状态和当前状态，并在每次状态更新时，判断当前状态与上一次状态是否不同，如果不同，则更新上一次状态。
 

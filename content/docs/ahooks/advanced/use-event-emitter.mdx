@@ -3,16 +3,19 @@ title: useEventEmitter
 description: 创建一个事件发射器，用于在组件之间传递事件。
 ---
 
-# [useEventEmitter](https://ahooks.js.org/zh-CN/hooks/use-event-emitter)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-event-emitter" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useEventEmitter/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 创建一个事件发射器，用于在组件之间传递事件。
 
 <ViewCode src="./use-event-emitter/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useEventEmitter/index.ts)
-
+## 源码
 
 {/* prettier-ignore */}
 ```ts [useEventEmitter.ts]
@@ -59,7 +62,7 @@ function useEventEmitter<T = void>() {
 export default useEventEmitter;
 ```
 
-## 🔍 解读
+## 解读
 
 先看 `EventEmitter` 类的实现。
 

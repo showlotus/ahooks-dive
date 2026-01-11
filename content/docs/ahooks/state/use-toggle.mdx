@@ -1,22 +1,25 @@
 ---
-title: Components
-description: Some builtin components
+title: useToggle
+description: 用于管理开关状态的 Hook
+icon: Loader
 ---
 
-# [useToggle](https://ahooks.js.org/zh-CN/hooks/use-toggle#usetoggle)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-toggle#usetoggle" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useToggle/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 用来管理开关状态的 Hook。
 
 <ViewCode src="./use-toggle/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useToggle/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useToggle.ts]
+```ts title="useToggle.ts"
 import { useMemo, useState } from 'react';
 
 export interface Actions<T> {
@@ -59,8 +62,6 @@ function useToggle<D, R>(defaultValue: D = false as unknown as D, reverseValue?:
 export default useToggle;
 ```
 
-:::
-
-## 🔍 解读
+## 解读
 
 _TODO_

@@ -1,20 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useDebounce
+description: 用于处理防抖值的 Hook
 ---
 
-# [useDebounce](https://ahooks.js.org/zh-CN/hooks/use-raf-state#userafstate)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-raf-state#userafstate" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useDebounce/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 用来处理防抖值的 Hook。
 
 <ViewCode src="./use-debounce/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useDebounce/index.ts)
+## 源码
 
 {/* prettier-ignore */}
-```ts [useDebounce.ts]
+```ts title="useDebounce.ts"
 import { useEffect, useState } from 'react';
 import useDebounceFn from '../useDebounceFn';
 import type { DebounceOptions } from './debounceOptions';
@@ -36,11 +40,11 @@ function useDebounce<T>(value: T, options?: DebounceOptions) {
 export default useDebounce;
 ```
 
-## 🔍 解读
+## 解读
 
-::: tip
-关于 `useDebounceFn`，可以查看对应文档：[useDebounceFn](../../effect/use-debounce-fn/)。
-:::
+<Callout>
+  关于 `useDebounceFn`，可以查看对应文档：[useDebounceFn](../../effect/use-debounce-fn/)。
+</Callout>
 
 {/* prettier-ignore */}
 ```ts

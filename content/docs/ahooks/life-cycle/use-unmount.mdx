@@ -1,9 +1,13 @@
 ---
-title: Components
-description: Some builtin components
+title: useUnmount
+description: 用于组件卸载时执行的 Hook
 ---
 
-# [useUnmount](https://ahooks.js.org/zh-CN/hooks/use-unmount#useunmount)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-unmount#useunmount" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUnmount/index.ts"
+  text="源码"
+/>
 
 ## 用法
 
@@ -11,10 +15,10 @@ description: Some builtin components
 
 <ViewCode src="./use-unmount/use-unmount.tsx" />
 
-## [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUnmount/index.ts)
+## 源码
 
 {/* prettier-ignore */}
-```ts [useUnMount.ts]
+```ts title="useUnMount.ts"
 import { useEffect } from 'react';
 import useLatest from '../useLatest';
 import { isFunction } from '../utils';
@@ -40,9 +44,9 @@ const useUnmount = (fn: () => void) => {
 export default useUnmount;
 ```
 
-:::tip
-关于 `useLatest`，可以查看对应文档：[useLatest](../../advanced/use-latest/)，用来返回最新的值。
-:::
+<Callout>
+  关于 `useLatest`，可以查看对应文档：[useLatest](../../advanced/use-latest/)，用来返回最新的值。
+</Callout>
 
 ## 解读
 

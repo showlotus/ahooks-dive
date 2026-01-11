@@ -1,22 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useUpdate
+description: 用于强制组件重新渲染的 Hook
 ---
 
-# [useUpdate](https://ahooks.js.org/zh-CN/hooks/use-update)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-update" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUpdate/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 返回一个函数，调用该函数会强制组件重新渲染。
 
 <ViewCode src="./use-update/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUpdate/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useUpdate.ts]
+```ts title="useUpdate.ts"
 import { useCallback, useState } from 'react';
 
 const useUpdate = () => {
@@ -28,9 +30,7 @@ const useUpdate = () => {
 export default useUpdate;
 ```
 
-:::
-
-## 🔍 解读
+## 解读
 
 {/* prettier-ignore */}
 ```ts

@@ -1,22 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useCreation
+description: 缓存计算量较大或创建成本较高的数据
+icon: Progress
 ---
 
-# [useCreation](https://ahooks.js.org/zh-CN/hooks/use-creation)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-creation#use-creation" text="ahooks 文档" />
 
-## 📖 用法
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useCreation/index.ts"
+  text="源码"
+/>
 
-缓存计算量较大或创建成本较高的数据。
+## 用法
 
 <ViewCode src="./use-creation/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useCreation/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useCreation.ts]
+```ts tab="useCreation.ts"
 import type { DependencyList } from 'react';
 import { useRef } from 'react';
 import depsAreSame from '../utils/depsAreSame';
@@ -39,7 +41,7 @@ export default useCreation;
 ```
 
 {/* prettier-ignore */}
-```ts [depsAreSame.ts]
+```ts tab="depsAreSame.ts"
 import type { DependencyList } from 'react';
 
 function depsAreSame(oldDeps: DependencyList, deps: DependencyList): boolean {
@@ -57,9 +59,7 @@ function depsAreSame(oldDeps: DependencyList, deps: DependencyList): boolean {
 export default depsAreSame;
 ```
 
-:::
-
-## 🔍 解读
+## 解读
 
 先看 `depsAreSame` 函数，用于比较两个依赖数组是否相同，内部采用 `Object.is` 进行比较。
 
@@ -81,7 +81,7 @@ function depsAreSame(oldDeps: DependencyList, deps: DependencyList): boolean {
 而 `useCreation` 函数则是在内部使用 `useRef` 定义了一个 `ref` 对象，用于存储依赖数组和计算结果。
 
 {/* prettier-ignore */}
-```ts [useCreation.ts]
+```ts title="useCreation.ts"
 const useCreation = <T>(factory: () => T, deps: DependencyList) => {
   // 1. 定义一个 ref 对象，用于存储依赖数组和计算结果
   const { current } = useRef({

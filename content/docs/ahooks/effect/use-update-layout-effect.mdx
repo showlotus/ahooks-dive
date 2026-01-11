@@ -1,22 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useUpdateLayoutEffect
+description: 用于更新 Layout Effect Hook
 ---
 
-# [useUpdateLayoutEffect](https://ahooks.js.org/zh-CN/hooks/use-update-layout-effect#useupdatelayouteffect)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-update-layout-effect" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUpdateLayoutEffect/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 用法与 `useLayoutEffect` 一致，不同的是，会忽略首次执行，只在依赖更新时执行。
 
 <ViewCode src="./use-update-layout-effect/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUpdateLayoutEffect/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useUpdateLayoutEffect.ts]
+```ts tab="useUpdateLayoutEffect.ts"
 import { useLayoutEffect } from 'react';
 import { createUpdateEffect } from '../createUpdateEffect';
 
@@ -24,7 +26,7 @@ export default createUpdateEffect(useLayoutEffect);
 ```
 
 {/* prettier-ignore */}
-```ts [createUpdateEffect.ts]
+```ts tab="createUpdateEffect.ts"
 import { useRef } from 'react';
 import type { useEffect, useLayoutEffect } from 'react';
 
@@ -53,8 +55,6 @@ export const createUpdateEffect: (hook: EffectHookType) => EffectHookType =
 export default createUpdateEffect;
 ```
 
-:::
+## 解读
 
-## 🔍 解读
-
-关于 `createUpdateEffect` 的解读，可以查看对应文档：[useUpdateEffect](../../effect/use-update-effect/#🔍-解读)。
+关于 `createUpdateEffect` 的解读，可以查看对应文档：[useUpdateEffect](../../effect/use-update-effect/#解读)。

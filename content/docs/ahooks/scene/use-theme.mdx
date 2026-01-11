@@ -1,22 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useTheme
+description: 用于获取和设置主题的 Hook
 ---
 
-{/* # [useTheme](https://ahooks.js.org/zh-CN/hooks/use-theme) */}
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-theme" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useTheme/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 获取并设置当前主题，并将主题存储在 `localStorage` 中。
 
 <ViewCode src="./use-theme/use-theme.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useTheme/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useTheme.ts]
+```ts title="useTheme.ts"
 import { useEffect, useState } from 'react';
 import useMemoizedFn from '../useMemoizedFn';
 import isBrowser from '../utils/isBrowser';
@@ -93,9 +95,7 @@ export default function useTheme(options: Options = {}) {
 }
 ```
 
-:::
-
-## 🔍 解读
+## 解读
 
 先看 `useCurrentTheme` 的实现，用来获取当前的主题 `light` 或 `dark`。
 
@@ -193,9 +193,10 @@ export default function useTheme(options: Options = {}) {
 
 最后返回 `theme`、`themeMode` 和 `setThemeMode` 函数。
 
-:::tip
-关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)，用来缓存函数引用，避免重复创建函数。
-:::
+<Callout>
+  关于
+  `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)，用来缓存函数引用，避免重复创建函数。
+</Callout>
 
 {/* prettier-ignore */}
 ```ts

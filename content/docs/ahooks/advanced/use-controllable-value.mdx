@@ -1,22 +1,25 @@
 ---
-title: Components
-description: Some builtin components
+title: useControllableValue
+description: 用于管理可控值的 Hook
+icon: Loader
 ---
 
-# [useControllableValue](https://ahooks.js.org/zh-CN/hooks/use-controllable-value)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-controllable-value" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useControllableValue/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 在某些组件开发时，我们需要组件的状态既可以自己管理，也可以被外部控制，`useControllableValue` 就是帮你管理这种状态的 Hook。
 
 <ViewCode src="./use-controllable-value/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useControllableValue/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useControllableValue.ts]
+```ts title="useControllableValue.ts"
 import { useMemo, useRef } from 'react';
 import type { SetStateAction } from 'react';
 import { isFunction } from '../utils';
@@ -93,12 +96,11 @@ function useControllableValue<T = any>(defaultProps?: Props, options: Options<T>
 export default useControllableValue;
 ```
 
-:::
+## 解读
 
-## 🔍 解读
-
-::: tip
-关于 `useMemoizedFn`、`useUpdate`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)、[useUpdate](../../effect/use-update/)。
-:::
+<Callout>
+  关于
+  `useMemoizedFn`、`useUpdate`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)、[useUpdate](../../effect/use-update/)。
+</Callout>
 
 _TODO_

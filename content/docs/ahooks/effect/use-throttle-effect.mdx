@@ -1,22 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useThrottleEffect
+description: 用于管理节流副作用的 Hook
 ---
 
-# [useThrottleEffect](https://ahooks.js.org/zh-CN/hooks/use-throttle-effect#usethrottleeffect)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-throttle-effect" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useThrottleEffect/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 用来处理节流副作用的 Hook。
 
 <ViewCode src="./use-throttle-effect/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useThrottleEffect/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useThrottleEffect.ts]
+```ts title="useThrottleEffect.ts"
 import { useEffect, useState } from 'react';
 import type { DependencyList, EffectCallback } from 'react';
 import type { ThrottleOptions } from '../useThrottle/throttleOptions';
@@ -44,13 +46,12 @@ function useThrottleEffect(
 export default useThrottleEffect;
 ```
 
-:::
+## 解读
 
-## 🔍 解读
-
-::: tip
-关于 `useThrottleFn`、`useUpdateEffect`，可以查看对应文档：[useThrottleFn](../../effect/use-throttle-fn/)、[useUpdateEffect](../../effect/use-update-effect/)。
-:::
+<Callout>
+  关于
+  `useThrottleFn`、`useUpdateEffect`，可以查看对应文档：[useThrottleFn](../../effect/use-throttle-fn/)、[useUpdateEffect](../../effect/use-update-effect/)。
+</Callout>
 
 {/* prettier-ignore */}
 ```ts

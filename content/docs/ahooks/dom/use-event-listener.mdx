@@ -1,22 +1,28 @@
 ---
-title: Components
-description: Some builtin components
+title: useEventListener
+description: 用于管理事件监听的 Hook
+icon: Loader
 ---
 
-# [useEventListener](https://ahooks.js.org/zh-CN/hooks/use-event-listener#useeventlistener)
+<LinkButton
+  url="https://ahooks.js.org/zh-CN/hooks/use-event-listener#useeventlistener"
+  text="ahooks 文档"
+/>
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useEventListener/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 监听事件。
 
 <ViewCode src="./use-event-listener/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useEventListener/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useEventListener.ts]
+```ts title="useEventListener.ts"
 import useLatest from '../useLatest';
 import type { BasicTarget } from '../utils/domTarget';
 import { getTargetElement } from '../utils/domTarget';
@@ -107,6 +113,6 @@ function useEventListener(eventName: string | string[], handler: noop, options: 
 export default useEventListener;
 ```
 
-## 🔍 解读
+## 解读
 
 _TODO_

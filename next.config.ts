@@ -1,5 +1,6 @@
 import { createMDX } from 'fumadocs-mdx/next'
 import { withBasePath } from '@/lib/env'
+import type { NextConfig } from 'next'
 
 const withMDX = createMDX()
 
@@ -25,6 +26,6 @@ const config = {
         assetPrefix: withBasePath('/'), // 资源路径前缀
       }
     : {}),
-}
+} as NextConfig
 
 export default withMDX(config)

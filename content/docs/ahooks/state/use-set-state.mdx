@@ -1,20 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useSetState
+description: 用于更新对象状态的 Hook
 ---
 
-# [useSetState](https://ahooks.js.org/zh-CN/hooks/use-set-state)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-set-state" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useSetState/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 用于更新对象状态，自动合并对象。
 
 <ViewCode src="./use-set-state/use-set-state.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useSetState/index.ts)
+## 源码
 
 {/* prettier-ignore */}
-```ts [useSetState.ts]
+```ts title="useSetState.ts"
 import { useState } from 'react';
 import useMemoizedFn from '../useMemoizedFn';
 import { isFunction } from '../utils';
@@ -41,15 +45,15 @@ const useSetState = <S extends Record<string, any>>(
 export default useSetState;
 ```
 
-## 🔍 解读
+## 解读
 
 重点就是 `setMergeState` 函数。
 
 首先使用 `useMemoizedFn` 缓存函数引用，避免重复创建函数。
 
-:::tip
-关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)。
-:::
+<Callout>
+  关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)。
+</Callout>
 
 {/* prettier-ignore */}
 ```ts

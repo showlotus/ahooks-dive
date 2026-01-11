@@ -1,22 +1,22 @@
 ---
-title: Components
-description: Some builtin components
+title: useReactive
+description: 提供一个响应式对象，当对象的属性发生变化时，会自动更新页面。
 ---
 
-# [useReactive](https://ahooks.js.org/zh-CN/hooks/use-reactive)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-reactive" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useReactive/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
-
-提供一个响应式对象，当对象的属性发生变化时，会自动更新页面。
+## 用法
 
 <ViewCode src="./use-reactive/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useReactive/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useReactive.ts]
+```ts title="useReactive.ts"
 import { useRef } from 'react';
 import isPlainObject from 'lodash/isPlainObject';
 import useCreation from '../useCreation';
@@ -89,13 +89,12 @@ function useReactive<S extends Record<string, any>>(initialState: S): S {
 export default useReactive;
 ```
 
-:::
+## 解读
 
-## 🔍 解读
-
-::: tip
-关于 `useCreation`、`useUpdate`，可以查看对应文档：[useCreation](../../advanced/use-creation/)、[useUpdate](../../effect/use-update/)。
-:::
+<Callout>
+  关于
+  `useCreation`、`useUpdate`，可以查看对应文档：[useCreation](../../advanced/use-creation/)、[useUpdate](../../effect/use-update/)。
+</Callout>
 
 先看 `observer` 函数，用于深度代理一个对象。
 

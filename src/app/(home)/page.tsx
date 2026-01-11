@@ -1,22 +1,16 @@
+import { Button } from '@/components/button'
 import Link from 'next/link'
-import { Cards, Card } from 'fumadocs-ui/components/card'
 
 export default function HomePage() {
   return (
     <div className="flex flex-col justify-center text-center flex-1">
-      <h1 className="text-2xl font-bold mb-4">Hello World</h1>
-      <p>
-        You can open{' '}
-        <Link href="/docs/components" className="font-medium underline">
-          /docs/components
-        </Link>{' '}
-        and see the documentation.
-      </p>
+      <h1 className="text-2xl font-bold mb-4">
+        一个深入剖析 ahooks 源码与用法的文档站点，帮助开发者更好地理解和应用 ahooks
+      </h1>
 
-      <Cards className="mt-8 flex justify-center">
-        <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-        <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-      </Cards>
+      <Link href="/docs/ahooks/use-request" className="font-medium underline">
+        <Button className="px-5 py-3 text-base rounded-full">开始探索</Button>
+      </Link>
     </div>
   )
 }

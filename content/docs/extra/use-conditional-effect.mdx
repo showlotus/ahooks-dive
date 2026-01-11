@@ -1,15 +1,9 @@
 ---
-title: Components
-description: Some builtin components
+title: useConditionalEffect
+description: 用于在条件满足时执行副作用的 Hook
 ---
 
-# useConditionalEffect
-
-::: tip
-`useConditionalEffect` 是 ahooks 提供的一个 Hook，用于在条件满足时执行副作用。
-:::
-
-```ts
+```ts title="useConditionalEffect.ts"
 function useConditionalEffect(effect: () => boolean | void | (() => void), deps: any[]) {
   const shouldRunRef = useRef(true)
 

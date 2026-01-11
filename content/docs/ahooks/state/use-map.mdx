@@ -1,20 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useMap
+description: 用于管理 Map 类型状态的 Hook
 ---
 
-# [useMap](https://ahooks.js.org/zh-CN/hooks/use-map)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-map" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useMap/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 管理 `Map` 类型状态。
 
 <ViewCode src="./use-map/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useMap/index.ts)
+## 源码
 
 {/* prettier-ignore */}
-```ts [useMap.ts]
+```ts title="useMap.ts"
 import { useState } from 'react';
 import useMemoizedFn from '../useMemoizedFn';
 
@@ -61,11 +65,11 @@ function useMap<K, T>(initialValue?: Iterable<readonly [K, T]>) {
 export default useMap;
 ```
 
-## 🔍 解读
+## 解读
 
-::: tip
-关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)。
-:::
+<Callout>
+  关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)。
+</Callout>
 
 本质上 `useMap` 返回的就是一个普通 `Map` 类型的数据，而在更新时则传入一个新的 `Map` 对象，从而触发页面重新渲染。
 

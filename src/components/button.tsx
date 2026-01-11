@@ -4,11 +4,12 @@ import { buttonVariants } from 'fumadocs-ui/components/ui/button'
 import { cn } from '@/lib/cn'
 
 export function Button(props: {
+  className?: string
   icon?: React.ReactNode
   children?: React.ReactNode
   onClick?: () => void
 }) {
-  const { icon, children, onClick } = props
+  const { className, icon, children, onClick } = props
   return (
     <button
       className={cn(
@@ -17,6 +18,7 @@ export function Button(props: {
           size: 'sm',
           className: 'gap-2 [&_svg]:size-3.5 [&_svg]:text-fd-muted-foreground',
         }),
+        className,
       )}
       onClick={onClick}
     >

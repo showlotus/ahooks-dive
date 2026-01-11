@@ -1,22 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useMemoizedFn
+description: 用于管理持久化函数的 Hook
 ---
 
-# [useMemoizedFn](https://ahooks.js.org/zh-CN/hooks/use-memoized-fn)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-memoized-fn" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useMemoizedFn/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 持久化 `function` 的引用，保证函数引用保持不变，避免重复创建函数。
 
 <ViewCode src="./use-memoized-fn/use-memoized-fn.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useMemoizedFn/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useMemoizedFn.ts]
+```ts title="useMemoizedFn.ts"
 import { useMemo, useRef } from 'react';
 import { isFunction } from '../utils';
 import isDev from '../utils/isDev';
@@ -55,9 +57,7 @@ const useMemoizedFn = <T extends noop>(fn: T) => {
 export default useMemoizedFn;
 ```
 
-:::
-
-## 🔍 解读
+## 解读
 
 先是环境判断，开发模式下传入参数的类型不为 `Function` 时，输出错误日志。
 
@@ -76,9 +76,10 @@ const useMemoizedFn = <T extends noop>(fn: T) => {
 
 然后使用 `useRef` 定义了一个 `fnRef` 对象，用于存储传入的函数。并且当传入的 `fn` 发生变化时，更新 `fnRef` 对象的值。
 
-::: tip
-关于为什么使用 `useMemo` 包裹，可以查看对应 issue：[#728](https://github.com/alibaba/hooks/issues/728)
-:::
+<Callout>
+  关于为什么使用 `useMemo` 包裹，可以查看对应
+  issue：[#728](https://github.com/alibaba/hooks/issues/728)。
+</Callout>
 
 {/* prettier-ignore */}
 ```tsx

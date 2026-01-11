@@ -1,22 +1,25 @@
 ---
-title: Components
-description: Some builtin components
+title: useHover
+description: 用于管理悬停状态的 Hook
+icon: Loader
 ---
 
-# [useHover](https://ahooks.js.org/zh-CN/hooks/use-hover#usehover)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-hover#usehover" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useHover/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 监听元素的悬停状态。
 
 <ViewCode src="./use-hover/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useHover/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useHover.ts]
+```ts title="useHover.ts"
 import useBoolean from '../useBoolean';
 import useEventListener from '../useEventListener';
 import type { BasicTarget } from '../utils/domTarget';
@@ -60,8 +63,6 @@ export default (target: BasicTarget, options?: Options): boolean => {
 };
 ```
 
-:::
-
-## 🔍 解读
+## 解读
 
 _TODO_

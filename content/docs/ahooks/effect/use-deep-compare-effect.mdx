@@ -1,22 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useDeepCompareEffect
+description: 用于深度比较依赖的 Hook
 ---
 
-# [useDeepCompareEffect](https://ahooks.js.org/zh-CN/hooks/use-deep-compare-effect)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-deep-compare-effect" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useDeepCompareEffect/index.tsx"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 用法与 `useEffect` 一致，不同的是，会深度比较依赖。
 
 <ViewCode src="./use-deep-compare-effect/use-deep-compare-effect.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useDeepCompareEffect/index.tsx)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```tsx [useDeepCompareEffect.tsx]
+```tsx tab="useDeepCompareEffect.tsx"
 import { useEffect } from 'react';
 import { createDeepCompareEffect } from '../createDeepCompareEffect';
 
@@ -24,7 +26,7 @@ export default createDeepCompareEffect(useEffect);
 ```
 
 {/* prettier-ignore */}
-```ts [createDeepCompareEffect.ts]
+```ts tab="createDeepCompareEffect.ts"
 import { useRef } from 'react';
 import type { DependencyList, useEffect, useLayoutEffect } from 'react';
 import { depsEqual } from '../utils/depsEqual';
@@ -45,7 +47,7 @@ export const createDeepCompareEffect: CreateUpdateEffect = (hook) => (effect, de
 ```
 
 {/* prettier-ignore */}
-```ts [depsEqual.ts]
+```ts tab="depsEqual.ts"
 import type { DependencyList } from 'react';
 import isEqual from 'react-fast-compare';
 
@@ -53,9 +55,7 @@ export const depsEqual = (aDeps: DependencyList = [], bDeps: DependencyList = []
   isEqual(aDeps, bDeps);
 ```
 
-:::
-
-## 🔍 解读
+## 解读
 
 首先调用 `createDeepCompareEffect` 函数，传入 `useEffect` 函数。
 
@@ -144,6 +144,6 @@ export const createDeepCompareEffect: CreateUpdateEffect = (hook) => {
 
 关于 `react-fast-compare` 的性能，与其他常用库对比了一下：
 
-{/* ![benchmark](./benchmark.png) */}
+![benchmark](./use-deep-compare-effect/benchmark.png)
 
 在对比原始值时，`react-fast-compare` 的性能居末，但对比对象、数组时，性能位居前二。尤其是对象的比对，测了好几轮，一直是第一。可见其在 `React` 中用来对比 `deps`，还是很能打的。

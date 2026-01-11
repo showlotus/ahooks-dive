@@ -1,22 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useThrottleFn
+description: 用于管理节流函数的 Hook
 ---
 
-# [useThrottleFn](https://ahooks.js.org/zh-CN/hooks/use-throttle-fn#usethrottlefn)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-throttle-fn" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useThrottleFn/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 用来处理节流函数的 Hook。
 
 <ViewCode src="./use-throttle-fn/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useThrottleFn/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useThrottleFn.ts]
+```ts title="useThrottleFn.ts"
 import throttle from 'lodash/throttle';
 import { useMemo } from 'react';
 import useLatest from '../useLatest';
@@ -64,13 +66,12 @@ function useThrottleFn<T extends noop>(fn: T, options?: ThrottleOptions) {
 export default useThrottleFn;
 ```
 
-:::
+## 解读
 
-## 🔍 解读
-
-::: tip
-关于 `useLatest`、`useUnmount`，可以查看对应文档：[useLatest](../../advanced/use-latest/)、[useUnmount](../../life-cycle/use-unmount/)。
-:::
+<Callout>
+  关于
+  `useLatest`、`useUnmount`，可以查看对应文档：[useLatest](../../advanced/use-latest/)、[useUnmount](../../life-cycle/use-unmount/)。
+</Callout>
 
 {/* prettier-ignore */}
 ```ts

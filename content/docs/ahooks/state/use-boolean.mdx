@@ -1,22 +1,25 @@
 ---
-title: Components
-description: Some builtin components
+title: useBoolean
+description: 用于管理布尔值的 Hook
+icon: Loader
 ---
 
-# [useBoolean](https://ahooks.js.org/zh-CN/hooks/use-boolean#useboolean)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-boolean#useboolean" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useBoolean/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 用来管理布尔值的 Hook。
 
 <ViewCode src="./use-boolean/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useBoolean/index.ts)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```ts [useBoolean.ts]
+```ts title="useBoolean.ts"
 import { useMemo } from 'react';
 import useToggle from '../useToggle';
 
@@ -45,8 +48,6 @@ export default function useBoolean(defaultValue = false): [boolean, Actions] {
 }
 ```
 
-:::
-
-## 🔍 解读
+## 解读
 
 _TODO_

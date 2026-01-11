@@ -1,17 +1,21 @@
 ---
-title: Components
-description: Some builtin components
+title: useThrottle
+description: 用于处理节流值的 Hook
 ---
 
-# [useThrottle](https://ahooks.js.org/zh-CN/hooks/use-throttle#usethrottle)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-throttle#usethrottle" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useThrottle/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 用来处理节流值的 Hook。
 
 <ViewCode src="./use-throttle/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useThrottle/index.ts)
+## 源码
 
 {/* prettier-ignore */}
 ```ts title="useThrottle.ts"
@@ -36,11 +40,11 @@ function useThrottle<T>(value: T, options?: ThrottleOptions) {
 export default useThrottle;
 ```
 
-## 🔍 解读
+## 解读
 
-::: tip
-关于 `useThrottleFn`，可以查看对应文档：[useThrottleFn](../../effect/use-throttle-fn/)。
-:::
+<Callout>
+  关于 `useThrottleFn`，可以查看对应文档：[useThrottleFn](../../effect/use-throttle-fn/)。
+</Callout>
 
 {/* prettier-ignore */}
 ```ts

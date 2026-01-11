@@ -1,21 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useScroll
+description: 用于管理滚动的 Hook
+icon: Loader
 ---
 
-# [useScroll](https://ahooks.js.org/zh-CN/hooks/use-scroll#usescroll)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-scroll#usescroll" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useScroll/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 监听元素的滚动事件。
 
 <ViewCode src="./use-scroll/use-scroll.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useScroll/index.ts)
+## 源码
 
-::: code-group
-
-```ts [useScroll.ts]
+```ts title="useScroll.ts"
 import { useEffect, useRef } from 'react'
 
 const useScroll = () => {
@@ -35,8 +38,6 @@ const useScroll = () => {
 export default useScroll
 ```
 
-:::
-
-## 🔍 解读
+## 解读
 
 _TODO_

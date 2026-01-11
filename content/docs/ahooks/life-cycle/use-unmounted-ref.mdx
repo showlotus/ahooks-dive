@@ -1,9 +1,16 @@
 ---
-title: Components
-description: Some builtin components
+title: useUnmountedRef
+description: 用于判断组件是否已经卸载的 Hook
 ---
 
-# [useUnmountedRef](https://ahooks.js.org/zh-CN/hooks/use-unmounted-ref#useunmountedref)
+<LinkButton
+  url="https://ahooks.js.org/zh-CN/hooks/use-unmounted-ref#useunmountedref"
+  text="ahooks 文档"
+/>
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUnmountedRef/index.tsx"
+  text="源码"
+/>
 
 ## 用法
 
@@ -11,12 +18,10 @@ description: Some builtin components
 
 <ViewCode src="./use-unmounted-ref/use-unmounted-ref.tsx" />
 
-## [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useUnmountedRef/index.tsx)
-
-::: code-group
+## 源码
 
 {/* prettier-ignore */}
-```tsx [useUnmountedRef.tsx]
+```tsx title="useUnmountedRef.tsx"
 import { useEffect, useRef } from 'react';
 
 const useUnmountedRef = () => {
@@ -32,8 +37,6 @@ const useUnmountedRef = () => {
 
 export default useUnmountedRef;
 ```
-
-:::
 
 ## 解读
 

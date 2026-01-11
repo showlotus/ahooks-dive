@@ -37,6 +37,11 @@
   background-color: transparent;
 }
 
+.view-code-container div[role='tabpanel'] input,
+.view-code-container div[role='tabpanel'] button:not([aria-label='Copy Text']) {
+  all: revert;
+}
+
 .custom-code-block pre,
 .custom-code-block code {
   border: none;

@@ -1,17 +1,21 @@
 ---
-title: Components
-description: Some builtin components
+title: useSet
+description: 用于管理 Set 类型状态的 Hook
 ---
 
-# [useSet](https://ahooks.js.org/zh-CN/hooks/use-set)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-set" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useSet/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 管理 `Set` 类型状态。
 
 <ViewCode src="./use-set/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useSet/index.ts)
+## 源码
 
 {/* prettier-ignore */}
 ```ts title="useSet.ts"
@@ -61,11 +65,11 @@ function useSet<K>(initialValue?: Iterable<K>) {
 export default useSet;
 ```
 
-::: tip
-关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)。
-:::
+<Callout>
+  关于 `useMemoizedFn`，可以查看对应文档：[useMemoizedFn](../../advanced/use-memoized-fn/)。
+</Callout>
 
-## 🔍 解读
+## 解读
 
 在不了解 `useSet` 之前，如果使用 `useState` 初始化一个 `Set` 类型的值，更新时需要怎么做呢？
 

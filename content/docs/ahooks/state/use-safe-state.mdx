@@ -1,20 +1,24 @@
 ---
-title: Components
-description: Some builtin components
+title: useSafeState
+description: 用于安全更新状态的 Hook
 ---
 
-# [useSafeState](https://ahooks.js.org/zh-CN/hooks/use-safe-state)
+<LinkButton url="https://ahooks.js.org/zh-CN/hooks/use-safe-state" text="ahooks 文档" />
+<LinkButton
+  url="https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useSafeState/index.ts"
+  text="源码"
+/>
 
-## 📖 用法
+## 用法
 
 组件卸载后，不再更新状态。
 
 <ViewCode src="./use-safe-state/demo.tsx" />
 
-## 📄 [源码](https://github.com/alibaba/hooks/blob/master/packages/hooks/src/useSafeState/index.ts)
+## 源码
 
 {/* prettier-ignore */}
-```ts [useSafeState.ts]
+```ts title="useSafeState.ts"
 import { useCallback, useState } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import useUnmountedRef from '../useUnmountedRef';
@@ -40,11 +44,11 @@ function useSafeState<S>(initialState?: S | (() => S)) {
 export default useSafeState;
 ```
 
-## 🔍 解读
+## 解读
 
-::: tip
-关于 `useUnmountedRef`，可以查看对应文档：[useUnmountedRef](../../life-cycle/use-unmounted-ref/)。
-:::
+<Callout>
+  关于 `useUnmountedRef`，可以查看对应文档：[useUnmountedRef](../../life-cycle/use-unmounted-ref/)。
+</Callout>
 
 内部使用 `useUnmountedRef` 来判断组件是否已经卸载，如果已经卸载，则不进行更新。
 

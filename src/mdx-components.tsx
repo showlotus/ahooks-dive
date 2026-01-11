@@ -13,7 +13,7 @@ import { CodeBlock } from './components/code-block'
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
-    // img: props => <ImageZoom {...(props as any)} />,
+    img: props => <ImageZoom {...(props as any)} />,
     ...components,
     Button,
     LinkButton,
