@@ -25,7 +25,7 @@ const MessageBox: FC<{
 const InputBox: FC<{
   focus$: EventEmitter<void>
 }> = function (props) {
-  const inputRef = useRef<any>()
+  const inputRef = useRef<HTMLInputElement>(null)
   props.focus$.useSubscription(() => {
     inputRef.current.focus()
   })
